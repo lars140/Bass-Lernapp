@@ -1,7 +1,7 @@
 # Bass lernen – Phase 1–4 (Gast-Modus, Konten, Sync, Level 1–4, Einstufung, Wiederholung, Statistik, Songs)
 
-Statische Web-App (Vanilla JS, ES-Module, Vite). Alle Sounds werden per Web Audio synthetisiert,
-alle Grafiken sind SVG, Lektionen liegen als JSON in `public/content/`. Kein CDN, kein Tracking.
+Statische Web-App (Vanilla JS, ES-Module, Vite). Der Bass klingt aus freien Aufnahmen (CC0, siehe „Bass-Samples“), alles andere
+(Drums, Klick, Akkorde, Slap/Pop/Flageolett) wird per Web Audio synthetisiert. Alle Grafiken sind SVG, Lektionen liegen als JSON in `public/content/`. Kein CDN, kein Tracking.
 
 ## Entwickeln
 
@@ -29,7 +29,7 @@ public/
   content/level1.json    Level 1 (Module → Lektionen → Schritte)
 src/
   main.js                Shell, Navigation, Belohnungen, SW-Registrierung
-  audio/                 engine, synth (Bass/Drums/Klick), sequencer, drums, pitch (Mikrofon), music
+  audio/                 engine, synth (Rückfall-Bass/Drums/Klick), samples (echter Bass), sequencer, drums, pitch (Mikrofon), music
   state/                 store (local-first, versioniert), gamify (XP/Streak/Ziel), badges, dates, events
   lessons/               loader (JSON laden), riff (Tab-Format parsen)
   exercises/             tabPlayer, quiz, fretQuiz, rhythmTrainer, tempoLadder, tuner, metronome, drumMachine
@@ -256,3 +256,15 @@ Level 4, Slap-Meister, Ganzes Griffbrett (Noten, Lagenwechsel und Bassschlüssel
 `npm test` prüft zusätzlich: Level-4-Inhalte (alle 45 Lektionen, 11 Songs, Skill-Zuordnung, Einstufungsfragen), Tonhöhen der neuen Riffs (Modi, Walking-Blues, Flageolett-Töne, Slap/Pop-Oktaven, Notenpositionen im Bassschlüssel), Intervall-Berechnung, Merge v2, Migration v1 → v2, Server-Validierung und alle neuen Ansichten (Aufwärmen, Einstufung inklusive Durchfallen und Überspringen, Statistik, Songs, Editor). Gegen den lokalen Server (wrangler + D1) habe ich den Ablauf Registrierung → Abruf → Update → ungültige Karte → alter v1-Client einmalig von Hand geprüft.
 
 **Nicht prüfbar ohne echtes Gerät:** Klang von Slap, Pop und Flageolett (synthetisch, also nur eine Annäherung), Gefühl und Timing der Übungen, die Mikrofon-Erkennung bei Slap/Flageolett (sehr kurze oder sehr hohe Töne werden unzuverlässiger erkannt), Darstellung auf iOS/Safari und die Größe des Cloudflare-CPU-Budgets beim Login.
+
+## Bass-Samples (echter Klang)
+
+**Quelle und Lizenz:** [FreePats „Finger Bass YR“](https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html), aufgenommen von Andrea Biasior an einem Yamaha RBX, veröffentlicht unter **CC0 1.0** (Public Domain). Lizenztext und Quelle liegen bei den Dateien (`public/samples/bass/LICENSE-CC0.txt`, `SOURCE.txt`). Eine Namensnennung ist bei CC0 nicht Pflicht, steht aber im Profil-Footer.
+
+**Aufbau:** 12 Aufnahmen, eine pro Halbton von E1 bis D#2 (MIDI 28–39), als FLAC (22,05 kHz, 16 Bit, ca. 3,6 s), zusammen **ca. 0,4 MB**. Höhere Töne entstehen durch Tonhöhenverschiebung des D#2-Samples (bis zum MIDI-Ton 57, also bis ca. G-Saite 14. Bund). Darüber und bei Slap, Pop und Flageolett spielt die Synthese. Die Sample-Stimmung ist gemessen (`manifest.json`, Feld `cents`) und wird beim Abspielen ausgeglichen. Im Test in Edge landeten verschobene Töne auf ±1,5 Cent genau.
+
+**Ablauf (`src/audio/samples.js`):** Beim ersten Klick, der Audio freigibt, werden die Dateien geladen (höchstens 2 Sekunden Wartezeit, dann läuft die Synthese als Rückfall). Der Service Worker speichert sie für den Offline-Betrieb. Fehlt das Netz beim ersten Besuch, spielt die Synthese weiter und das Laden wird später erneut versucht. Es entstehen **keine Function-Anfragen** (statische Dateien). Im Profil lässt sich **Synthese** statt **Echter Bass** wählen (`settings.sound`).
+
+**Eigene Aufnahmen verwenden:** Nimm die Töne E1 bis D#2 (MIDI 28–39) einzeln als FLAC auf (24 Bit, mono, 44,1 kHz) und lege sie in einen Ordner `E.flac`, `F.flac`, `F#.flac` … `D#.flac`. Dann: `npm install --no-save libflacjs`, `node scripts/build-samples.cjs <Ordner> public/samples/bass`. Das Skript gleicht den Pegel an, misst die Stimmung, verkleinert die Dateien und schreibt `manifest.json` neu. Passe danach `SOURCE.txt` an.
+
+**Tests:** `node scripts/test-samples.mjs` prüft Manifest, Dateien, Lizenzdateien, Zuordnung Ton → Sample und die Abspielgeschwindigkeit. Dass die Dateien im echten Browser dekodiert werden und die Tonhöhen stimmen, habe ich einmalig in Edge geprüft. **Wie es klingt, kann ich nicht hören:** Bitte hör dir Zupfklang, Ghost Notes, Hammer-on und besonders die höheren Töne (ab etwa der D-Saite, 5. Bund) selbst an. Dort ist das Sample um mehr als eine Quarte hochgeschoben und klingt dünner als ein echter Bass an dieser Stelle.

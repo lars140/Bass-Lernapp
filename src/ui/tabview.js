@@ -73,7 +73,7 @@ export function renderTab(riff, o = {}) {
     setActive(bar, step) {
       if (activeBar >= 0) {
         const b = bars[activeBar];
-        b.cursor.setAttribute('opacity', 0);
+        b.cursor.classList.remove('show');
         b.noteEls[activeStep] && b.noteEls[activeStep].classList.remove('on');
       }
       activeBar = bar == null ? -1 : bar;
@@ -81,7 +81,7 @@ export function renderTab(riff, o = {}) {
       if (activeBar >= 0) {
         const b = bars[activeBar];
         b.cursor.setAttribute('x', PAD_L + step * b.stepW);
-        b.cursor.setAttribute('opacity', 1);
+        b.cursor.classList.add('show');
         b.noteEls[step] && b.noteEls[step].classList.add('on');
       }
     },

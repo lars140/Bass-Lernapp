@@ -110,9 +110,9 @@ input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 32px
 .lbar { flex: 1; }
 .step { min-height: 280px; }
 .step-title { outline: none; }
-.lesson-nav { display: flex; justify-content: space-between; gap: 10px; position: sticky; bottom: calc(66px + env(safe-area-inset-bottom)); }
+.lesson-nav { display: flex; justify-content: space-between; gap: 10px; position: sticky; bottom: calc(57px + env(safe-area-inset-bottom)); z-index: 5; background: var(--bg); padding: 10px 0; border-top: 1px solid var(--line); }
 .lesson-nav .btn.primary { margin-left: auto; min-width: 150px; }
-@media (min-width: 760px) { .lesson-nav { bottom: 12px; } }
+@media (min-width: 760px) { .lesson-nav { bottom: 0; } }
 .prose p { max-width: 62ch; }
 .theory { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--line)); border-left-width: 4px; border-radius: 12px; padding: 14px 16px; }
 .theory-title { font-weight: 700; margin-bottom: 6px; }
@@ -129,7 +129,7 @@ input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 32px
 .tab-note rect { fill: var(--surface2); } .tab-note text { fill: var(--text); font: 700 13px var(--mono); }
 .tab-note.on rect { fill: var(--accent); } .tab-note.on text { fill: var(--accent-ink); }
 .tab-hold { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 3 3; }
-.tab-cursor { fill: var(--accent); opacity: .18; }
+.tab-cursor { fill: var(--accent); opacity: 0; } .tab-cursor.show { opacity: .18; }
 .player-controls { margin-top: 12px; display: grid; gap: 10px; }
 .tempo { gap: 8px; } .tempo input { flex: 1; } .bpm { white-space: nowrap; font-variant-numeric: tabular-nums; min-width: 78px; }
 .countin { font-size: 1.6rem; font-weight: 800; color: var(--accent); min-width: 1.6ch; } .countin.big { text-align: center; font-size: 2.4rem; min-height: 3rem; }

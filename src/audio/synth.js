@@ -1,6 +1,7 @@
 // Alle Klänge werden synthetisiert. Keine Audio-Dateien.
 import { getCtx, out } from './engine.js';
 import { midiToFreq } from './music.js';
+import { samplesReady, playSample } from './samples.js';
 
 let noiseBuf = null;
 function noise() {
@@ -20,6 +21,8 @@ function noise() {
 export function pluck(midi, t, dur = 0.4, vel = 0.9, dest = out(), opts = {}) {
   if (opts.slap || opts.pop) return slapPop(midi, t, dur, vel, dest, !!opts.pop);
   if (opts.harmonic) return harmonic(midi, t, dur, vel, dest);
+  // Echter Bass aus Samples, wenn geladen und eingeschaltet. Sonst läuft die Synthese darunter als Rückfall.
+  if (samplesReady() && playSample(midi, t, dur, vel, dest, opts)) return;
   const c = getCtx();
   const f = midiToFreq(midi);
   const ghost = !!opts.ghost;

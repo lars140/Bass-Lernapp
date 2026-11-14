@@ -1,6 +1,7 @@
 // Wendet Einstellungen auf die Seite an (Theme, Lautstärke).
 import { getSettings } from '../state/store.js';
 import { setVolume } from '../audio/engine.js';
+import { setSamplesEnabled } from '../audio/samples.js';
 
 export function applySettings() {
   const s = getSettings();
@@ -8,4 +9,5 @@ export function applySettings() {
   const meta = document.querySelector('meta[name="theme-color"]');
   if (meta) meta.content = s.theme === 'light' ? '#f6f8fa' : '#0f1318';
   setVolume(s.volume);
+  setSamplesEnabled(s.sound !== 'synth');
 }

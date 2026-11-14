@@ -30,6 +30,7 @@ export function profileView(root) {
     const goalBtns = [5, 10, 20].map((m) => h('button', { class: 'chip', 'aria-pressed': String(st.settings.goal === m), onClick: () => { commit((x) => { x.settings.goal = m; }); render(); } }, `${m} Min.`));
     const themeBtns = [['dark', 'Dunkel'], ['light', 'Hell']].map(([v, l]) => h('button', { class: 'chip', 'aria-pressed': String(st.settings.theme === v), onClick: () => { commit((x) => { x.settings.theme = v; }); applySettings(); render(); } }, l));
 
+    const soundBtns = [['samples', 'Echter Bass'], ['synth', 'Synthese']].map(([v, l]) => h('button', { class: 'chip', 'aria-pressed': String((st.settings.sound || 'samples') === v), onClick: () => { commit((x) => { x.settings.sound = v; }); applySettings(); render(); } }, l));
     const vol = h('input', { type: 'range', min: 0, max: 1, step: 0.05, value: st.settings.volume, 'aria-label': 'Lautstärke' });
     vol.addEventListener('input', () => { commit((x) => { x.settings.volume = Number(vol.value); }); applySettings(); });
     const lat = h('input', { type: 'number', min: -150, max: 300, step: 5, value: st.settings.latencyMs, 'aria-label': 'Latenz-Ausgleich in Millisekunden', class: 'num' });
@@ -59,6 +60,8 @@ export function profileView(root) {
         row('Tagesziel', h('div', { class: 'row' }, goalBtns)),
         row('Design', h('div', { class: 'row' }, themeBtns)),
         row('Lautstärke', vol),
+        row('Bass-Klang', h('div', { class: 'row' }, soundBtns)),
+        h('p', { class: 'muted small' }, 'Echter Bass aus Aufnahmen (wird beim ersten Abspielen geladen, ca. 0,4 MB) oder reine Synthese. Slap, Pop und Flageolett klingen immer synthetisch.'),
         row('Latenz-Ausgleich (ms)', lat),
         h('p', { class: 'muted small' }, 'Für den Rhythmus-Trainer: Bluetooth-Kopfhörer haben oft Verzögerung. Erhöhe den Wert, wenn du immer „zu spät“ bewertet wirst.'),
         h('div', { class: 'col' }, lefty, sounds)),
@@ -68,7 +71,7 @@ export function profileView(root) {
           h('button', { class: 'btn ghost', onClick: doExport }, 'Exportieren (JSON)'),
           h('button', { class: 'btn ghost', onClick: () => file.click() }, 'Importieren'),
           h('button', { class: 'btn danger', onClick: doReset }, 'Fortschritt zurücksetzen')), file),
-      h('p', { class: 'small muted' }, h('a', { href: '#/privacy' }, 'Datenschutz'), ' · ', h('a', { href: '#/imprint' }, 'Impressum'))));
+      h('p', { class: 'small muted' }, h('a', { href: '#/privacy' }, 'Datenschutz'), ' · ', h('a', { href: '#/imprint' }, 'Impressum'), ' · Bass-Aufnahmen: ', h('a', { href: 'https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html', rel: 'noopener noreferrer', target: '_blank' }, 'FreePats (CC0)'))));
   }
 
   function doExport() {

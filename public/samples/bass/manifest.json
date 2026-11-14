@@ -1,0 +1,66 @@
+{
+ "sampleRate": 22050,
+ "source": "FreePats Finger Bass YR (Yamaha RBX), CC0 1.0",
+ "notes": [
+  {
+   "midi": 28,
+   "file": "m28.flac",
+   "cents": 1
+  },
+  {
+   "midi": 29,
+   "file": "m29.flac",
+   "cents": 6
+  },
+  {
+   "midi": 30,
+   "file": "m30.flac",
+   "cents": 17
+  },
+  {
+   "midi": 31,
+   "file": "m31.flac",
+   "cents": 11
+  },
+  {
+   "midi": 32,
+   "file": "m32.flac",
+   "cents": 7
+  },
+  {
+   "midi": 33,
+   "file": "m33.flac",
+   "cents": 2
+  },
+  {
+   "midi": 34,
+   "file": "m34.flac",
+   "cents": 9
+  },
+  {
+   "midi": 35,
+   "file": "m35.flac",
+   "cents": 7
+  },
+  {
+   "midi": 36,
+   "file": "m36.flac",
+   "cents": 0
+  },
+  {
+   "midi": 37,
+   "file": "m37.flac",
+   "cents": -2
+  },
+  {
+   "midi": 38,
+   "file": "m38.flac",
+   "cents": -2
+  },
+  {
+   "midi": 39,
+   "file": "m39.flac",
+   "cents": -3
+  }
+ ]
+}

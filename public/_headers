@@ -20,6 +20,10 @@
 /content/*
   Cache-Control: public, max-age=0, must-revalidate
 
+# Bass-Samples (ändern sich praktisch nie): eine Woche cachen
+/samples/*
+  Cache-Control: public, max-age=604800
+
 # API: nie cachen
 /api/*
   Cache-Control: no-store

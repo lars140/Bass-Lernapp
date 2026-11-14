@@ -106,6 +106,7 @@ Unter **Werkzeuge** findest du:
 ### Profil
 
 - Linkshänder-Modus, Einstellungen, Latenz-Ausgleich
+- **Bass-Klang:** „Echter Bass“ (Aufnahmen eines Yamaha-Basses, frei nutzbar unter CC0) oder „Synthese“. Die Aufnahmen laden beim ersten Abspielen (ca. 0,4 MB) und stehen danach auch offline bereit. Slap, Pop und Flageolett klingen immer synthetisch.
 - Statistik und Abzeichen
 - **Export/Import** des Fortschritts als JSON-Datei, als Sicherung
 - **Konto erstellen**: Dein Gast-Fortschritt wird übernommen. Du bekommst **einmalig einen Recovery-Code**. Schreib ihn auf, denn damit setzt du das Passwort zurück (es gibt keine E-Mail-Zurücksetzung).

@@ -26,7 +26,7 @@ export function defaults() {
     srs: {},            // Wiederholungs-Karten: kartenId -> [fälligTag, Intervall (Tage), Ease×100, Wiederholungen]
     skipped: {},        // lessonId -> Zeitstempel (per Einstufungs-/Überspringtest übersprungen)
     placement: null,    // { at, level } nach dem Einstufungstest
-    settings: { theme: 'dark', lefty: false, goal: 10, volume: 0.8, sounds: true, latencyMs: 0 },
+    settings: { theme: 'dark', lefty: false, goal: 10, volume: 0.8, sounds: true, latencyMs: 0, sound: 'samples' },
   };
 }
 

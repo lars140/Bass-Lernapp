@@ -22,9 +22,14 @@ export function getCtx() {
 /** Muss direkt in einem Klick/Touch-Handler aufgerufen werden. */
 export function unlock() {
   const c = getCtx();
-  if (c.state !== 'running') return c.resume().then(() => c).catch(() => c);
-  return Promise.resolve(c);
+  const ready = c.state !== 'running' ? c.resume().then(() => c).catch(() => c) : Promise.resolve(c);
+  // Zusätzliche Vorbereitung (z. B. Bass-Samples laden), die beim ersten Klick starten darf
+  return Promise.all([ready, ...unlockHooks.map((fn) => { try { return fn(); } catch { return null; } })]).then(([ctx]) => ctx);
 }
+
+const unlockHooks = [];
+/** Registriert eine Funktion, die bei der Audio-Freigabe läuft (darf ein Promise liefern). */
+export function onUnlock(fn) { unlockHooks.push(fn); }
 
 export function out() { getCtx(); return master; }
 export function setVolume(v) { volume = v; if (master) master.gain.value = v; }

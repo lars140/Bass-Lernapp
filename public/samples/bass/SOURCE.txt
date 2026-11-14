@@ -1,0 +1,11 @@
+Bass-Samples
+============
+Quelle:   FreePats "Finger Bass YR" (Yamaha RBX Bass, Fingerstil), Version 2019-09-30
+Autor:    Andrea Biasior (Aufnahmen), Roberto Roma / FreePats (Aufbereitung)
+Seite:    https://freepats.zenvoid.org/ElectricGuitar/clean-electric-bass.html
+Lizenz:   Creative Commons CC0 1.0 (Public Domain Dedication), Text: LICENSE-CC0.txt
+
+Bearbeitung für diese App: Pegel angeglichen, auf 22,05 kHz / 16 Bit verkleinert,
+nach 3,6 s ausgeblendet, als FLAC gespeichert. manifest.json enthält pro Sample die
+gemessene Abweichung von der gleichstufigen Stimmung in Cent (wird beim Abspielen ausgeglichen).
+Eine Datei pro Halbton von E1 (MIDI 28) bis D#2 (MIDI 39); höhere Töne werden per Tonhöhenverschiebung erzeugt.
