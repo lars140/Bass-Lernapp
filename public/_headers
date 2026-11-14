@@ -1,0 +1,25 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), geolocation=(), microphone=(self)
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; worker-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+# Dateien mit Hash im Namen: ein Jahr cachen
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Einstiegspunkte: immer revalidieren (kurze Cache-Zeit)
+/
+  Cache-Control: public, max-age=0, must-revalidate
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+/manifest.webmanifest
+  Cache-Control: public, max-age=3600
+/content/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# API: nie cachen
+/api/*
+  Cache-Control: no-store

@@ -1,0 +1,32 @@
+{
+  "levels": [
+    {
+      "id": "level1",
+      "file": "level1",
+      "available": true,
+      "title": "Level 1 – Erste Töne",
+      "subtitle": "Für absolute Anfänger"
+    },
+    {
+      "id": "level2",
+      "file": "level2",
+      "available": true,
+      "title": "Level 2 – Grundlagen festigen",
+      "subtitle": "Muting, Noten auf dem Griffbrett, Grundton–Quinte–Oktave, Dur und Moll, Sechzehntel"
+    },
+    {
+      "id": "level3",
+      "file": "level3",
+      "available": true,
+      "title": "Level 3 – Fortgeschritten",
+      "subtitle": "Hammer-on, Slides, Pentatonik, Arpeggios, Stufen und Genres"
+    },
+    {
+      "id": "level4",
+      "file": "level4",
+      "available": false,
+      "title": "Level 4 – Profi",
+      "subtitle": "Slap, Walking Bass, Modi, Timing, eigene Basslines"
+    }
+  ]
+}

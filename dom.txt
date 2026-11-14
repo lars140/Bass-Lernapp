@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bass lernen</title>
+  <meta name="description" content="E-Bass lernen durch Spielen: interaktive Lektionen, Tabs, Griffbrett, Stimmgerät und Metronom. Läuft offline.">
+  <meta name="theme-color" content="#0f1318">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <script type="module" crossorigin="" src="/assets/index-BzhwOqKz.js"></script>
+  <link rel="stylesheet" crossorigin="" href="/assets/style-Db8rg0MZ.css">
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <div id="app"><header class="top"><a class="logo" href="#/">🎸 Bass lernen</a><div class="status" aria-live="off"><span title="Streak">🔥 0</span><span title="Erfahrungspunkte">Lv 1 · 0 XP</span></div><span class="sync-note small muted" role="status"></span><a class="acct" href="#/login">Anmelden</a></header><main id="main" tabindex="-1"><section class="view"><h1>Werkzeuge</h1><div class="tabs" role="tablist"><a class="tab-btn" role="tab" aria-selected="true" href="#/tools/tuner">🎚️ Stimmgerät</a><a class="tab-btn" role="tab" aria-selected="false" href="#/tools/metronome">⏱️ Metronom</a><a class="tab-btn" role="tab" aria-selected="false" href="#/tools/drums">🥁 Drum-Machine</a><a class="tab-btn" role="tab" aria-selected="false" href="#/tools/jam">🎶 Jam-Tracks</a><a class="tab-btn" role="tab" aria-selected="false" href="#/tools/ear">👂 Gehörbildung</a></div><div class="card"><div class="tuner"><p class="muted small">Das Mikrofon wird nur nach deiner Zustimmung genutzt. Die Auswertung passiert lokal in deinem Browser – es wird kein Ton gespeichert oder gesendet.</p><div class="tuner-note" aria-live="polite">–</div><div class="muted">Tippe auf „Mikrofon starten“ und spiele eine leere Saite.</div><div class="tuner-meter" role="img" aria-label="Abweichung in Cent"><div class="tick c"></div><div class="tuner-needle"></div></div><div class="tuner-hint" aria-live="polite"></div><div class="row center"><button class="btn primary">🎤 Mikrofon starten</button></div><h3>Referenztöne</h3><div class="row wrap center"><button class="btn ghost" aria-label="Referenzton E-Saite">E</button><button class="btn ghost" aria-label="Referenzton A-Saite">A</button><button class="btn ghost" aria-label="Referenzton D-Saite">D</button><button class="btn ghost" aria-label="Referenzton G-Saite">G</button></div></div></div></section></main><nav class="nav" aria-label="Hauptnavigation"><a href="#/" data-path="/"><span class="ni" aria-hidden="true">🏠</span><span>Start</span></a><a href="#/course" data-path="/course"><span class="ni" aria-hidden="true">📚</span><span>Kurs</span></a><a href="#/tools" data-path="/tools" aria-current="page"><span class="ni" aria-hidden="true">🎚️</span><span>Werkzeuge</span></a><a href="#/profile" data-path="/profile"><span class="ni" aria-hidden="true">👤</span><span>Profil</span></a></nav></div>
+  <noscript>Diese App benötigt JavaScript.</noscript>
+
+
+</body></html>

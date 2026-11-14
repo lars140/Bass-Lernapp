@@ -1,0 +1,186 @@
+{
+  "id": "level3",
+  "title": "Level 3 – Fortgeschritten",
+  "subtitle": "Hammer-on, Slides, Pentatonik, Tonleitern, Arpeggios, Akkordfolgen und Genres.",
+  "modules": [
+    {
+      "id": "l3m1", "title": "Techniken",
+      "lessons": [
+        {
+          "id": "l3-hammer", "title": "Hammer-on und Pull-off", "minutes": 10, "goal": "Töne ohne Zupfen binden",
+          "steps": [
+            { "type": "text", "title": "Töne binden", "body": ["Beim **Hammer-on** schlägst du mit einem Finger der Greifhand von oben auf einen Bund und erzeugst so einen Ton, **ohne zu zupfen**. Beim **Pull-off** ziehst du den Finger seitlich weg und lässt den tieferen Ton erklingen.", "Beide Techniken heißen **Legato** (gebunden) und klingen weich und fließend."] },
+            { "type": "tab", "title": "Hammer-on und Pull-off", "bpm": 70, "text": "In der Tab zeigt **H** einen Hammer-on und **P** einen Pull-off an: Der Ton wird nicht neu gezupft.",
+              "riff": { "id": "r-hammer", "title": "Legato-Lauf", "bpm": 70, "beats": 4, "sub": 2, "bars": ["A0 A2h A3h A2p A0p ~ - -", "E0 E3h E0p E3h A0 ~ - -"] } },
+            { "type": "quiz", "title": "Tab lesen", "question": "Was bedeutet das H über der zweiten Note?", "options": ["Hammer-on: Ton ohne Zupfen", "Halten", "Hohe Oktave"], "answer": 0, "explain": "H = Hammer-on. Der Ton entsteht allein durch den Schlag des Fingers auf den Bund.",
+              "riff": { "id": "q-hammer", "title": "", "bpm": 70, "beats": 4, "sub": 1, "bars": ["A0 A2h A3h A2p"] } },
+            { "type": "tab", "title": "Pull-off üben", "bpm": 65, "text": "Zupfe nur die Töne ohne P. Bei den Pull-offs ziehst du den Finger leicht nach unten weg, sodass er die Saite anreißt.",
+              "riff": { "id": "r-pull", "title": "Pull-offs", "bpm": 65, "beats": 4, "sub": 2, "bars": ["A5 A3p A5 A3p A5 A3p A5 ~"] } },
+            { "type": "theory", "title": "Warum klingen gebundene Töne anders?", "body": ["Beim Zupfen entsteht ein Anschlagsgeräusch, bei Hammer-on und Pull-off nicht. Die Töne klingen weicher, und deine Zupfhand hat Zeit für den nächsten Ton. Darum nutzen Profis Legato für schnelle Läufe und für flüssige Linien."] }
+          ]
+        },
+        {
+          "id": "l3-slides", "title": "Slides, Vibrato und Ghost Notes", "minutes": 12, "goal": "Töne gleiten, schwingen und perkussiv spielen",
+          "steps": [
+            { "type": "text", "title": "Ausdruck für den Bass", "body": ["**Slide:** Du rutschst mit dem Finger von einem Bund zum nächsten, ohne die Saite loszulassen.", "**Vibrato:** Du bewegst den Finger leicht hin und her, der Ton „lebt“.", "**Ghost Note:** Du greifst nicht richtig und zupfst nur ein „Klopfgeräusch“. Das ist Rhythmus ohne Tonhöhe."] },
+            { "type": "tab", "title": "Slides", "bpm": 70, "text": "Der kleine Strich links der Zahl zeigt die Richtung: **/** hoch, **\\** runter. Der Ton gleitet zur Zielnote.",
+              "riff": { "id": "r-slide", "title": "Slides", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E3 ~ E5/ ~ E5 ~ E3\\ ~", "A2 ~ A5/ ~ A5 ~ A2\\ ~"] } },
+            { "type": "tab", "title": "Vibrato", "bpm": 60, "text": "Das **~** über der Zahl steht für Vibrato. Halte den Ton und bewege den Finger leicht parallel zur Saite (nicht seitlich).",
+              "riff": { "id": "r-vib", "title": "Vibrato", "bpm": 60, "beats": 4, "sub": 1, "bars": ["A5v ~ ~ ~", "A7v ~ ~ A5"] } },
+            { "type": "tab", "title": "Ghost Notes", "bpm": 85, "text": "Das **x** ist eine Ghost Note: Greifhand lockern (Saite nur berühren) und trotzdem zupfen. Es klingt „tock“ statt eines Tons.",
+              "riff": { "id": "r-ghost", "title": "Ghost-Groove", "bpm": 85, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 ~ E0g E0 ~ E0g A0 E0g", "E0 ~ E0g E0 ~ E0g D2 E0g"] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was ist eine Ghost Note?", "options": ["Ein gedämpfter, kaum hörbarer Ton, der nur den Rhythmus füllt", "Ein sehr lauter Ton", "Ein Ton ohne Zupfhand"], "answer": 0, "explain": "Ghost Notes sind rhythmische Füller. Sie fühlen sich eher wie Schlagzeug an." },
+            { "type": "theory", "title": "Warum klingen Ghost Notes nach Groove?", "body": ["Ghost Notes füllen die kleinen Lücken zwischen den Hauptnoten und geben dem Spiel eine durchgehende Bewegung, wie ein Hi-Hat. Weil sie leise sind, bleibt der Rhythmus trotzdem klar. Das ist der Kern von Funk-Bass."] }
+          ]
+        },
+        {
+          "id": "l3-plectrum", "title": "Plektrum-Technik", "minutes": 9, "goal": "Mit dem Plektrum gleichmäßig Achtel spielen",
+          "steps": [
+            { "type": "text", "title": "Der Plektrum-Sound", "body": ["Mit dem Plektrum klingt der Bass **schärfer und präziser**, ideal für Rock, Punk und Metal. Viele Bassisten wechseln je nach Song zwischen Finger und Pick.", "**Haltung:** Plektrum zwischen Daumen und Zeigefinger, nur die Spitze schaut heraus. Bewege das **Handgelenk**, nicht den ganzen Arm."] },
+            { "type": "text", "title": "Auf und Ab", "body": ["**Downstroke (⬇):** Anschlag nach unten, auf den Schlägen **1, 2, 3, 4**. **Upstroke (⬆):** Anschlag nach oben, auf dem **„und“**.", "Das nennt man **Alternate Picking**: ⬇⬆⬇⬆. Die Hand bewegt sich immer, auch bei Pausen, so bleibt der Rhythmus stabil."] },
+            { "type": "tab", "title": "Achtel mit Plektrum", "bpm": 90, "text": "Spiele jeden Takt mit Alternate Picking. Auf der Zahl immer ⬇, auf dem „und“ ⬆. Auch bei Saitenwechseln!",
+              "riff": { "id": "r-pick", "title": "Pick-Achtel", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 E0 E0 E0 E0", "E0 E0 E3 E3 A0 A0 E0 E0", "E0 E0 E0 E0 E0 E0 E0 E0"] } },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 80, "target": 120, "stepBpm": 5,
+              "riff": { "id": "r-pick", "title": "Pick-Achtel", "bpm": 80, "beats": 4, "sub": 2, "bars": ["E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 E0 E0 E0 E0", "E0 E0 E3 E3 A0 A0 E0 E0", "E0 E0 E0 E0 E0 E0 E0 E0"] } },
+            { "type": "quiz", "title": "Auf oder ab?", "question": "Auf welchem Teil des Schlags spielst du beim Alternate Picking den Upstroke?", "options": ["Auf dem „und“", "Auf der Zahl", "Nie"], "answer": 0, "explain": "Zahlen = Downstroke, „und“ = Upstroke. So bleibt die Bewegung gleichmäßig." },
+            { "type": "theory", "title": "Warum klingt der Pick anders?", "body": ["Das Plektrum regt die Saite härter und schneller an als die Fingerkuppe. Dadurch entstehen mehr Obertöne und ein knackiger Anschlag. Bei Fingerstyle klingt der Bass runder und wärmer, beides hat seinen Platz."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3m2", "title": "Griffbrett und Tonleitern",
+      "lessons": [
+        {
+          "id": "l3-shifting", "title": "Lagenwechsel", "minutes": 10, "goal": "Sicher durch das ganze Griffbrett wandern",
+          "steps": [
+            { "type": "text", "title": "Das ganze Griffbrett", "body": ["Bisher hast du die ersten Bünde genutzt. Ein Profi bewegt sich über den **ganzen Hals** (Lagen). Beim **Lagenwechsel (Shifting)** wandert die ganze Greifhand, der Daumen führt mit.", "Regel: Der Finger, der den nächsten Ton spielt, **führt** die Bewegung. Die Hand folgt locker, nicht verkrampft."] },
+            { "type": "tab", "title": "Shifting auf einer Saite", "bpm": 70, "text": "Wechsle von der 3. in die 5. und 7. Lage. Achte darauf, dass der Wechsel im Takt bleibt.",
+              "riff": { "id": "r-shift", "title": "Shifting", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E3 E5 E7 E8 E7 E5 E3 ~", "A3 A5 A7 A8 A7 A5 A3 ~"] } },
+            { "type": "fretboard", "title": "C-Dur über den ganzen Hals", "scale": { "root": "C", "type": "major", "fromFret": 0, "toFret": 12, "strings": [0, 1, 2, 3], "labels": "names" }, "text": "Alle Töne von **C-Dur** auf dem ganzen Griffbrett (12 Bünde). Das C ist farbig. Viele Töne findest du an mehreren Stellen." },
+            { "type": "fretquiz", "title": "Finde den Ton im ganzen Hals", "mode": "find", "strings": [0, 1, 2, 3], "maxFret": 12, "rounds": 6 },
+            { "type": "theory", "title": "Warum mehrere Lagen?", "body": ["Weil jeder Ton mehrfach vorkommt (z. B. A: E-Saite 5, A-Saite 0, D-Saite 7, G-Saite 2). So wählst du die Lage, in der der nächste Ton **am bequemsten** liegt, ohne springen zu müssen. Auch der Klang ändert sich: Hohe Lagen klingen heller, tiefe voller."] },
+            { "type": "quiz", "title": "Gleicher Ton", "question": "Welche Stelle klingt wie die leere A-Saite?", "options": ["E-Saite, 5. Bund", "E-Saite, 4. Bund", "D-Saite, 5. Bund"], "answer": 0, "explain": "E + 5 Halbtöne = A. Das war auch deine Stimm-Methode aus Level 1." }
+          ]
+        },
+        {
+          "id": "l3-pentatonic", "title": "Moll-Pentatonik", "minutes": 13, "goal": "Die wichtigste Bass-Tonleiter spielen und anwenden",
+          "steps": [
+            { "type": "text", "title": "Fünf Töne, unendlich viele Riffs", "body": ["Die **Moll-Pentatonik** hat nur **fünf Töne** (Penta = fünf). Sie klingt in Rock, Blues, Funk und Pop fast nie falsch. Du hast sie in Level 1 schon gespielt (E–G–A)!", "Die Töne in A: **A – C – D – E – G**."] },
+            { "type": "fretboard", "title": "Griffmuster (Box 1)", "scale": { "root": "A", "type": "minorPent", "fromFret": 5, "toFret": 8, "strings": [0, 1, 2, 3], "labels": "degrees" }, "frets": 8, "text": "Die A-Moll-Pentatonik am 5. Bund. Der Grundton **1** (A) ist farbig. Das Muster lässt sich an jede Stelle des Halses schieben." },
+            { "type": "tab", "title": "Hoch und runter", "bpm": 70, "text": "Spiele die Tonleiter auf- und abwärts. Zeigefinger = 5. Bund, kleiner Finger = 8. Bund (bzw. 7. Bund auf den höheren Saiten).",
+              "riff": { "id": "r-pent-scale", "title": "A-Moll-Pentatonik", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E5 E8 A5 A7 D5 D7 G5 G7", "G7 G5 D7 D5 A7 A5 E8 E5"] } },
+            { "type": "tab", "title": "Pentatonik im Riff", "bpm": 90, "text": "Dasselbe Material als echtes Rock-Riff. Du erkennst: Aus der Tonleiter wird Musik.",
+              "riff": { "id": "r-pent-riff", "title": "Pentatonik-Riff", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E5 ~ E5 E8 ~ A5 ~ A7", "E5 ~ E5 E8 ~ A5 ~ -", "E5 ~ E5 E8 ~ A5 ~ A7", "A7 ~ A5 ~ E8 ~ E5 ~"] } },
+            { "type": "ear", "title": "Basslinien erkennen", "mode": "line", "rounds": 5, "text": "Du hörst eine kurze Bassline und wählst die passende Tab. So trainierst du das Heraushören nach Gehör." },
+            { "type": "theory", "title": "Warum klingt die Pentatonik so sicher?", "body": ["Gegenüber der normalen Moll-Tonleiter fehlen zwei Töne: die **Sekunde** und die **kleine Sexte**. Gerade diese Töne reiben am meisten gegen Akkorde. Mit nur den fünf „braven“ Tönen kann nichts schiefgehen. Darum ist die Pentatonik die erste Tonleiter jedes Musikers."] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wie viele Töne hat die Pentatonik?", "options": ["5", "7", "12"], "answer": 0, "explain": "Penta bedeutet fünf." }
+          ]
+        },
+        {
+          "id": "l3-scales", "title": "Dur- und Moll-Tonleiter", "minutes": 12, "goal": "Die Tonleiter-Formeln kennen und spielen",
+          "steps": [
+            { "type": "text", "title": "Das Muster aus Ganz- und Halbtönen", "body": ["Die **Dur-Tonleiter** folgt immer demselben Muster: **Ganz – Ganz – Halb – Ganz – Ganz – Ganz – Halb** (Ganzton = 2 Bünde, Halbton = 1 Bund). Fängst du auf C an, spielst du nur weiße Tasten: C D E F G A H C.", "Die **natürliche Moll-Tonleiter** hat das Muster: Ganz – Halb – Ganz – Ganz – Halb – Ganz – Ganz."] },
+            { "type": "fretboard", "title": "C-Dur auf A- und D-Saite", "scale": { "root": "C", "type": "major", "fromFret": 0, "toFret": 10, "strings": [1, 2], "labels": "names" }, "text": "Die Töne von C-Dur auf zwei Saiten. Siehst du, dass zwischen **E–F** und **H–C** nur ein Bund liegt?" },
+            { "type": "tab", "title": "C-Dur spielen", "bpm": 70, "text": "Eine Oktave aufwärts und wieder abwärts, mit dem Muster aus Ganz- und Halbtönen.",
+              "riff": { "id": "r-cmajor", "title": "C-Dur-Tonleiter", "bpm": 70, "beats": 4, "sub": 2, "bars": ["A3 A5 A7 A8 D5 D7 D9 D10", "D10 D9 D7 D5 A8 A7 A5 A3"] } },
+            { "type": "fretboard", "title": "A-Moll", "scale": { "root": "A", "type": "minor", "fromFret": 0, "toFret": 7, "strings": [1, 2, 3], "labels": "degrees" }, "text": "A-Moll hat dieselben Töne wie C-Dur, nur beginnt sie bei A. Die Zahlen zeigen die Funktion der Töne: **b3, b6, b7** sind die Moll-Merkmale." },
+            { "type": "ear", "title": "Intervalle hören", "mode": "interval", "rounds": 6, "intervals": [2, 4, 5, 7, 12] },
+            { "type": "theory", "title": "Warum klingt Dur hell und Moll dunkel?", "body": ["Der Unterschied steckt in der **3. Stufe**: Dur hat die große Terz (4 Halbtöne), Moll die kleine (3). Zusätzlich ist in Moll auch die 6. und 7. Stufe einen Halbton tiefer. Zusammen ergibt das den „weichen“, dunkleren Charakter."] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Zwischen welchen Tönen der C-Dur-Tonleiter liegen Halbtonschritte?", "options": ["E–F und H–C", "C–D und D–E", "G–A und A–H"], "answer": 0, "explain": "Nur dort gibt es keinen schwarzen Zwischenton, es sind genau die Halbtonschritte." }
+          ]
+        },
+        {
+          "id": "l3-arpeggios", "title": "Arpeggios", "minutes": 11, "goal": "Akkorde als Basslinie spielen",
+          "steps": [
+            { "type": "text", "title": "Akkorde in Einzeltönen", "body": ["Ein **Arpeggio** spielt die Töne eines Akkords **nacheinander**: Grundton, Terz, Quinte (und bei Septakkorden die Septime). Genau das tut der Bass: Er zeigt den Akkord, ohne mehrere Töne gleichzeitig zu spielen.", "Septakkorde haben vier Töne, z. B. **Am7 = A – C – E – G**."] },
+            { "type": "fretboard", "title": "Am7 auf dem Griffbrett", "scale": { "root": "A", "type": "arp-min7", "fromFret": 0, "toFret": 8, "strings": [1, 2, 3], "labels": "degrees" }, "text": "**1** = Grundton, **b3** = kleine Terz, **5** = Quinte, **b7** = kleine Septime." },
+            { "type": "tab", "title": "Am7 und Dm7", "bpm": 75, "text": "Zwei Septakkord-Arpeggios hintereinander: erst Am7 (A–C–E–G), dann Dm7 (D–F–A–C). Das ist die Hälfte von ii–V–I-Läufen im Jazz!",
+              "riff": { "id": "r-arp", "title": "Arpeggios Am7 – Dm7", "bpm": 75, "beats": 4, "sub": 2, "bars": ["A0 A3 D2 G0 D2 A3 A0 -", "A5 A8 D7 D10 D7 A8 A5 -"] } },
+            { "type": "quiz", "title": "Akkordtöne", "question": "Welche Töne enthält Am7?", "options": ["A – C – E – G", "A – C# – E – G", "A – C – E – F"], "answer": 0, "explain": "Am7 = Grundton A, kleine Terz C, Quinte E, kleine Septime G." },
+            { "type": "ear", "title": "Dur oder Moll?", "mode": "quality", "rounds": 5 },
+            { "type": "theory", "title": "Warum funktionieren Arpeggios so gut?", "body": ["Die Akkordtöne sind die „sicheren“ Töne: Sie passen immer zum Akkord, den Gitarre oder Klavier spielen. Spielst du sie rhythmisch, klingt dein Bass wie eine Melodie, bleibt aber harmonisch eindeutig. Fast jede gute Basslinie besteht zu einem großen Teil aus Arpeggio-Tönen."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3m3", "title": "Akkordfolgen",
+      "lessons": [
+        {
+          "id": "l3-degrees", "title": "Stufen und Nashville-Zahlen", "minutes": 13, "goal": "Akkordfolgen als Stufen lesen und in jeder Tonart spielen",
+          "steps": [
+            { "type": "text", "title": "Zahlen statt Namen", "body": ["Profis schreiben Akkorde oft als **Stufen**: **I** (1. Stufe), **IV** (4.), **V** (5.) … In C-Dur ist I = C, IV = F, V = G. In E-Dur ist I = E, IV = A, V = H.", "Das **Nashville-Zahlensystem** nutzt einfach Zahlen: **1 – 4 – 5**. So kannst du dieselbe Folge in jeder Tonart spielen, ohne neu zu lernen."] },
+            { "type": "quiz", "title": "Stufen rechnen", "question": "In C-Dur: Welcher Akkord ist die Stufe V?", "options": ["G", "F", "D"], "answer": 0, "explain": "C(1) D(2) E(3) F(4) G(5): Stufe V ist G." },
+            { "type": "jam", "title": "I – IV – V in E", "key": "E", "progression": "rock-145", "genre": "rock", "text": "In E: **E – A – H – A**. Spiele Grundtöne (E-Saite 0, A-Saite 0, A-Saite 2). Im Raster siehst du Name und Nashville-Zahl jedes Akkords." },
+            { "type": "theory", "title": "Warum klingen I, IV und V so selbstverständlich?", "body": ["Die **Tonika (I)** ist das „Zuhause“. Die **Dominante (V)** erzeugt Spannung, die danach zur Tonika zurück will. Die **Subdominante (IV)** liegt dazwischen. Dieser Weg von Ruhe über Spannung zurück zur Ruhe steckt in tausenden Songs und gibt ihnen ihr Gefühl von Logik."] },
+            { "type": "jam", "title": "ii – V – I (Jazz)", "key": "C", "progression": "jazz-251", "genre": "blues", "text": "Die wichtigste Jazz-Akkordfolge: **Dm7 – G7 – Cmaj7 – Cmaj7**. Spiele erst die Grundtöne, dann Arpeggios (Terz, Quinte, Septime)." },
+            { "type": "quiz", "title": "ii–V–I", "question": "Wie lautet die ii–V–I-Folge in C-Dur?", "options": ["Dm – G – C", "C – F – G", "Am – D – G"], "answer": 0, "explain": "ii = D-Moll, V = G, I = C." },
+            { "type": "jam", "title": "12-Takt-Blues in A", "key": "A", "progression": "blues12", "genre": "blues", "text": "Der Blues in A: **A7 – D7 – E7**. Zwölf Takte, die du an der Schleife merkst. Spiele Grundtöne im Shuffle-Rhythmus." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3m4", "title": "Genres",
+      "lessons": [
+        {
+          "id": "l3-funk", "title": "Funk", "minutes": 12, "goal": "Einen Funk-Groove mit Sechzehnteln und Ghost Notes spielen",
+          "steps": [
+            { "type": "text", "title": "Funk: der Bass ist die Hauptstimme", "body": ["Im Funk spielt der Bass **kurze, präzise Töne** mit viel Luft dazwischen. Der Rhythmus ist tänzerisch und steckt voller Sechzehntel, Pausen und **Ghost Notes**.", "Wichtig: Die **„Eins“** (erster Schlag des Taktes) ist heilig und wird immer betont."] },
+            { "type": "tab", "title": "Funk-Groove in E", "bpm": 95, "text": "Zähle 1 e + a. Das **x** sind Ghost Notes (leise und gedämpft), die großen Töne sitzen auf der Bassdrum.",
+              "riff": { "id": "r-funk", "title": "Funk in E", "bpm": 95, "beats": 4, "sub": 4, "drums": "funk", "bars": ["E0 - - E0g E0 - E0g - E3 - E0 - A0 ~ E0g -", "E0 - - E0g E0 - E0g - E5 - E3 - E0 ~ ~ E0g"] } },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 80, "target": 100, "stepBpm": 5,
+              "riff": { "id": "r-funk", "title": "Funk in E", "bpm": 80, "beats": 4, "sub": 4, "bars": ["E0 - - E0g E0 - E0g - E3 - E0 - A0 ~ E0g -", "E0 - - E0g E0 - E0g - E5 - E3 - E0 ~ ~ E0g"] } },
+            { "type": "jam", "title": "Funk-Jam", "key": "E", "progression": "funk-i-IV", "genre": "funk", "text": "Spiele den Groove von oben über **Em7 – Em7 – A7 – Em7**. Bei A7 verschiebst du das Muster auf die A-Saite." },
+            { "type": "theory", "title": "Warum klingt Funk so tanzbar?", "body": ["Funk lebt von **Kontrast**: lange Pausen, dann plötzlich dichte Sechzehntel-Läufe. Die Ghost Notes halten die Bewegung am Laufen, ohne dass du laut wirst. Die Bassdrum und der Bass spielen dabei meist **zusammen**, das nennt man „Lock“."] }
+          ]
+        },
+        {
+          "id": "l3-blues", "title": "Blues und Shuffle", "minutes": 12, "goal": "Den Shuffle-Rhythmus über einen 12-Takt-Blues spielen",
+          "steps": [
+            { "type": "text", "title": "Der Shuffle", "body": ["Beim **Shuffle** sind die Achtel nicht gleich lang: Die erste ist **länger**, die zweite **kürzer** (triolisch, „lang-kurz“). Du zählst **1-la-li 2-la-li 3-la-li 4-la-li** und spielst Zahl und „li“.", "Das ist das Herz von Blues, Rock’n’Roll und Swing."] },
+            { "type": "tab", "title": "Blues-Shuffle in A", "bpm": 90, "text": "Das klassische Muster: Grundton – Quinte – Sexte – Quinte, jeweils als „lang-kurz“. Takt 3 wechselt zum D (IV. Stufe).",
+              "riff": { "id": "r-shuffle", "title": "Shuffle in A", "bpm": 90, "beats": 4, "sub": 3, "drums": "shuffle", "bars": ["A0 ~ A0 D2 ~ D2 D4 ~ D4 D2 ~ D2", "A0 ~ A0 D2 ~ D2 D4 ~ D4 D2 ~ D2", "D0 ~ D0 A0 ~ A0 A2 ~ A2 A0 ~ A0", "A0 ~ A0 D2 ~ D2 D4 ~ D4 D2 ~ D2"] } },
+            { "type": "jam", "title": "12-Takt-Blues", "key": "A", "progression": "blues12", "genre": "blues", "text": "Spiele den Shuffle über den kompletten Blues. Bei **D7** (IV) nimmst du das Muster aus Takt 3, bei **E7** (V) schiebst du es um zwei Bünde." },
+            { "type": "theory", "title": "Warum swingt der Shuffle?", "body": ["Beim geraden Achtel teilst du einen Schlag 1:1, beim Shuffle **2:1** (Triole). Diese Ungleichheit erzeugt den „schaukelnden“ Effekt. Ein Sprichwort sagt: „Spiel die erste Note so, als wäre sie ein Stück zu spät.“"] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wie ist das Verhältnis der beiden Achtel beim Shuffle?", "options": ["2:1 (lang–kurz)", "1:1", "3:1"], "answer": 0, "explain": "Zwei Teile der Triole für die erste Note, einer für die zweite." }
+          ]
+        },
+        {
+          "id": "l3-reggae", "title": "Reggae", "minutes": 10, "goal": "Reggae-Bass mit Luft und Betonung auf Schlag 3 spielen",
+          "steps": [
+            { "type": "text", "title": "Weniger ist mehr", "body": ["Reggae-Bass ist **melodisch, tief und sparsam**. Er lässt viele Pausen und spielt oft **auf der „1“ und der „3“**. Der Drum-Beat (One Drop) betont Schlag 3 mit Kick und Snare gleichzeitig.", "Der Klang ist **warm und rund**: Zupfe nah am Hals und mit dem Daumen oder der Fingerkuppe."] },
+            { "type": "tab", "title": "Reggae in A-Moll", "bpm": 76, "text": "Die Pausen sind Teil des Grooves. Beende die Töne sauber (Muting!).",
+              "riff": { "id": "r-reggae", "title": "Reggae-Groove", "bpm": 76, "beats": 4, "sub": 2, "drums": "reggae", "bars": ["A0 ~ ~ - A0 ~ D2 A0", "D0 ~ ~ - D0 ~ A0 D0", "A0 ~ ~ - A0 ~ D2 A0", "E0 ~ ~ - E0 ~ A2 E0"] } },
+            { "type": "jam", "title": "Reggae-Jam", "key": "A", "progression": "minor-i-VI-III-VII", "genre": "reggae", "text": "Eine typische Moll-Schleife. Die Gitarre spielt die Akkorde auf den Offbeats (das „und“). Du hältst das Fundament." },
+            { "type": "theory", "title": "Warum fühlt sich Reggae so entspannt an?", "body": ["Der Rhythmus liegt **hinter** dem Schlag: Gitarre und Keyboard betonen das „und“, der Bass setzt den Schwerpunkt auf 1 und 3. Dazwischen entsteht Raum, der dem Groove sein lässiges Schwingen gibt. Weniger Töne erlauben mehr Gewicht pro Ton."] }
+          ]
+        },
+        {
+          "id": "l3-disco", "title": "Disco", "minutes": 10, "goal": "Mit Oktaven einen treibenden Disco-Bass spielen",
+          "steps": [
+            { "type": "text", "title": "Oktav-Bass", "body": ["Disco ist **Vier-auf-den-Boden**: Die Bassdrum spielt auf jedem Schlag. Der Bass springt dazu zwischen **Grundton und Oktave** und erzeugt so einen durchgehenden, tanzbaren Motor.", "Das Griffbild kennst du: Oktave = zwei Saiten höher, zwei Bünde weiter (Level 2)."] },
+            { "type": "tab", "title": "Disco in A–D–E", "bpm": 118, "text": "Achtel mit Oktavsprung. Achte darauf, dass beide Töne gleich laut und gleich lang klingen.",
+              "riff": { "id": "r-disco", "title": "Oktav-Disco", "bpm": 118, "beats": 4, "sub": 2, "drums": "disco", "bars": ["A0 D7 A0 D7 A0 D7 A0 D7", "D0 G7 D0 G7 D0 G7 D0 G7", "E0 D2 E0 D2 E0 D2 E0 D2", "A0 D7 A0 D7 A0 D7 A0 D7"] } },
+            { "type": "jam", "title": "Disco-Jam", "key": "A", "progression": "pop-1564", "genre": "disco", "text": "Mit „Bass spielen lassen“ hörst du das Prinzip: Grundton, Oktave, Grundton, Oktave …" },
+            { "type": "theory", "title": "Warum treibt der Oktavsprung so?", "body": ["Der Wechsel zwischen tief und hoch erzeugt eine **Wippbewegung**, die der Körper sofort mitgeht. Weil Grundton und Oktave sehr ähnlich klingen, bleibt die Harmonie eindeutig, während sich der Rhythmus pausenlos bewegt."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l3m5", "title": "Abschluss",
+      "lessons": [
+        {
+          "id": "l3-finale", "title": "Dein Repertoire", "minutes": 10, "goal": "Alles in einem freien Jam anwenden",
+          "steps": [
+            { "type": "text", "title": "Zeit zum Spielen", "body": ["Du kennst jetzt Techniken, Tonleitern, Arpeggios, Stufen und fünf Genres. Wähle in den nächsten Schritten selbst, was zu dir passt."] },
+            { "type": "jam", "title": "Freier Jam", "key": "E", "progression": "pop-1564", "genre": "rock", "text": "Ändere **Genre, Tonart, Akkordfolge und Tempo** und spiele frei dazu: mit Pentatonik, Arpeggios, Slides oder Ghost Notes. Probiere ruhig aus, wie sich dieselbe Folge in anderen Genres anfühlt." },
+            { "type": "text", "title": "Level 3 geschafft! 🎉", "body": ["Stark! Du bist jetzt ein **fortgeschrittener Bassist**. In Level 4 geht es um Slap & Pop, Walking Bass, Modi, Profi-Timing und eigene Basslines."] }
+          ]
+        }
+      ]
+    }
+  ]
+}

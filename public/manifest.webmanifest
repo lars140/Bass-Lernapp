@@ -1,0 +1,14 @@
+{
+  "name": "Bass lernen",
+  "short_name": "Bass",
+  "description": "E-Bass lernen durch Spielen",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1318",
+  "theme_color": "#0f1318",
+  "lang": "de",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

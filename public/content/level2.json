@@ -1,0 +1,126 @@
+{
+  "id": "level2",
+  "title": "Level 2 – Grundlagen festigen",
+  "subtitle": "Sauber spielen, alle Saiten kennen, Grundton–Quinte–Oktave, Dur und Moll, Sechzehntel und Synkopen.",
+  "modules": [
+    {
+      "id": "l2m1", "title": "Saubere Technik",
+      "lessons": [
+        {
+          "id": "l2-muting", "title": "Muting mit beiden Händen", "minutes": 9, "goal": "Töne bewusst beenden und Nebengeräusche vermeiden",
+          "steps": [
+            { "type": "text", "title": "Warum muten?", "body": ["Ein guter Bassist spielt nicht nur Töne, sondern **beendet** sie auch. Saiten, die ungewollt mitschwingen, machen den Klang matschig, vor allem bei Rock und Funk.", "**Muting** (Dämpfen) heißt: Alle Saiten, die gerade nicht klingen sollen, werden leicht berührt."] },
+            { "type": "text", "title": "Zwei Hände, zwei Aufgaben",
+              "body": ["**Greifhand:** Die nicht benutzten Finger liegen locker auf den Saiten. Zum Beenden eines Tons lockerst du den Druck, ohne die Saite ganz loszulassen.", "**Zupfhand:** Der Daumen ruht auf dem Tonabnehmer oder der nächsttieferen Saite. Nach dem Zupfen legst du den Zupffinger auf die nächste Saite. So dämpfst du tiefere Saiten und verhinderst Nachklingen."] },
+            { "type": "tab", "title": "Kurz und knackig", "bpm": 70, "text": "Die Pausen (–) sind **aktive Stille**: Beende den Ton genau dort, mit der Greifhand oder der Zupfhand.",
+              "riff": { "id": "r-mute-1", "title": "Staccato", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E0 - E0 - A0 - A0 -", "E0 - E0 - A0 - E0 -"] } },
+            { "type": "tab", "title": "Lang und kurz", "bpm": 70, "text": "Jetzt klingt ein Ton drei Achtel lang, dann gibt es eine Pause. Bei der Pause muss es **still** sein.",
+              "riff": { "id": "r-mute-2", "title": "Lang und kurz", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E0 ~ ~ - E0 ~ ~ -", "A0 ~ ~ - A0 ~ - -"] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Warum dämpft man die Saiten, die gerade nicht gespielt werden?", "options": ["Damit sie nicht ungewollt mitschwingen und den Klang verschmieren", "Damit sie lauter werden", "Damit sie sich nicht verstimmen"], "answer": 0, "explain": "Mitschwingende Saiten erzeugen Nebengeräusche. Muting hält den Bass klar und präzise." },
+            { "type": "theory", "title": "Warum wirkt Stille so stark?", "body": ["Rhythmus entsteht aus dem Wechsel von Klang und Stille. Wenn der Bass exakt endet, wo das Schlagzeug einen Schlag setzt, klingen beide wie ein Instrument. Darum sagen Profis: „Die Pausen sind das Wichtigste.“"] }
+          ]
+        },
+        {
+          "id": "l2-strings", "title": "Saitenwechsel und Raking", "minutes": 9, "goal": "Sicher zwischen allen vier Saiten wechseln",
+          "steps": [
+            { "type": "text", "title": "Der wandernde Daumen", "body": ["Beim Saitenwechsel bleibt dein Wechselschlag gleichmäßig. Der Daumen ruht immer auf der Saite **unter** der, die du gerade spielst (bei der E-Saite am Tonabnehmer).", "Die Zupffinger bleiben nah an den Saiten und bewegen sich nur wenig."] },
+            { "type": "tab", "title": "Alle vier Saiten", "bpm": 70, "text": "Spiele jede Saite zweimal, bevor du wechselst. Lass den Wechselschlag nicht neu starten.",
+              "riff": { "id": "r-strings-1", "title": "Saitenwechsel", "bpm": 70, "beats": 4, "sub": 2, "bars": ["E0 E0 A0 A0 D0 D0 A0 A0", "E0 E0 A0 A0 D0 D0 G0 G0"] } },
+            { "type": "text", "title": "Raking", "body": ["**Raking** bedeutet: Dein Zupffinger schlägt eine Saite an und **bleibt auf der nächsttieferen Saite hängen**. So spielst du mehrere Töne auf derselben Saite, ohne dass die tiefere mitklingt.", "Das ist ein Trick, um Läufe auf höheren Saiten sauber zu halten."] },
+            { "type": "tab", "title": "Raking üben", "bpm": 65, "text": "Der erste Ton jedes Taktes liegt auf einer tieferen Saite, dann folgen drei gleiche Töne. Dein Finger zieht „durch“ und stoppt auf der nächsten Saite.",
+              "riff": { "id": "r-rake", "title": "Raking", "bpm": 65, "beats": 4, "sub": 2, "bars": ["E3 A0 A0 A0 E3 A0 A0 A0", "A3 D0 D0 D0 A3 D0 D0 D0"] } },
+            { "type": "quiz", "title": "Wohin mit dem Finger?", "question": "Wo ruht dein Zupffinger beim Raking nach dem Anschlag?", "options": ["Auf der nächsttieferen Saite", "In der Luft", "Auf der gleichen Saite, ganz fest"], "answer": 0, "explain": "Dort dämpft er die tiefere Saite und dient als Anschlagpunkt für den nächsten Ton." },
+            { "type": "theory", "title": "Warum Raking funktioniert", "body": ["Eine tiefere Saite schwingt sonst als „Resonanz“ mit, wenn du direkt darüber spielst. Der aufliegende Finger nimmt ihr die Schwingung. So bleibt der Bass auch bei schnellen Wechseln sauber."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2m2", "title": "Töne und ihre Funktion",
+      "lessons": [
+        {
+          "id": "l2-notes2", "title": "Noten auf D- und G-Saite", "minutes": 10, "goal": "Das ganze untere Griffbrett (Bund 0–5) benennen",
+          "steps": [
+            { "type": "fretboard", "title": "D-Saite", "string": 2, "frets": 5, "text": "Leere Saite = **D**. Auch hier liegen **E–F** (2. und 3. Bund) direkt nebeneinander." },
+            { "type": "fretboard", "title": "G-Saite", "string": 3, "frets": 5, "text": "Leere Saite = **G**. Zwischen **H und C** (4. und 5. Bund) liegt nur ein Halbton." },
+            { "type": "fretquiz", "title": "Finde den Ton", "mode": "find", "strings": [0, 1, 2, 3], "maxFret": 5, "rounds": 6 },
+            { "type": "fretquiz", "title": "Welcher Ton ist das?", "mode": "name", "strings": [2, 3], "maxFret": 5, "rounds": 6 },
+            { "type": "theory", "title": "Warum gibt es jeden Ton mehrfach?", "body": ["Die Saiten sind in Quarten gestimmt, also überlappen sich die Töne: Das **E** gibt es als leere E-Saite, am 7. Bund der A-Saite, am 2. Bund der D-Saite und am 9. Bund der G-Saite. Das ist praktisch, denn so kannst du jede Passage an mehreren Stellen spielen und wählst die bequemste."] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Welcher Ton liegt am 3. Bund der A-Saite?", "options": ["C", "D", "H"], "answer": 0, "explain": "A → H (2. Bund) → C (3. Bund). Zwischen H und C ist nur ein Halbton." }
+          ]
+        },
+        {
+          "id": "l2-root5oct", "title": "Grundton, Quinte, Oktave", "minutes": 11, "goal": "Rock- und Pop-Grooves aus drei Tönen bauen",
+          "steps": [
+            { "type": "text", "title": "Das Fundament eines Akkords", "body": ["Zu jedem Akkord spielt der Bass meist den **Grundton**: den Ton, nach dem der Akkord heißt. Wird es abwechslungsreicher, kommen die **Quinte** (7 Halbtöne darüber) und die **Oktave** (12 Halbtöne darüber) dazu.", "Die gute Nachricht: Dafür gibt es **ein Griffbild**, das du an jeder Stelle des Halses verschieben kannst."] },
+            { "type": "fretboard", "title": "Das Griffbild", "frets": 7, "marks": [[1, 3, "1"], [2, 5, "5"], [3, 5, "8"]],
+              "text": ["Grundton auf der A-Saite (hier **C**, 3. Bund). Die **Quinte** liegt eine Saite höher, zwei Bünde weiter (D-Saite, 5. Bund = **G**). Die **Oktave** liegt zwei Saiten höher, zwei Bünde weiter (G-Saite, 5. Bund = **C**).", "Verschiebst du das Bild, passt es auf jeden Grundton."] },
+            { "type": "tab", "title": "Rock in A", "bpm": 90, "text": "A als Grundton (A-Saite leer), Quinte E (D-Saite, 2. Bund) und Oktave A (G-Saite, 2. Bund).",
+              "riff": { "id": "r-root5", "title": "Grundton – Quinte – Oktave", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["A0 ~ A0 ~ D2 ~ A0 ~", "A0 ~ A0 ~ D2 ~ G2 ~"] } },
+            { "type": "tab", "title": "Pop in G", "bpm": 100, "text": "Gleiches Griffbild, anderer Grundton: G auf der E-Saite (3. Bund). Die Quinte D liegt auf der A-Saite (5. Bund), die Oktave G auf der D-Saite (5. Bund).",
+              "riff": { "id": "r-pop-g", "title": "Pop-Groove in G", "bpm": 100, "beats": 4, "sub": 2, "drums": "rock4", "bars": ["E3 ~ E3 ~ A5 ~ E3 ~", "E3 ~ E3 ~ A5 ~ D5 ~"] } },
+            { "type": "theory", "title": "Warum klingen Quinte und Oktave so gut?", "body": ["Oktave und Quinte sind die **verwandtesten** Töne zum Grundton: Ihre Schwingungen stehen im einfachen Verhältnis 2:1 bzw. 3:2. Darum klingen sie „rein“ und passen zu Dur und Moll gleichermaßen. Du kannst sie also spielen, ohne zu wissen, ob der Akkord Dur oder Moll ist."] },
+            { "type": "quiz", "title": "Quinte", "question": "Welcher Ton ist die Quinte über A?", "options": ["E", "D", "H"], "answer": 0, "explain": "Von A aus 7 Halbtöne aufwärts: A–A#–H–C–C#–D–D#–E." }
+          ]
+        },
+        {
+          "id": "l2-majmin", "title": "Dur und Moll hören und spielen", "minutes": 11, "goal": "Dur und Moll an der Terz unterscheiden",
+          "steps": [
+            { "type": "text", "title": "Hell oder dunkel?", "body": ["Ob ein Akkord **Dur** (fröhlich, hell) oder **Moll** (ernst, dunkel) klingt, entscheidet **ein einziger Ton**: die **Terz**.", "Dur-Terz = 4 Halbtöne über dem Grundton. Moll-Terz = 3 Halbtöne."] },
+            { "type": "fretboard", "title": "A-Dur-Dreiklang", "scale": { "root": "A", "type": "arp-maj", "fromFret": 0, "toFret": 7, "strings": [1, 2, 3], "labels": "degrees" }, "text": "Die Akkordtöne von A-Dur: Grundton **1**, große Terz **3**, Quinte **5**." },
+            { "type": "fretboard", "title": "A-Moll-Dreiklang", "scale": { "root": "A", "type": "arp-min", "fromFret": 0, "toFret": 7, "strings": [1, 2, 3], "labels": "degrees" }, "text": "Bei A-Moll rutscht die Terz einen Halbton tiefer: **b3**." },
+            { "type": "tab", "title": "Hör den Unterschied", "bpm": 70, "text": "Im ersten Takt spielst du A-Dur (mit C#), im zweiten A-Moll (mit C). Nur ein Bund Unterschied, aber ein ganz anderes Gefühl.",
+              "riff": { "id": "r-maj-min", "title": "Dur und Moll", "bpm": 70, "beats": 4, "sub": 1, "bars": ["A0 A4 D2 A4", "A0 A3 D2 A3"] } },
+            { "type": "ear", "title": "Dur oder Moll?", "mode": "quality", "rounds": 6 },
+            { "type": "theory", "title": "Warum klingt Moll traurig?", "body": ["Die kleine Terz erzeugt eine leichte „Reibung“ zur Quinte und klingt dadurch gedämpfter. Dur wirkt offen und strahlend. Songs wählen oft bewusst Moll für düstere, nachdenkliche Stimmungen und Dur für Optimismus."] },
+            { "type": "quiz", "title": "Terz", "question": "Wie heißt die Terz bei Moll?", "options": ["Kleine Terz (3 Halbtöne)", "Große Terz (4 Halbtöne)", "Quinte (7 Halbtöne)"], "answer": 0, "explain": "Moll hat die kleine Terz, nur 3 Halbtöne über dem Grundton." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2m3", "title": "Mehr Rhythmus",
+      "lessons": [
+        {
+          "id": "l2-sixteenths", "title": "Sechzehntelnoten", "minutes": 10, "goal": "Vier Töne pro Schlag gleichmäßig spielen",
+          "steps": [
+            { "type": "text", "title": "Noch eine Teilung", "body": ["Teilst du jeden Schlag in **vier**, entstehen **Sechzehntel**. Du zählst **1 e + a, 2 e + a, 3 e + a, 4 e + a**.", "Wechselschlag ist jetzt Pflicht: Zeigefinger – Mittelfinger – Zeigefinger – Mittelfinger. Beginne **langsam**, Tempo ist nebensächlich."] },
+            { "type": "tab", "title": "Sechzehntel auf E und A", "bpm": 55, "text": "Unter der Tab steht die Zählhilfe. Spiele gleichmäßig und entspannt.",
+              "riff": { "id": "r-16-a", "title": "Sechzehntel", "bpm": 55, "beats": 4, "sub": 4, "bars": ["E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0"] } },
+            { "type": "rhythm", "title": "Achtel und Sechzehntel tippen", "bpm": 60, "sub": 4, "bars": ["x - x - x - x - x - x - x - x -", "x x x x x x x x x x x x x x x x"] },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 50, "target": 80, "stepBpm": 5,
+              "riff": { "id": "r-16-ladder", "title": "Sechzehntel-Leiter", "bpm": 50, "beats": 4, "sub": 4, "bars": ["E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0 A0"] } },
+            { "type": "theory", "title": "Warum sind Sechzehntel „schnell“?", "body": ["Bei 80 BPM dauert eine Sechzehntel nur 187 ms, bei Achteln wären es 375 ms. Darum brauchst du die Ruhe des Wechselschlags: Wer angespannt zupft, wird unregelmäßig. Üb lieber 10 Minuten locker als 2 Minuten verkrampft."] }
+          ]
+        },
+        {
+          "id": "l2-synco", "title": "Pausen und Synkopen", "minutes": 10, "goal": "Rhythmen mit Pausen und Betonung auf „und“ spielen",
+          "steps": [
+            { "type": "text", "title": "Gegen den Schlag", "body": ["Eine **Synkope** betont eine Stelle, die normalerweise unbetont ist, meist das „und“. Der Rhythmus „stolpert“ dadurch angenehm und wird tanzbar.", "In Funk, Reggae, Pop und Soul steckt fast alles voller Synkopen."] },
+            { "type": "rhythm", "title": "Synkopen tippen", "bpm": 70, "sub": 2, "bars": ["x - - x x - x -", "x - x - - x x -"] },
+            { "type": "tab", "title": "Synkopen-Groove", "bpm": 85, "text": "Die Töne auf dem „und“ (zwischen den Zahlen) sind die Synkopen. Zähle innerlich 1 + 2 + 3 + 4 + mit.",
+              "riff": { "id": "r-synco", "title": "Synkopen-Groove", "bpm": 85, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 - - E0 ~ E0 - E0", "A0 - - A0 ~ A0 - E0"] } },
+            { "type": "theory", "title": "Warum klingt das „groovy“?", "body": ["Dein Gehirn erwartet den Schlag auf der Zahl. Spielst du stattdessen das „und“, entsteht eine kleine Überraschung, die sich beim Hören wie Schwung anfühlt. Die Pausen davor sind wichtig: Sie bauen die Erwartung erst auf."] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was ist eine Synkope?", "options": ["Betonung auf einer sonst unbetonten Stelle", "Ein besonders lauter Ton", "Eine Pause von vier Schlägen"], "answer": 0, "explain": "Synkopen verschieben die Betonung weg vom Grundschlag." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l2m4", "title": "Anwenden",
+      "lessons": [
+        {
+          "id": "l2-grooves", "title": "Rock- und Pop-Grooves", "minutes": 12, "goal": "Gelerntes in einem Song und mit Jam-Track anwenden",
+          "steps": [
+            { "type": "text", "title": "Alles zusammen", "body": ["Jetzt setzt du Grundton, Quinte, Oktave, Muting und Synkopen in einem Song ein. Er stammt aus der klassischen Rock-Akkordfolge **A – D – E** (I–IV–V)."] },
+            { "type": "tab", "title": "Straßen-Rock (A–D–E)", "bpm": 100, "text": "Originalriff: Grundtöne mit Quinte/Oktave als Farbe. Achte auf die Achtel-Pausen und auf sauberes Muting.",
+              "riff": { "id": "r-road", "title": "Straßen-Rock", "bpm": 100, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["A0 ~ A0 A0 ~ A0 D2 ~", "A0 ~ A0 A0 ~ A0 G2 ~", "D0 ~ D0 D0 ~ D0 A0 ~", "E0 ~ E0 E0 ~ E0 D2 ~"] } },
+            { "type": "jam", "title": "Jam-Track Rock", "key": "A", "progression": "rock-145", "genre": "rock", "text": "Jetzt spielst du mit einer **Band**: Schlagzeug und Akkorde laufen. Hör zu und spiele die Grundtöne. Die Bund-Hilfe unter jedem Akkord zeigt dir, wo er liegt. Mit „Bass spielen lassen“ hörst du, wie es klingen soll." },
+            { "type": "jam", "title": "Jam-Track Pop", "key": "G", "progression": "pop-1564", "genre": "hiphop", "text": "Die berühmteste Pop-Akkordfolge der Welt: **I – V – vi – IV**. Spiele Grundtöne, dann probiere Quinte und Oktave als Variation." },
+            { "type": "text", "title": "Level 2 geschafft! 🎉", "body": ["Du spielst jetzt sauber, kennst alle Saiten, nutzt Quinte und Oktave, hörst Dur und Moll und spielst Sechzehntel und Synkopen. In Level 3 kommen **Techniken wie Hammer-on und Slides**, **Pentatonik und Tonleitern**, **Arpeggios** und **Genres**."] }
+          ]
+        }
+      ]
+    }
+  ]
+}

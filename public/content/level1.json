@@ -1,0 +1,177 @@
+{
+  "id": "level1",
+  "title": "Level 1 – Erste Töne",
+  "subtitle": "Vom ersten Zupfen bis zu deinem ersten Groove und einer echten Melodie.",
+  "modules": [
+    {
+      "id": "m1", "title": "Dein Instrument",
+      "lessons": [
+        {
+          "id": "l1-bass", "title": "Dein Bass", "minutes": 6, "goal": "Teile des Basses kennen und bequem sitzen oder stehen",
+          "steps": [
+            { "type": "text", "title": "Willkommen am Bass", "diagram": "bass",
+              "body": ["Der E-Bass ist das Fundament jeder Band: Er verbindet **Rhythmus** (Schlagzeug) und **Harmonie** (Akkorde).", "Das sind die wichtigsten Teile: **Mechaniken** stimmen die Saiten, der **Hals** mit den **Bundstäbchen** gibt dir die Töne, **Tonabnehmer** wandeln die Saitenschwingung in ein Signal, am **Steg** sind die Saiten befestigt."] },
+            { "type": "text", "title": "Haltung und Gurt",
+              "body": ["**Sitzend:** Der Korpus liegt auf dem rechten Oberschenkel, der Hals zeigt leicht nach oben. Rücken gerade, Schultern locker.", "**Stehend:** Stelle den Gurt so ein, dass der Bass in der gleichen Höhe hängt wie im Sitzen. Der Hals soll nicht nach unten kippen.", "**Greifhand:** Daumen hinten am Hals, Handgelenk gerade. **Zupfhand:** Unterarm entspannt auf dem Korpus. Wenn etwas schmerzt, Pause machen!"] },
+            { "type": "quiz", "title": "Kurz nachgefragt", "question": "Welche Saite ist die dickste und klingt am tiefsten?", "options": ["Die G-Saite", "Die E-Saite", "Die D-Saite"], "answer": 1, "explain": "Die dicke E-Saite schwingt am langsamsten und klingt am tiefsten." },
+            { "type": "fretboard", "title": "Die vier Saiten", "string": 0, "frets": 0, "marks": [[0,0,"E"],[1,0,"A"],[2,0,"D"],[3,0,"G"]],
+              "text": ["Ein Bass hat vier Saiten. Von dick/tief nach dünn/hoch heißen sie **E – A – D – G**.", "Merkhilfe: **E**ddie **A**te **D**ynamite, **G**ood-bye **E**ddie. Tippe auf die Saiten und höre den Unterschied."] },
+            { "type": "theory", "title": "Warum tief?", "body": ["Dicke, schwere Saiten schwingen langsamer. Langsame Schwingung = tiefer Ton. Die E-Saite schwingt nur etwa 41-mal pro Sekunde (41 Hz), die G-Saite etwa 98-mal. Darum ist der Bass so „fett“ – und darum fühlst du ihn eher im Bauch als im Ohr."] },
+            { "type": "quiz", "title": "Reihenfolge", "question": "Wie heißen die Saiten von tief nach hoch?", "options": ["G – D – A – E", "E – A – D – G", "A – E – G – D"], "answer": 1, "explain": "E – A – D – G: Jede Saite liegt eine Quarte (5 Halbtöne) über der vorigen." }
+          ]
+        },
+        {
+          "id": "l1-tuning", "title": "Stimmen", "minutes": 7, "goal": "Deinen Bass sicher stimmen",
+          "steps": [
+            { "type": "text", "title": "Warum stimmen?", "body": ["Ein verstimmter Bass klingt auch bei perfektem Spiel falsch. Stimme **vor jedem Üben**, denn Saiten verstimmen sich durch Temperatur und Spielen.", "Gestimmt wird mit den **Mechaniken** an der Kopfplatte: Drehen spannt oder lockert die Saite. **Höher spannen = höherer Ton.**"] },
+            { "type": "tuner", "title": "Stimmgerät", "text": ["Spiele nacheinander jede leere Saite. Zeigt die Nadel nach links, ist die Saite zu tief, nach rechts zu hoch. Die Mitte (grün) ist richtig.", "Ohne Mikrofon kannst du dir die Referenztöne anhören und nach Gehör stimmen."] },
+            { "type": "fretboard", "title": "Stimmen nach Gehör: 5.-Bund-Methode", "frets": 5, "labels": "names", "marks": [[0,5,"A"],[1,0,"A"]],
+              "text": ["Ohne Stimmgerät hilft ein Trick: Der **5. Bund der E-Saite** klingt genau wie die **leere A-Saite**. So kannst du jede Saite mit der nächsttieferen vergleichen.", "Spielen beide Töne gleichzeitig und es „schwebt“ oder „wabert“, sind sie noch nicht gleich."] },
+            { "type": "quiz", "title": "Richtig drehen", "question": "Dein Stimmgerät zeigt „zu tief“. Was tust du?", "options": ["Saite spannen (Mechanik fester drehen)", "Saite lockern", "Gar nichts"], "answer": 0, "explain": "Zu tief heißt: Die Saite schwingt zu langsam. Mehr Spannung macht sie schneller und höher." },
+            { "type": "theory", "title": "Warum klingen Saiten im Abstand von 5 Bünden gleich?", "body": ["Jeder Bund erhöht den Ton um einen **Halbton**. Fünf Halbtöne ergeben ein Intervall namens **Quarte**. Alle vier Basssaiten sind in Quarten gestimmt: E → A → D → G. Darum ist der 5. Bund einer Saite immer dieselbe Note wie die nächste leere Saite."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m2", "title": "Zupfen und Greifen",
+      "lessons": [
+        {
+          "id": "l1-plucking", "title": "Zupfen mit Wechselschlag", "minutes": 8, "goal": "Gleichmäßig mit Zeige- und Mittelfinger zupfen",
+          "steps": [
+            { "type": "text", "title": "Der Wechselschlag", "body": ["Beim Bass zupfst du mit **Zeigefinger und Mittelfinger im Wechsel**: 1 – 2 – 1 – 2. Das klingt gleichmäßig und ist später die Basis für schnelle Läufe.", "Der **Daumen** ruht am Tonabnehmer oder auf der nächsttieferen Saite. Zupfe mit der Fingerkuppe und ziehe die Saite leicht nach oben/vorne, statt sie zu reißen."] },
+            { "type": "tab", "title": "Leere E-Saite", "bpm": 60, "text": "Spiele jede Zahl mit abwechselnd Zeige- und Mittelfinger. Die **0** bedeutet: Saite leer lassen, nichts greifen.",
+              "riff": { "id": "r-open-e", "title": "Leere E-Saite", "bpm": 60, "beats": 4, "sub": 1, "bars": ["E0 E0 E0 E0", "E0 E0 E0 E0"] } },
+            { "type": "tab", "title": "Auf die A-Saite", "bpm": 60, "text": "Jetzt die nächste Saite. Der Daumen wandert mit: Er liegt nun auf der E-Saite (Ruhepunkt).",
+              "riff": { "id": "r-open-a", "title": "Leere A-Saite", "bpm": 60, "beats": 4, "sub": 1, "bars": ["A0 A0 A0 A0", "A0 A0 A0 A0"] } },
+            { "type": "tab", "title": "Saiten wechseln", "bpm": 60, "text": "Wechsle zwischen E und A. Achte darauf, dass der Wechselschlag **nicht** neu beginnt, sondern einfach weiterläuft.",
+              "riff": { "id": "r-open-ea", "title": "E und A im Wechsel", "bpm": 60, "beats": 4, "sub": 1, "bars": ["E0 A0 E0 A0", "A0 E0 A0 E0"] } },
+            { "type": "theory", "title": "Warum Wechselschlag?", "body": ["Mit nur einem Finger wirst du schnell langsam und müde. Zwei Finger im Wechsel teilen die Arbeit und lassen dich später schnelle Achtel- und Sechzehntelnoten spielen, ohne dass der Rhythmus wackelt. Das Gleichmäßige ist das Ziel, nicht die Geschwindigkeit."] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was bedeutet die Zahl 0 in einer Tabulatur?", "options": ["Pause", "Leere Saite (nichts greifen)", "Den 10. Bund spielen"], "answer": 1, "explain": "Die Zahl in der Tab ist der Bund. 0 = kein Bund gegriffen, die Saite klingt leer." }
+          ]
+        },
+        {
+          "id": "l1-fretting", "title": "Greifen: ein Finger pro Bund", "minutes": 9, "goal": "Mit der Greifhand die ersten vier Bünde spielen",
+          "steps": [
+            { "type": "text", "title": "Ein Finger pro Bund", "body": ["Jeder Finger der Greifhand ist für einen Bund zuständig: **Zeigefinger = 1. Bund, Mittelfinger = 2., Ringfinger = 3., kleiner Finger = 4.**", "Drücke die Saite **direkt hinter dem Bundstäbchen** (auf der Seite zum Korpus). Dann klingt sie klar und braucht wenig Druck."] },
+            { "type": "fretboard", "title": "Die ersten Bünde der E-Saite", "string": 0, "frets": 4, "labels": "frets",
+              "marks": [[0,0,"0"],[0,1,"1"],[0,2,"2"],[0,3,"3"],[0,4,"4"]],
+              "text": "Die Zahlen zeigen den Bund. Tippe jeden Punkt an und höre, wie der Ton immer höher wird." },
+            { "type": "tab", "title": "1-2-3-4 auf der E-Saite", "bpm": 55, "text": "Spiele langsam und lass jeden Finger **über seinem Bund schweben**, auch wenn er gerade nicht greift.",
+              "riff": { "id": "r-fingers-e", "title": "Spinnenübung E-Saite", "bpm": 55, "beats": 4, "sub": 1, "bars": ["E1 E2 E3 E4", "E4 E3 E2 E1"] } },
+            { "type": "tab", "title": "Dasselbe auf der A-Saite", "bpm": 55,
+              "riff": { "id": "r-fingers-a", "title": "Spinnenübung A-Saite", "bpm": 55, "beats": 4, "sub": 1, "bars": ["A1 A2 A3 A4", "A4 A3 A2 A1"] } },
+            { "type": "theory", "title": "Was ist ein Halbton?", "body": ["Von einem Bund zum nächsten steigt der Ton um einen **Halbton**, den kleinsten Schritt in der westlichen Musik. Darum klingt deine Übung wie eine Treppe nach oben und wieder nach unten.", "Zwölf Halbtöne ergeben eine **Oktave**: am 12. Bund klingt dieselbe Note wie die leere Saite, nur höher."] },
+            { "type": "quiz", "title": "Zähl mit", "question": "Wie viele Halbtöne liegen zwischen der leeren E-Saite und dem 3. Bund?", "options": ["2", "3", "4"], "answer": 1, "explain": "Jeder Bund = ein Halbton, also 3 Halbtöne. Der 3. Bund der E-Saite ist das G." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m3", "title": "Töne auf dem Griffbrett",
+      "lessons": [
+        {
+          "id": "l1-notes", "title": "Töne finden", "minutes": 10, "goal": "Die Noten auf E- und A-Saite benennen",
+          "steps": [
+            { "type": "text", "title": "Das Notenalphabet", "body": ["Töne heißen **C D E F G A H** (international: B statt H). Danach geht es wieder von vorn. Dazwischen liegen die Töne mit Vorzeichen, z. B. **F#** (Fis).", "Wir fangen mit den Naturtönen auf der **E-Saite** und der **A-Saite** an."] },
+            { "type": "fretboard", "title": "E-Saite", "string": 0, "frets": 5, "text": "Leere Saite = **E**. Mit jedem Bund geht es einen Halbton hoch. Beachte: Zwischen **E und F** gibt es keinen Ton dazwischen." },
+            { "type": "fretboard", "title": "A-Saite", "string": 1, "frets": 5, "text": "Leere Saite = **A**. Zwischen **H und C** liegt ebenfalls nur ein Halbton – darum liegen sie direkt nebeneinander (2. und 3. Bund)." },
+            { "type": "fretquiz", "title": "Finde den Ton", "mode": "find", "strings": [0, 1], "maxFret": 5, "rounds": 5 },
+            { "type": "fretquiz", "title": "Welcher Ton ist das?", "mode": "name", "strings": [0, 1], "maxFret": 5, "rounds": 5 },
+            { "type": "theory", "title": "Warum fehlt manchmal der Zwischenton?", "body": ["Die Tonleiter C-Dur besteht aus sieben Tönen. Zwischen den meisten liegt ein **Ganzton** (= 2 Bünde), nur zwischen **E–F** und **H–C** ein **Halbton** (= 1 Bund). Dort gibt es keine Töne mit #. Das Muster aus Ganz- und Halbtönen macht eine Tonleiter erst zu „Dur“."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m4", "title": "Rhythmus",
+      "lessons": [
+        {
+          "id": "l1-quarters", "title": "Viertelnoten und Metronom", "minutes": 9, "goal": "Gleichmäßig auf jeden Schlag spielen",
+          "steps": [
+            { "type": "text", "title": "Der Puls", "body": ["Musik hat einen gleichmäßigen **Puls**, den du mit dem Fuß mitklopfen kannst. Im **4/4-Takt** zählst du **1 – 2 – 3 – 4**. Jede dieser Zahlen ist eine **Viertelnote**.", "Ein Bassist muss vor allem eines können: **im Takt bleiben**. Das Metronom ist dein bester Trainingspartner."] },
+            { "type": "rhythm", "title": "Tippe den Puls", "bpm": 70, "sub": 1, "bars": ["x x x x", "x x x x"] },
+            { "type": "tab", "title": "Viertelnoten spielen", "bpm": 70, "text": "Spiele auf jeden Schlag eine Note. Der Klick hilft dir, nicht zu hetzen.",
+              "riff": { "id": "r-quarters", "title": "Vier Schläge pro Takt", "bpm": 70, "beats": 4, "sub": 1, "bars": ["E0 E0 A0 A0", "E0 E0 A0 E0"] } },
+            { "type": "rhythm", "title": "Mit Pausen", "bpm": 70, "sub": 1, "bars": ["x - x x", "x x - x"] },
+            { "type": "theory", "title": "Warum klingt das nach Musik?", "body": ["Dein Gehirn sucht ständig nach einem regelmäßigen Puls. Wenn alle Töne exakt auf den Schlägen liegen, entsteht Groove. **Pausen** sind genauso wichtig wie Töne: Sie geben dem Rhythmus Luft und Spannung."] },
+            { "type": "quiz", "title": "Takt", "question": "Wie viele Viertelnoten passen in einen 4/4-Takt?", "options": ["2", "4", "8"], "answer": 1, "explain": "4/4 heißt: vier Schläge pro Takt, jeder Schlag eine Viertelnote." }
+          ]
+        },
+        {
+          "id": "l1-eighths", "title": "Achtelnoten", "minutes": 10, "goal": "Zwei Töne pro Schlag gleichmäßig spielen",
+          "steps": [
+            { "type": "text", "title": "„Und“ zwischen den Schlägen", "body": ["Teilst du jeden Schlag in zwei, entstehen **Achtelnoten**. Du zählst **1 und 2 und 3 und 4 und**. Die Zahlen liegen auf den Schlägen, das „und“ dazwischen.", "Dein Wechselschlag kommt jetzt voll zum Einsatz: Zeigefinger auf die Zahlen, Mittelfinger auf das „und“."] },
+            { "type": "tab", "title": "Achtel auf E und A", "bpm": 60, "text": "Unter der Tab siehst du die Zählhilfe. Spiele langsam und gleichmäßig.",
+              "riff": { "id": "r-eighths", "title": "Achtelnoten", "bpm": 60, "beats": 4, "sub": 2, "bars": ["E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 A0 A0 A0 A0"] } },
+            { "type": "rhythm", "title": "Achtel tippen", "bpm": 60, "sub": 2, "bars": ["x x x x x x x x", "x - x x x - x x"] },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 60, "target": 90, "stepBpm": 5,
+              "riff": { "id": "r-eighths-ladder", "title": "Achtel-Tempoleiter", "bpm": 60, "beats": 4, "sub": 2, "bars": ["E0 E0 E0 E0 E0 E0 E0 E0", "A0 A0 A0 A0 A0 A0 A0 A0"] } },
+            { "type": "theory", "title": "Warum wird es schneller schwerer?", "body": ["Bei höherem Tempo bleiben dir weniger Millisekunden pro Note. Bei 60 BPM dauert eine Achtel 500 ms, bei 90 BPM nur noch ca. 333 ms. Darum übst du in Stufen: erst sauber, dann schneller."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m5", "title": "Tabs lesen",
+      "lessons": [
+        {
+          "id": "l1-tabs", "title": "Tabulatur lesen", "minutes": 7, "goal": "Eine Tab selbstständig spielen",
+          "steps": [
+            { "type": "text", "title": "So liest du eine Tab", "body": ["Eine Bass-Tabulatur hat **vier Linien**, eine für jede Saite. Die **oberste Linie ist die G-Saite**, die **unterste die tiefe E-Saite**.", "Die **Zahl** auf der Linie sagt dir den **Bund**. 0 = leer. Von links nach rechts liest du die Zeit. Die Zahlen unter der Tab helfen beim Zählen."] },
+            { "type": "quiz", "title": "Lies diese Tab", "question": "Welchen Ton spielt die erste Note?", "options": ["E-Saite, 2. Bund", "A-Saite, 2. Bund", "A-Saite, leer"], "answer": 1, "explain": "Die erste Zahl steht auf der zweituntersten Linie (A-Saite) und lautet 2.",
+              "riff": { "id": "q-tab-1", "title": "", "bpm": 80, "beats": 4, "sub": 1, "bars": ["A2 A0 E3 E0"] } },
+            { "type": "tab", "title": "Spiel die Tab", "bpm": 60,
+              "riff": { "id": "r-tab-read", "title": "Erste Tab zum Lesen", "bpm": 60, "beats": 4, "sub": 1, "bars": ["A2 A0 E3 E0", "D2 D0 A2 A0"] } },
+            { "type": "quiz", "title": "Noch eine", "question": "In welcher Saite steht die Zahl der obersten Tab-Linie?", "options": ["Tiefe E-Saite", "Hohe G-Saite", "A-Saite"], "answer": 1, "explain": "Oben = hoch: Die oberste Linie steht für die dünnste, höchste Saite, die G-Saite." },
+            { "type": "theory", "title": "Was Tabs nicht zeigen", "body": ["Eine Tab sagt dir, **wo** du greifst, aber nicht immer **wie lang** ein Ton klingt. Dafür gibt es hier die Zählhilfe und das Hören. Später lernst du in Level 4 auch Noten im Bassschlüssel zu lesen, die den Rhythmus genau festlegen."] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "m6", "title": "Erste Riffs und Songs",
+      "lessons": [
+        {
+          "id": "l1-groove", "title": "Dein erster Groove", "minutes": 10, "goal": "Mit einem Drum-Beat zusammen spielen",
+          "steps": [
+            { "type": "text", "title": "Zusammen mit dem Schlagzeug", "body": ["Der Bass klingt erst richtig, wenn er mit dem Schlagzeug verschmilzt. Die Bassdrum (**Kick**) und dein Bass sollen **gemeinsam** zupacken.", "Starte mit nur einem Ton, dem **Grundton E**, und achte auf die Bassdrum."] },
+            { "type": "tab", "title": "Achtel-Puls", "bpm": 80, "text": "Die Drums laufen mit. Klappt es nicht, senke das Tempo oder schalte den Klick ein.",
+              "riff": { "id": "r-pulse", "title": "Achtel-Puls in E", "bpm": 80, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 E0 E0 E0 E0 E0 E0 E0", "E0 E0 E0 E0 E0 E0 E0 E0"] } },
+            { "type": "tab", "title": "Mit Pausen: dein Groove", "bpm": 80, "text": "Jetzt kommen **Pausen** dazu. Gerade sie machen aus einem Puls einen Groove.",
+              "riff": { "id": "r-groove1", "title": "Erster Groove", "bpm": 80, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 E0 - E0 E0 E0 - E0", "E0 E0 - E0 E0 E0 - E0", "A0 A0 - A0 A0 A0 - A0", "E0 E0 - E0 E0 E0 - E0"] } },
+            { "type": "theory", "title": "Warum groovt das?", "body": ["Die Pausen auf „3“ lassen Platz für die **Snare**, die im Rock-Beat auf 2 und 4 spielt. Bass und Drums ergänzen sich: Ihr spielt nicht aufeinander drauf, sondern **ineinander**. Das nennt man „locker sitzen“ im Groove."] },
+            { "type": "quiz", "title": "Rolle des Basses", "question": "Welche zwei Instrumente bilden die „Rhythmusgruppe“?", "options": ["Bass und Schlagzeug", "Gitarre und Gesang", "Bass und Klavier"], "answer": 0, "explain": "Bass und Schlagzeug tragen den Song gemeinsam." }
+          ]
+        },
+        {
+          "id": "l1-rock", "title": "Rock-Riff und Blues", "minutes": 12, "goal": "Ein Riff mit mehreren Tönen und einen 12-Takt-Blues spielen",
+          "steps": [
+            { "type": "text", "title": "Von einem Ton zu mehreren", "body": ["Jetzt kommen neue Töne dazu: **G** (E-Saite, 3. Bund) und **A** (leere A-Saite). Mit **E, G und A** kannst du schon ein echtes Rock-Riff spielen."] },
+            { "type": "tab", "title": "Rock-Riff in E", "bpm": 90, "text": "Der Griff: Zeigefinger und Ringfinger auf der E-Saite (3. Bund = Ringfinger).",
+              "riff": { "id": "r-rock-riff", "title": "Erdiger Rock", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 ~ E0 G3 ~ A0 ~ G3", "E0 ~ E0 G3 ~ A0 ~ -", "E0 ~ E0 G3 ~ A0 ~ G3", "E0 E0 E0 ~ ~ ~ ~ ~"] } },
+            { "type": "theory", "title": "Warum klingt das so rockig?", "body": ["Die Töne **E, G, A** (und B, D) bilden die **E-Moll-Pentatonik**: fünf Töne, die fast nie falsch klingen. Darum hören sich Rock-, Blues- und Pop-Riffs oft ähnlich „vertraut“ an. Du hast gerade Pentatonik gespielt, ohne Theorie pauken zu müssen."] },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 70, "target": 100, "stepBpm": 5,
+              "riff": { "id": "r-rock-riff", "title": "Erdiger Rock", "bpm": 70, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 ~ E0 G3 ~ A0 ~ G3", "E0 ~ E0 G3 ~ A0 ~ -", "E0 ~ E0 G3 ~ A0 ~ G3", "E0 E0 E0 ~ ~ ~ ~ ~"] } },
+            { "type": "tab", "title": "12-Takt-Blues (nur Grundtöne)", "bpm": 80, "text": "Das älteste Schema der Popmusik: **E – A – B** (hier B = A-Saite, 2. Bund). Die Reihenfolge der Akkorde läuft über 12 Takte.",
+              "riff": { "id": "r-blues", "title": "12-Takt-Blues in E", "bpm": 80, "beats": 4, "sub": 2, "drums": "rock8", "bars": ["E0 ~ E0 ~ E0 ~ E0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "A0 ~ A0 ~ A0 ~ A0 ~", "A0 ~ A0 ~ A0 ~ A0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "A2 ~ A2 ~ A2 ~ A2 ~", "A0 ~ A0 ~ A0 ~ A0 ~", "E0 ~ E0 ~ E0 ~ E0 ~", "A2 ~ A2 ~ A2 ~ A2 ~"] } },
+            { "type": "quiz", "title": "Blues-Check", "question": "Wie viele Takte hat der klassische Blues?", "options": ["8", "12", "16"], "answer": 1, "explain": "Der 12-Takt-Blues ist eine der wichtigsten Formen der Musik." }
+          ]
+        },
+        {
+          "id": "l1-ode", "title": "Freude, schöner Götterfunken", "minutes": 12, "goal": "Eine echte Melodie auf dem Bass spielen",
+          "steps": [
+            { "type": "text", "title": "Beethovens Melodie", "body": ["Die „Ode an die Freude“ (Beethoven, 1824, gemeinfrei) ist ideal: Sie bewegt sich fast nur in **Nachbartönen**.", "Du spielst sie auf der **D-Saite** (leer = D, 2. Bund = E, 3. Bund = F), dazu das **leere G** und das **C** auf der A-Saite (3. Bund)."] },
+            { "type": "fretboard", "title": "Die Töne der Melodie", "frets": 5, "labels": "names", "marks": [[1,3,"C"],[2,0,"D"],[2,2,"E"],[2,3,"F"],[3,0,"G"]], "text": "Hier siehst du die fünf Töne. Tippe sie an und summe die Melodie dazu." },
+            { "type": "tab", "title": "Die Melodie", "bpm": 72, "text": "Die **Punkte** (~) zeigen gehaltene Töne. Nimm dir die Takte einzeln vor: Tippe auf einen Takt, um ihn zu wiederholen.",
+              "riff": { "id": "r-ode", "title": "Ode an die Freude", "bpm": 72, "beats": 4, "sub": 2, "bars": ["D2 ~ D2 ~ D3 ~ G0 ~", "G0 ~ D3 ~ D2 ~ D0 ~", "A3 ~ A3 ~ D0 ~ D2 ~", "D2 ~ ~ D0 D0 ~ ~ ~", "D2 ~ D2 ~ D3 ~ G0 ~", "G0 ~ D3 ~ D2 ~ D0 ~", "A3 ~ A3 ~ D0 ~ D2 ~", "D0 ~ ~ A3 A3 ~ ~ ~"] } },
+            { "type": "theory", "title": "Warum klingt die Melodie so rund?", "body": ["Fast jeder Schritt geht zum **Nachbarton**. Solche Stufen-Bewegungen singen sich leicht. Alle Töne stammen aus der **C-Dur-Tonleiter** (C D E F G A H). Darum klingt alles hell und „aufgelöst“, wie ein Happy End."] },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 60, "target": 90, "stepBpm": 5,
+              "riff": { "id": "r-ode", "title": "Ode an die Freude", "bpm": 60, "beats": 4, "sub": 2, "bars": ["D2 ~ D2 ~ D3 ~ G0 ~", "G0 ~ D3 ~ D2 ~ D0 ~", "A3 ~ A3 ~ D0 ~ D2 ~", "D2 ~ ~ D0 D0 ~ ~ ~", "D2 ~ D2 ~ D3 ~ G0 ~", "G0 ~ D3 ~ D2 ~ D0 ~", "A3 ~ A3 ~ D0 ~ D2 ~", "D0 ~ ~ A3 A3 ~ ~ ~"] } },
+            { "type": "text", "title": "Level 1 geschafft! 🎉", "body": ["Du kannst jetzt stimmen, zupfen, greifen, Tabs lesen, im Takt spielen und hast eine echte Melodie und einen Blues gespielt. Level 2 (Muting, Grundton-Quinte-Oktave, Dur und Moll) folgt."] }
+          ]
+        }
+      ]
+    }
+  ]
+}
