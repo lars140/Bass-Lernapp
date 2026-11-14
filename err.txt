@@ -1,6 +1,0 @@
-[10144:17900:1114/130301.426:WARNING:chrome\browser\extensions\external_registry_loader_win.cc:283] Error observing HKLM: 5
-[10144:17900:1114/130301.720:INFO:CONSOLE:6359] "[ProtocolLaunch] handler constructed; wiring port events.", source: chrome-extension://ndcpkimcihhghdcddljkfmmjccdmcmof/background.rollup.js (6359)
-[10144:17900:1114/130301.751:WARNING:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:304] Cache isn't initialized
-[10144:17900:1114/130301.813:WARNING:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:304] Cache isn't initialized
-[10144:17900:1114/130301.815:WARNING:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:304] Cache isn't initialized
-[10144:17900:1114/130301.823:WARNING:chrome\browser\edge_pinned_sites\pinned_sites_cache.cc:304] Cache isn't initialized

@@ -10,7 +10,8 @@
     "check": "node scripts/validate-content.mjs",
     "pages:dev": "npm run build && wrangler pages dev dist",
     "db:migrate:local": "wrangler d1 migrations apply bass-db --local",
-    "db:migrate:remote": "wrangler d1 migrations apply bass-db --remote"
+    "db:migrate:remote": "wrangler d1 migrations apply bass-db --remote",
+    "test": "node scripts/validate-content.mjs && node scripts/test-merge.mjs && node scripts/test-music.mjs && node scripts/test-render.mjs"
   },
   "devDependencies": {
     "jsdom": "^31.0.1",
