@@ -2,11 +2,11 @@ name = "bass-lernen"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "dist"
 
-[[18a852be-1c22-4f5a-8dd8-998a7b8b7fcb]]
+[[d1_databases]]
 binding = "DB"
 database_name = "bass-db"
-# Für lokale Entwicklung reicht der Platzhalter. Für Deployment hier die echte ID aus `wrangler d1 create` eintragen.
-database_id = "00000000-0000-0000-0000-000000000000"
+# Echte ID aus `wrangler d1 create bass-db`
+database_id = "bc35656f-78af-48ac-9982-5473ab7f68f9"
 migrations_dir = "migrations"
 
 # Umgebungsvariablen (Geheimnisse NICHT hier, sondern im Dashboard bzw. per `wrangler pages secret put`):
