@@ -1,7 +1,9 @@
 // Abzeichen. `test(state)` wird nach jeder Änderung geprüft (rein clientseitig).
 // LEVEL1_LESSONS: Anzahl der Lektionen in Level 1 (siehe public/content/level1.json).
-const LEVEL1_LESSONS = 11, LEVEL2_LESSONS = 8, LEVEL3_LESSONS = 13;
-const doneCount = (s, prefix) => Object.keys(s.done).filter((k) => k.startsWith(prefix)).length;
+const LEVEL1_LESSONS = 11, LEVEL2_LESSONS = 8, LEVEL3_LESSONS = 13, LEVEL4_LESSONS = 13;
+// Per Test übersprungene Lektionen (s.skipped) zählen nicht für Abzeichen.
+const doneCount = (s, prefix) => Object.keys(s.done).filter((k) => k.startsWith(prefix) && !s.skipped[k]).length;
+const did = (s, id) => !!s.done[id] && !s.skipped[id];
 const maxRecord = (s) => Math.max(0, ...Object.values(s.records));
 
 export const BADGES = [
@@ -18,6 +20,12 @@ export const BADGES = [
   { id: 'level1',      icon: '🎸', title: 'Level 1 geschafft',desc: 'Alle Lektionen von Level 1 abgeschlossen', test: (s) => doneCount(s, 'l1-') >= LEVEL1_LESSONS },
   { id: 'level2',      icon: '🎸', title: 'Level 2 geschafft',desc: 'Alle Lektionen von Level 2 abgeschlossen', test: (s) => doneCount(s, 'l2-') >= LEVEL2_LESSONS },
   { id: 'level3',      icon: '🏆', title: 'Level 3 geschafft',desc: 'Alle Lektionen von Level 3 abgeschlossen', test: (s) => doneCount(s, 'l3-') >= LEVEL3_LESSONS },
+  { id: 'level4',      icon: '👑', title: 'Level 4 geschafft',desc: 'Alle Lektionen von Level 4 abgeschlossen', test: (s) => doneCount(s, 'l4-') >= LEVEL4_LESSONS },
+  { id: 'slap',        icon: '👍', title: 'Slap-Meister',     desc: 'Lektion „Slap-Groove“ geschafft', test: (s) => did(s, 'l4-slapgroove') },
+  { id: 'fretboard',   icon: '🗺️', title: 'Ganzes Griffbrett',desc: 'Noten-, Lagenwechsel- und Bassschlüssel-Lektion geschafft', test: (s) => did(s, 'l1-notes') && did(s, 'l2-notes2') && did(s, 'l3-shifting') && did(s, 'l4-clef') },
+  { id: 'placement',   icon: '🧭', title: 'Eingestuft',       desc: 'Den Einstufungstest gemacht', test: (s) => !!s.placement },
+  { id: 'warmup',      icon: '☕', title: 'Aufgewärmt',       desc: 'Die erste Aufwärm-Wiederholung geschafft', test: (s) => s.stats.warmups >= 1 },
+  { id: 'warmup10',    icon: '🔁', title: 'Routine',          desc: '10 Aufwärm-Wiederholungen geschafft', test: (s) => s.stats.warmups >= 10 },
   { id: 'ear',         icon: '👂', title: 'Gutes Gehör',      desc: 'Eine Gehörbildung mit mind. 60 % bestanden', test: (s) => s.stats.earPassed >= 1 },
   { id: 'mic',         icon: '🎤', title: 'Erkannt!',         desc: 'Ein Riff per Mikrofon bestätigt bekommen', test: (s) => s.stats.micPassed >= 1 },
   { id: 'jam',         icon: '🎶', title: 'Jam-Session',      desc: 'Zu einem Jam-Track mitgespielt', test: (s) => s.stats.jamsDone >= 1 },

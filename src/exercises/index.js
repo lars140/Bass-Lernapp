@@ -4,6 +4,7 @@
 import { h, md, paragraphs } from '../ui/dom.js';
 import { createFretboard, stringMarks } from '../ui/fretboard.js';
 import { bassDiagram } from '../ui/bassDiagram.js';
+import { renderStaff } from '../ui/staff.js';
 import { createTabPlayer } from './tabPlayer.js';
 import { createQuiz } from './quiz.js';
 import { createFretQuiz } from './fretQuiz.js';
@@ -139,7 +140,13 @@ function jam(step, ctx) {
   return { el: h('div', null, step.text ? h('div', { class: 'prose' }, paragraphs(step.text)) : null, j.el), destroy: j.destroy };
 }
 
+// Notensystem (Bassschlüssel): step { notes: [midi…], names?, text? }
+function staffStep(step) {
+  return { el: h('div', null, step.text ? h('div', { class: 'prose' }, paragraphs(step.text)) : null, renderStaff(step.notes, { names: !!step.names })) };
+}
+
 export const STEP_TYPES = {
+  staff:        { create: staffStep, interactive: false },
   text:         { create: text, interactive: false },
   theory:       { create: theory, interactive: false },
   fretboard:    { create: fretboard, interactive: false },

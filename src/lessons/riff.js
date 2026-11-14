@@ -6,11 +6,13 @@
 // Technik-Suffixe am Ton (kombinierbar):
 //   g  Ghost Note (gedämpft, perkussiv)   h  Hammer-on ZU diesem Ton   p  Pull-off ZU diesem Ton
 //   /  Slide hoch ZU diesem Ton           \  Slide runter ZU diesem Ton   v  Vibrato
-import { midiAt } from '../audio/music.js';
+//   t  Slap (Daumen)   o  Pop (Zupfen nach oben)   *  Flageolett (Bund 5, 7 oder 12: klingt 24, 19 bzw. 12 Halbtöne über der leeren Saite)
+import { midiAt, OPEN_MIDI } from '../audio/music.js';
 import { TPB } from '../audio/sequencer.js';
 
 const STRING_INDEX = { E: 0, A: 1, D: 2, G: 3 };
-const TOKEN = /^([EADG])(\d{1,2})([ghpv/\\]*)$/;
+const TOKEN = /^([EADG])(\d{1,2})([ghpvto*/\\]*)$/;
+const HARMONIC_SHIFT = { 5: 24, 7: 19, 12: 12 };
 
 export function parseRiff(riff) {
   const beats = riff.beats || 4;
@@ -29,8 +31,11 @@ export function parseRiff(riff) {
       const string = STRING_INDEX[m[1]];
       const fret = Number(m[2]);
       const fl = m[3];
+      const harm = fl.includes('*') && HARMONIC_SHIFT[fret] != null;
       return {
-        type: 'note', string, fret, midi: midiAt(string, fret),
+        // Flageolett: klingt relativ zur LEEREN Saite (12. Bund = +12, 7. Bund = +19, 5. Bund = +24 Halbtöne)
+        type: 'note', string, fret, midi: harm ? OPEN_MIDI[string] + HARMONIC_SHIFT[fret] : midiAt(string, fret),
+        slap: fl.includes('t'), pop: fl.includes('o'), harm,
         ghost: fl.includes('g'), hammer: fl.includes('h'), pull: fl.includes('p'),
         slide: fl.includes('/') ? 'up' : fl.includes('\\') ? 'down' : null, vib: fl.includes('v'),
       };

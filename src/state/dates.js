@@ -11,6 +11,9 @@ function toUtcDay(str) {
   return Date.UTC(y, m - 1, d) / 86400000;
 }
 
+/** Tageszähler (Tage seit 1970) zu einem YYYY-MM-DD String, standardmäßig heute (lokales Datum). */
+export function dayNumber(str = dateStr()) { return toUtcDay(str); }
+
 /** Ganze Tage zwischen zwei YYYY-MM-DD Strings (b - a). */
 export function daysBetween(a, b) { return Math.round(toUtcDay(b) - toUtcDay(a)); }
 

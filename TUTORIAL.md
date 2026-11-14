@@ -46,7 +46,9 @@ Sie prüfen alle Lektionen, Tonhöhen, Merge-Regeln und das Rendern aller Schrit
 
 ### Kurs
 
-Unter **Kurs** siehst du die Level 1 bis 3 mit Modulen und Lektionen. Level 4 ist noch gesperrt.
+Unter **Kurs** siehst du die Level 1 bis 4 mit Modulen und Lektionen. Level 4 („Profi“) behandelt Slap, Flageolett, Walking Bass, Modi, Timing, eigene Basslines und Noten lesen.
+
+**Du spielst schon?** Mach den **Einstufungstest** (Link im Kurs oder auf der Startseite). Er fragt Level 1, 2 und 3 nacheinander ab und schlägt dir den Einstieg vor. Die Lektionen davor kannst du überspringen oder trotzdem durcharbeiten. Übersprungene Lektionen geben keine XP und kein Level-Abzeichen. Level 2 und 3 kannst du auch einzeln per Kurztest überspringen (Knopf im Kurs).
 
 Jede Lektion besteht aus Schritten:
 
@@ -71,6 +73,18 @@ Bei Schritten zum Mitmachen wird „Weiter“ erst aktiv, wenn du sie erledigt h
 4. Richtige Töne werden grün, falsche rot. Ab **70 %** gilt der Schritt als geschafft.
 
 Wenn alles zu früh oder zu spät erkannt wird, stelle im **Profil** den Latenz-Ausgleich ein. Das hilft besonders bei Bluetooth-Kopfhörern.
+
+### Aufwärmen (Wiederholung)
+
+Quizfragen, Riffs und Griffbrett-Übungen, die du abgeschlossen hast, kommen später als kurze **Wiederholung** wieder: erst nach 1 Tag, dann 3 Tage, dann immer seltener, solange du sie sicher kannst. Auf der Startseite erscheint die Karte **Aufwärmen**, sobald etwas fällig ist. Eine Runde hat höchstens 6 Karten und zählt für die Streak.
+
+### Songs
+
+Unter **Songs** liegen kurze, originale Stücke mit Schwierigkeit, Genre, Tempo und den nötigen Skills. Ein Song wird frei, sobald du die dazugehörigen Lektionen geschafft hast. Mit „Sauber gespielt“ speicherst du dein Tempo als Rekord. Im **Song-Editor** fügst du eigenen Song-JSON ein, die App prüft ihn und spielt ihn zur Vorschau ab. Eigene Songs bleiben in deinem Browser.
+
+### Statistik
+
+Unter **Profil → Alle Statistiken** siehst du die Übungszeit pro Tag und Woche, deinen Stand in sechs Skill-Bereichen, deine Tempo-Rekorde und den Stand der Wiederholungen.
 
 ### Werkzeuge
 
@@ -237,6 +251,9 @@ Mit Technik-Zeichen hinter dem Bund:
 | `p` | Pull-off | `A0p` |
 | `/` `\` | Slide hoch und runter (im JSON `\\`) | `E5/` |
 | `v` | Vibrato | `A5v` |
+| `t` | Slap (Daumen) | `E0t` |
+| `o` | Pop (Zupfen nach oben) | `D2o` |
+| `*` | Flageolett (nur 5., 7., 12. Bund) | `G12*` |
 
 ### Andere Schritt-Typen
 
@@ -247,12 +264,39 @@ Alle Typen mit ihren Feldern stehen in der Tabelle „Schritt-Typen“ in der [R
   "text": "Spiele zu jedem Akkord den Grundton." }
 ```
 
+### Neue Lektion einordnen
+
+Jede Lektion gehört zu einem Skill-Bereich (`technik`, `rhythmus`, `griffbrett`, `theorie`, `groove`, `gehoer`). Trage sie in `public/content/skills.json` ein, sonst meldet `npm run check` einen Fehler:
+
+```json
+"l2-meine-lektion": "technik"
+```
+
+Quiz-, Tab- (mit Riff-`id`) und Griffbrett-Quiz-Schritte werden automatisch zu Wiederholungs-Karten.
+
+### Neuen Song hinzufügen
+
+Ergänze in `public/content/songs.json` ein Objekt (oder probiere es zuerst im Song-Editor aus):
+
+```json
+{ "id": "s-mein-song", "title": "Mein Song", "genre": "Rock", "difficulty": 2, "bpm": 90,
+  "requires": ["l1-groove"], "skills": ["Achtelnoten"],
+  "riff": { "id": "s-mein-song", "bars": ["E0 ~ E0 ~ E0 ~ G3 ~"], "sub": 2, "drums": "rock8" } }
+```
+
+`requires` nennt die Lektionen, die den Song freischalten (leer = sofort frei).
+
+### Notensystem in einer Lektion
+
+Mit dem Schritt-Typ `staff` zeigst du Noten im Bassschlüssel. `notes` sind die klingenden MIDI-Töne (E-Saite leer = 28, A = 33, D = 38, G = 43). Die App rechnet auf die notierte Oktave um. Auch Quiz-Schritte können ein Notensystem zeigen: `"staff": { "notes": [38] }`.
+
 ### Neues Level veröffentlichen
 
-1. Lege die Datei an, zum Beispiel `public/content/level4.json`.
-2. Setze in `public/content/index.json` bei `level4` den Wert `"available": true`.
-3. Passe in [src/state/badges.js](src/state/badges.js) die Anzahl der Lektionen und das Abzeichen an.
-4. Führe `npm test` aus und deploye.
+1. Lege die Datei an, zum Beispiel `public/content/level5.json`. Lektions-IDs beginnen mit `l5-`.
+2. Trage sie in `public/content/index.json` ein und setze `"available": true`.
+3. Ordne jede Lektion in `public/content/skills.json` einem Skill-Bereich zu.
+4. Passe in [src/state/badges.js](src/state/badges.js) die Anzahl der Lektionen und das Abzeichen an.
+5. Führe `npm test` aus und deploye.
 
 ---
 

@@ -1,0 +1,393 @@
+{
+  "id": "level4",
+  "title": "Level 4 – Profi",
+  "subtitle": "Slap, Flageolett, Walking Bass, Modi, Timing, eigene Basslines, Noten lesen",
+  "modules": [
+    {
+      "id": "l4m1",
+      "title": "Slap, Flageolett und Tapping",
+      "lessons": [
+        {
+          "id": "l4-slap", "title": "Slap und Pop", "minutes": 12, "goal": "Mit dem Daumen „slappen“ und mit dem Zeigefinger „poppen“",
+          "steps": [
+            { "type": "text", "title": "Zwei Klänge, ein Groove", "body": [
+              "Beim **Slap** schlägt der Daumen der Zupfhand mit dem Knochen seitlich auf die Saite und lässt sie sofort wieder los. Es klingt kurz, hell und perkussiv wie eine Bassdrum.",
+              "Beim **Pop** hakt ein Finger (meist Zeige- oder Mittelfinger) die Saite von unten ein, zieht sie nach oben und lässt sie gegen die Bünde schnalzen. Es klingt wie eine Snare.",
+              "Klassische Aufteilung: **Slap auf den tiefen Saiten (E, A)** als Bassdrum, **Pop auf den hohen Saiten (D, G)** als Snare. Im Tab steht **S** über dem Slap-Ton und **↑** über dem Pop-Ton."
+            ] },
+            { "type": "text", "title": "Der Daumen", "body": [
+              "Der Daumen kommt aus dem Handgelenk, nicht aus dem Arm. Stell dir vor, du klopfst mit dem Daumenknochen an eine Tür. Er trifft die Saite **über dem Ende des Griffbretts**, bleibt nicht liegen und federt sofort zurück.",
+              "Die Greifhand muss die Töne **sauber dämpfen**: Alle Saiten, die du gerade nicht spielst, bleiben leise. Das ist die halbe Slap-Technik."
+            ] },
+            { "type": "tab", "title": "Slap und Pop: Oktaven", "bpm": 70,
+              "text": "Der Grundbaustein: Slap auf dem Grundton, Pop auf der Oktave. Die Oktave liegt zwei Saiten höher (zwei Bünde auf der D-Saite für E).",
+              "riff": { "id": "r4-slap-oct", "title": "Slap-Oktaven", "bpm": 70, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "E0t - D2o - E0t - D2o -",
+                "A0t - G2o - A0t - G2o -",
+                "D0t - G7o - D0t - G7o -",
+                "E0t - D2o - E0t E0g D2o -"
+              ] } },
+            { "type": "theory", "title": "Warum klingt Slap nach Schlagzeug?", "body": [
+              "Ein Slap-Ton hat einen sehr schnellen Anschlag und klingt kurz. Beides sind Merkmale einer Bassdrum. Ein Pop hat einen noch helleren Anschlag. So kann ein Bass **Kick und Snare gleichzeitig** andeuten. Deshalb funktioniert Slap vor allem in Funk, Disco und Pop."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Welche Aufteilung ist beim Slap üblich?", "options": ["Slap auf den tiefen Saiten, Pop auf den hohen Saiten", "Pop auf den tiefen Saiten, Slap auf den hohen Saiten", "Beides immer auf derselben Saite"], "answer": 0, "explain": "Slap = Bassdrum (tief), Pop = Snare (hoch)." }
+          ]
+        },
+        {
+          "id": "l4-slapgroove", "title": "Slap-Groove und Double Thumbing", "minutes": 14, "goal": "Einen Slap-Groove mit Ghost Notes spielen und Double Thumbing kennenlernen",
+          "steps": [
+            { "type": "text", "title": "Mehr Bewegung", "body": [
+              "Ein echter Slap-Groove besteht aus **Slap, Pop und Ghost Notes**. Die Ghost Notes (gedämpft, im Tab als **x**) halten die Bewegung der Hand am Laufen: Slap, Ghost, Pop, Ghost.",
+              "Das fühlt sich zunächst wie Patschen an. Trainiere es **langsam** und lass die Bewegung locker. Tempo kommt von Entspannung."
+            ] },
+            { "type": "tab", "title": "Dein erster Slap-Groove", "bpm": 70,
+              "text": "Sechzehntel-Raster. Zähle „1 e + a“. Der Slap sitzt auf der 1, der Pop auf dem „+“. Die Ghost Notes dazwischen sind leise.",
+              "riff": { "id": "r4-slap-groove", "title": "Slap-Groove in E und A", "bpm": 70, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+                "E0t - - E0g D2o - E0g - E0t - E0g D2o - E0g - -",
+                "A0t - - A0g G2o - A0g - A0t - A0g G2o - G2o A0g -",
+                "E0t - - E0g D2o - E0g - E0t - E0g D2o - E0g - -",
+                "E0t - - E0g D2o - E0g - E0t E0g D2o - E0t - D2o -"
+              ] } },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 60, "target": 90, "stepBpm": 5,
+              "riff": { "id": "r4-slap-ladder", "title": "Slap-Groove (Leiter)", "bpm": 60, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+                "E0t - - E0g D2o - E0g - E0t - E0g D2o - E0g - -",
+                "A0t - - A0g G2o - A0g - A0t - A0g G2o - G2o A0g -"
+              ] } },
+            { "type": "text", "title": "Double Thumbing (Grundlagen)", "body": [
+              "Beim **Double Thumbing** schlägt der Daumen nicht nur nach unten, sondern auch beim Hochziehen nach oben auf die Saite. So entstehen schnelle Sechzehntel nur mit dem Daumen: runter – hoch – runter – hoch.",
+              "Übe zuerst nur auf einer gedämpften Saite, ohne Griffhand. Nach 5 Minuten sollte die Hand locker pendeln. Dann erst Töne greifen."
+            ] },
+            { "type": "tab", "title": "Double-Thumbing-Muster", "bpm": 60,
+              "text": "Ein Muster in Sechzehnteln. Der Daumen pendelt gleichmäßig, die Ghost Notes sind die Aufwärtsbewegungen.",
+              "riff": { "id": "r4-double-thumb", "title": "Double Thumbing", "bpm": 60, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+                "E0t E0g E0t E0g D2o E0g E0t E0g E0t E0g E0t E0g D2o E0g D2o -",
+                "A0t A0g A0t A0g G2o A0g A0t A0g A0t A0g A0t A0g G2o A0g G2o -"
+              ] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wozu dienen die Ghost Notes im Slap-Groove?", "options": ["Sie halten die Handbewegung am Laufen und füllen den Rhythmus", "Sie sind besonders laut", "Sie ersetzen den Pop"], "answer": 0, "explain": "Die Hand pendelt gleichmäßig, die Ghost Notes sind die „unhörbaren“ Zwischenschläge." }
+          ]
+        },
+        {
+          "id": "l4-harmtap", "title": "Flageolett und Tapping", "minutes": 12, "goal": "Obertöne (Flageoletts) spielen und die Grundidee des Tappings verstehen",
+          "steps": [
+            { "type": "text", "title": "Flageolett: Glockenklang", "body": [
+              "Beim **Flageolett** (Oberton) berührst du die Saite nur **leicht** direkt über dem Bundstäbchen, ohne sie herunterzudrücken, und zupfst. Die Saite schwingt in Teilen: Es entsteht ein glockenartiger, hoher Ton.",
+              "Die wichtigsten Stellen: **12. Bund** = eine Oktave höher, **7. Bund** = Oktave plus Quinte (19 Halbtöne höher), **5. Bund** = zwei Oktaven höher. Im Tab steht **◇** über dem Ton."
+            ] },
+            { "type": "tab", "title": "Flageolett auf allen Saiten", "bpm": 60,
+              "text": "Erst der 12. Bund, dann der 7. Bund. Berühre die Saite nur mit der Fingerkuppe direkt **über** dem Bundstäbchen (zum Kopf hin), nicht dahinter. Zieh den Finger sofort weg.",
+              "riff": { "id": "r4-harm", "title": "Flageoletts", "bpm": 60, "beats": 4, "sub": 1, "bars": [
+                "E12* A12* D12* G12*",
+                "E7* A7* D7* G7*"
+              ] } },
+            { "type": "tab", "title": "Flageolett-Melodie", "bpm": 70,
+              "text": "Dieselbe Technik, jetzt mit einer kleinen Melodie auf der G- und D-Saite.",
+              "riff": { "id": "r4-harm-melody", "title": "Glockenmelodie", "bpm": 70, "beats": 4, "sub": 1, "bars": [
+                "G12* G7* G5* G7*",
+                "D12* D7* D5* D7*"
+              ] } },
+            { "type": "text", "title": "Tapping: Töne mit der Zupfhand", "body": [
+              "Beim **Tapping** schlägt ein Finger der Zupfhand die Saite fest auf einen Bund. Dadurch entsteht der Ton **ohne Zupfen**, ähnlich einem Hammer-on, nur von oben. Dann zieht er wieder ab (Pull-off), damit die gegriffene Note klingt.",
+              "So lassen sich Muster spielen, die mit einer Hand zu weit auseinanderliegen. Im Tab erscheint das Tapping als Hammer-on (**H**) und Pull-off (**P**)."
+            ] },
+            { "type": "tab", "title": "Tapping-Muster", "bpm": 60,
+              "text": "Dreier-Gruppen: Gegriffener Ton – getappter Ton im 12. Bund – zurück auf den gegriffenen Ton. Die Greifhand wechselt zwischen Bund 5 und 7.",
+              "riff": { "id": "r4-tap", "title": "Tapping-Triolen", "bpm": 60, "beats": 4, "sub": 3, "bars": [
+                "A5 A12h A5p A5 A12h A5p A7 A12h A7p A7 A12h A7p",
+                "A9 A12h A9p A9 A12h A9p A7 A12h A7p A5 A12h A5p"
+              ] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wie klingt ein Flageolett im 12. Bund im Vergleich zum Ton der leeren Saite?", "options": ["Eine Oktave höher", "Eine Quinte höher", "Gleich hoch"], "answer": 0, "explain": "Der 12. Bund teilt die Saite genau in der Mitte. Das ergibt die doppelte Frequenz, also die Oktave." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4m2",
+      "title": "Walking Bass",
+      "lessons": [
+        {
+          "id": "l4-walking", "title": "Walking Bass: Grundlagen", "minutes": 12, "goal": "Eine durchgehende Viertelnoten-Linie mit Akkordtönen und Annäherungstönen spielen",
+          "steps": [
+            { "type": "text", "title": "Die Linie läuft", "body": [
+              "Ein **Walking Bass** spielt durchgehend **Viertelnoten**. Die Linie „läuft“ wie ein Spaziergänger durch die Akkorde. Er ist Standard im Jazz und im Blues.",
+              "Die Bausteine: **1.** Auf Schlag 1 des Taktes steht meist der **Grundton**. **2.** Dazwischen spielst du Akkordtöne (Terz, Quinte, Septime) oder Tonleitertöne. **3.** Der letzte Ton eines Takts **führt zum nächsten Akkord**, oft mit einem Halbton-Schritt (Annäherungston)."
+            ] },
+            { "type": "tab", "title": "Nur Akkordtöne", "bpm": 90,
+              "text": "Zuerst reicht es, Grundton, Terz und Quinte durchzulaufen. Spiele gleichmäßig und mit viel Ruhe. Die Viertel müssen swingen.",
+              "riff": { "id": "r4-walk-1", "title": "Walking: Akkordtöne", "bpm": 90, "beats": 4, "sub": 1, "drums": "shuffle", "bars": [
+                "A0 A4 A7 A4",
+                "A0 A4 A7 A9",
+                "D0 D4 D7 D4",
+                "E0 E4 E7 E4"
+              ] } },
+            { "type": "tab", "title": "Mit Annäherungstönen", "bpm": 90,
+              "text": "Der letzte Ton jedes Takts führt einen Halbton an den nächsten Grundton heran: erst ein Ton **über** dem Ziel (der Es vor dem D), dann ein Ton **über** dem A (das B vor dem A).",
+              "riff": { "id": "r4-walk-2", "title": "Walking: Annäherung", "bpm": 90, "beats": 4, "sub": 1, "drums": "shuffle", "bars": [
+                "A0 A4 A7 A6",
+                "D7 D4 D0 A1",
+                "A0 A4 A7 A6",
+                "D7 D4 D0 A1"
+              ] } },
+            { "type": "theory", "title": "Warum führt der Halbton so gut?", "body": [
+              "Ein Halbton-Schritt zu einem Ton klingt wie ein Magnet: Das Ohr will **dorthin**, wo der Schritt endet. Darum hört sich der Wechsel zum neuen Akkord „gezogen“ an, nicht „gesprungen“. Dieses Prinzip kannst du jederzeit nutzen: Ziel finden, einen Halbton darüber oder darunter wählen."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wohin führt der letzte Ton eines Walking-Takts typischerweise?", "options": ["Zum Grundton des nächsten Akkords", "Zu einer Pause", "Zurück zur Quinte des alten Akkords"], "answer": 0, "explain": "Er „zeigt“ auf den nächsten Akkord, oft mit einem Halbton Abstand." }
+          ]
+        },
+        {
+          "id": "l4-walkblues", "title": "Walking durch den 12-Takt-Blues", "minutes": 14, "goal": "Einen Walking Bass über einen ganzen 12-Takt-Blues spielen",
+          "steps": [
+            { "type": "text", "title": "Das Schema", "body": [
+              "Der 12-Takt-Blues in A: **A A A A | D D A A | E D A E**. Du kennst ihn aus Level 3. Jetzt läufst du mit Viertelnoten hindurch.",
+              "Drei Regeln: Auf der **1** steht der Grundton, der Takt vor einem Akkordwechsel endet mit einem **Halbton-Schritt** zum neuen Grundton, und die **Richtung wechselt** (mal aufwärts, mal abwärts), damit die Linie lebendig bleibt."
+            ] },
+            { "type": "tab", "title": "Walking-Blues in A", "bpm": 100,
+              "text": "12 Takte. Beachte den Schluss: Der letzte Takt führt über das Gis (E-Saite, 4. Bund) zurück zum A.",
+              "riff": { "id": "r4-walkblues", "title": "Walking-Blues in A", "bpm": 100, "beats": 4, "sub": 1, "drums": "shuffle", "bars": [
+                "A0 A2 A4 A7",
+                "A9 A7 A4 A2",
+                "A0 A4 A7 A4",
+                "A0 A4 A7 A6",
+                "D0 D2 D4 D5",
+                "D7 D4 D2 D0",
+                "A0 A2 A4 A7",
+                "A9 A7 A4 A2",
+                "E0 E2 E4 E7",
+                "D0 D4 D7 D4",
+                "A0 A4 A7 A4",
+                "E0 E7 E5 E4"
+              ] } },
+            { "type": "jam", "title": "Jetzt mit Begleitung", "key": "A", "progression": "blues12", "genre": "blues", "bpm": 100,
+              "text": "Spiele deine Linie zum Jam-Track. Du musst nicht meine Linie spielen: Nimm die Grundtöne und fülle sie mit Akkordtönen und Annäherungstönen selbst auf." },
+            { "type": "tempoLadder", "title": "Tempo-Leiter", "start": 70, "target": 110, "stepBpm": 5,
+              "riff": { "id": "r4-walk-ladder", "title": "Walking (Leiter)", "bpm": 70, "beats": 4, "sub": 1, "drums": "shuffle", "bars": [
+                "A0 A2 A4 A7",
+                "A9 A7 A4 A2",
+                "A0 A4 A7 A4",
+                "A0 A4 A7 A6"
+              ] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "In welchem Takt des 12-Takt-Blues wechselt der Akkord erstmals?", "options": ["Takt 5 (IV)", "Takt 3", "Takt 9"], "answer": 0, "explain": "Takte 1–4 sind I, in Takt 5 kommt die IV. Stufe (hier D)." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4m3",
+      "title": "Modi im Kontext",
+      "lessons": [
+        {
+          "id": "l4-modes1", "title": "Dorisch und Mixolydisch", "minutes": 12, "goal": "Dorisch und Mixolydisch am Klang erkennen und in einem Riff einsetzen",
+          "steps": [
+            { "type": "text", "title": "Modi: Farben statt Regeln", "body": [
+              "Ein **Modus** ist eine Tonleiter, die du aus einer Dur-Tonleiter gewinnst, indem du auf einer anderen Stufe beginnst. In der Praxis nutzt du Modi als **Klangfarben**: Fast Moll, aber heller. Fast Dur, aber „bluesiger“.",
+              "Du erkennst jeden Modus an **einem** Ton, dem **Charakterton**. Spiele diesen Ton im Riff, und der Modus ist hörbar."
+            ] },
+            { "type": "fretboard", "title": "A dorisch", "text": ["**Dorisch** ist natürliches Moll mit **großer Sexte**. In A: A H C D E **Fis** G. Der Charakterton Fis (die „6“) hellt das Moll auf."],
+              "scale": { "root": "A", "type": "dorian", "fromFret": 0, "toFret": 12, "strings": [1, 2], "labels": "degrees" } },
+            { "type": "tab", "title": "Dorisches Riff", "bpm": 90,
+              "text": "Takt 2 endet auf dem Fis (A-Saite, 9. Bund). Genau dieser Ton macht den dorischen Klang aus. Takt 4 wechselt zum D und nutzt das C als kleine Septime.",
+              "riff": { "id": "r4-dorian", "title": "A dorisch", "bpm": 90, "beats": 4, "sub": 2, "drums": "funk", "bars": [
+                "A0 ~ A0 A3 ~ A5 - A3",
+                "A0 ~ A0 A3 ~ A5 A9 A7",
+                "A0 ~ A0 A3 ~ A5 - A3",
+                "D0 ~ D0 D4 ~ D7 ~ A3"
+              ] } },
+            { "type": "fretboard", "title": "D mixolydisch", "text": ["**Mixolydisch** ist Dur mit **kleiner Septime**. In D: D E Fis G A H **C**. Der Charakterton C (die „b7“) macht den Klang bluesig und rockig."],
+              "scale": { "root": "D", "type": "mixolydian", "fromFret": 0, "toFret": 12, "strings": [1, 2], "labels": "degrees" } },
+            { "type": "tab", "title": "Mixolydisches Riff", "bpm": 100,
+              "text": "Das C (A-Saite, 3. Bund) unter dem D ist die kleine Septime. Es kehrt immer wieder und gibt dem Riff seinen Charakter.",
+              "riff": { "id": "r4-mixo", "title": "D mixolydisch", "bpm": 100, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "D0 ~ D0 D4 ~ D7 D5 D4",
+                "D0 ~ D0 D4 ~ D7 ~ A3",
+                "D0 ~ D0 D4 ~ D7 D5 D4",
+                "D0 ~ D0 D4 ~ D7 ~ A3"
+              ] } },
+            { "type": "theory", "title": "Warum klingt das so?", "body": [
+              "Dorisch = Moll mit großer Sexte: Moll-Terz **und** helle Sexte. Mixolydisch = Dur mit kleiner Septime: Dur-Terz **und** „bluesige“ Septime. Bei beiden ändert sich nur **eine Stufe** gegenüber Moll bzw. Dur. Genau dieser eine Ton ist der Unterschied zwischen „Standard“ und „Farbe“."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was unterscheidet Dorisch vom natürlichen Moll?", "options": ["Die 6. Stufe ist groß statt klein", "Die 2. Stufe ist klein", "Die 4. Stufe ist erhöht"], "answer": 0, "explain": "Dorisch = Moll mit großer Sexte. Das ergibt den Klang von Santana oder Daft Punk." }
+          ]
+        },
+        {
+          "id": "l4-modes2", "title": "Lydisch und Phrygisch", "minutes": 12, "goal": "Zwei weitere Modi erkennen und anwenden",
+          "steps": [
+            { "type": "text", "title": "Die extremen Farben", "body": [
+              "**Lydisch** ist Dur mit **erhöhter Quarte**: schwebend, hell, filmisch. **Phrygisch** ist Moll mit **kleiner Sekunde**: dunkel, spanisch, hart.",
+              "Beide haben einen starken Charakterton: lydisch die **#4**, phrygisch die **b2**."
+            ] },
+            { "type": "fretboard", "title": "F lydisch", "text": ["F G A **H** C D E. Das H (die #4) ist der Charakterton. Es liegt einen Halbton über der Quinte von F."],
+              "scale": { "root": "F", "type": "lydian", "fromFret": 0, "toFret": 12, "strings": [0, 1], "labels": "degrees" } },
+            { "type": "tab", "title": "Lydisches Riff", "bpm": 90,
+              "text": "Das H (E-Saite, 7. Bund) klingt „offen“ und schwebend. In Takt 2 steigt die Linie noch eine Stufe höher bis zum C.",
+              "riff": { "id": "r4-lydian", "title": "F lydisch", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "E1 ~ E1 E5 ~ E7 ~ E5",
+                "E1 ~ E1 E5 ~ E7 E8 E7"
+              ] } },
+            { "type": "fretboard", "title": "E phrygisch", "text": ["E **F** G A H C D. Das F direkt über dem Grundton (die b2) ist der Charakterton."],
+              "scale": { "root": "E", "type": "phrygian", "fromFret": 0, "toFret": 12, "strings": [0, 1], "labels": "degrees" } },
+            { "type": "tab", "title": "Phrygisches Riff", "bpm": 90,
+              "text": "Der Halbton E–F am Anfang ist der phrygische Klang. Takt 2 zeigt, wie das Riff nach oben bis zum A weiterläuft.",
+              "riff": { "id": "r4-phrygian", "title": "E phrygisch", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "E0 ~ E0 E1 ~ E0 ~ E3",
+                "E0 ~ E0 E1 ~ E3 E5 E3"
+              ] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Woran erkennst du Phrygisch?", "options": ["Kleine Sekunde (b2) über dem Grundton", "Erhöhte Quarte", "Große Sexte"], "answer": 0, "explain": "Der Halbton direkt über dem Grundton ist das Kennzeichen von Phrygisch." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4m4",
+      "title": "Groove und Timing",
+      "lessons": [
+        {
+          "id": "l4-swing", "title": "Swing und Shuffle auf Profi-Niveau", "minutes": 12, "goal": "Swing-Achtel gleichmäßig spielen und mit Ghost Notes beleben",
+          "steps": [
+            { "type": "text", "title": "Das Verhältnis macht den Swing", "body": [
+              "Beim **Swing** sind zwei Achtel nicht gleich lang: Die erste ist länger, die zweite kürzer. Im Shuffle ist das Verhältnis **2:1** (Triole), im Jazz oft **etwas lockerer** (zwischen 3:2 und 2:1, je nach Tempo).",
+              "Wichtig: **Je schneller das Tempo, desto gerader** wird der Swing. Bei langsamem Tempo wird er stärker."
+            ] },
+            { "type": "tab", "title": "Swing in A", "bpm": 110,
+              "text": "Triolenraster: Zähle „1 – la – li“. Du spielst die Zahl und das „li“. Die mittlere Position (la) bleibt still.",
+              "riff": { "id": "r4-swing", "title": "Swing-Groove", "bpm": 110, "beats": 4, "sub": 3, "drums": "shuffle", "bars": [
+                "A0 ~ A0 A4 ~ A4 A7 ~ A7 A4 ~ -",
+                "D0 ~ D0 D4 ~ D4 D7 ~ D7 D4 ~ -",
+                "A0 ~ A0 A4 ~ A4 A7 ~ A7 A4 ~ -",
+                "E0 ~ E0 E4 ~ E4 E7 ~ E7 E4 ~ -"
+              ] } },
+            { "type": "tab", "title": "Swing mit Ghost Notes", "bpm": 100,
+              "text": "Jetzt kommt auf das „li“ ein gedämpfter Schlag (x). Das macht den Groove deutlich lebendiger.",
+              "riff": { "id": "r4-swing-ghost", "title": "Swing mit Ghost Notes", "bpm": 100, "beats": 4, "sub": 3, "drums": "shuffle", "bars": [
+                "A0 ~ A0g A4 ~ A4g A7 ~ A7g A4 ~ A4g",
+                "D0 ~ D0g D4 ~ D4g D7 ~ D7g D4 ~ D4g"
+              ] } },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was passiert mit dem Swing, wenn das Tempo sehr schnell wird?", "options": ["Er wird gerader", "Er wird stärker", "Er bleibt exakt 2:1"], "answer": 0, "explain": "Bei schnellen Tempi rücken die Achtel näher an 1:1. Die Musiker swingen weniger stark." }
+          ]
+        },
+        {
+          "id": "l4-laidback", "title": "Laid-back und Ahead", "minutes": 10, "goal": "Verstehen, wie das Spielen leicht hinter oder vor dem Schlag den Groove verändert",
+          "steps": [
+            { "type": "text", "title": "Der Schlag hat eine Breite", "body": [
+              "Ein Schlag ist kein Punkt, sondern ein **kleiner Bereich**. Spielst du in der Mitte, klingt es neutral. Spielst du **leicht dahinter** (wenige Millisekunden), klingt es **laid-back**: entspannt, schwer, „fett“. Spielst du **leicht davor**, klingt es **ahead**: treibend, nervös, energisch.",
+              "Profis steuern das bewusst. Ein Bassist, der hinter dem Schlag spielt, lässt die Band „sinken“. Einer, der davor spielt, schiebt sie an."
+            ] },
+            { "type": "rhythm", "title": "Erst mal sauber in der Mitte", "bpm": 80, "sub": 2, "bars": ["x - x - x - x -", "x - - x x - x -"] },
+            { "type": "tab", "title": "Pocket-Groove", "bpm": 90,
+              "text": "Spiele den Groove dreimal. **1.** genau auf dem Klick. **2.** ganz bewusst leicht dahinter. **3.** leicht davor. Hör, wie sich der Charakter ändert.",
+              "riff": { "id": "r4-pocket", "title": "Pocket-Groove", "bpm": 90, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+                "E0 - - E0g - - E3 - E5 - - E3 - E0 - -",
+                "A0 - - A0g - - A3 - A5 - - A3 - A0 - -"
+              ] } },
+            { "type": "theory", "title": "Warum klingt hinter dem Schlag „fett“?", "body": [
+              "Das Schlagzeug gibt den Takt vor. Ein Bass, der minimal **nach** der Bassdrum kommt, klingt wie ein Nachhall: Der Ton scheint „aus“ der Bassdrum zu wachsen. Das erzeugt Gewicht. Wichtig: nur um **Millisekunden**. Wenn man es deutlich hört, ist es zu viel."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wie klingt ein Bass, der leicht VOR dem Schlag spielt?", "options": ["Treibend und energisch", "Besonders entspannt", "Gar nicht anders"], "answer": 0, "explain": "Ahead = vor dem Schlag: Das schiebt die Band an." }
+          ]
+        },
+        {
+          "id": "l4-odd", "title": "Ungerade Taktarten", "minutes": 12, "goal": "5/4 und 7/8 zählen und spielen",
+          "steps": [
+            { "type": "text", "title": "Nicht nur durch vier teilbar", "body": [
+              "Ungerade Taktarten klingen zunächst „schief“, werden aber schnell natürlich, wenn du sie **in kleine Gruppen** teilst. **5/4** zählst du als **3 + 2** oder **2 + 3**. **7/8** zählst du als **2 + 2 + 3**.",
+              "Im Player siehst du nur die Zählzeiten. Das Metronom betont immer die **1** des Taktes. Die Drums schweigen hier bewusst, damit du dich auf die Gruppen konzentrierst."
+            ] },
+            { "type": "tab", "title": "5/4 zählen und spielen", "bpm": 100,
+              "text": "Zähle laut „1 2 3 – 1 2“ (3 + 2). Jede Zählzeit hat zwei Achtel (Zählhilfe unter der Tab).",
+              "riff": { "id": "r4-five", "title": "5/4-Groove", "bpm": 100, "beats": 5, "sub": 2, "bars": [
+                "E0 ~ E0 ~ G3 ~ A0 ~ E0 -",
+                "E0 ~ E0 ~ G3 ~ A0 ~ A2 A3"
+              ] } },
+            { "type": "tab", "title": "7/8: 2 + 2 + 3", "bpm": 130,
+              "text": "Hier ist jeder Schlag ein Achtel. Gruppiere „1 2 | 3 4 | 5 6 7“. Die Betonung liegt auf 1, 3 und 5.",
+              "riff": { "id": "r4-seven", "title": "7/8-Groove", "bpm": 130, "beats": 7, "sub": 1, "bars": [
+                "E0 ~ A0 ~ D2 ~ ~",
+                "E0 E3 A0 A2 D2 ~ ~"
+              ] } },
+            { "type": "theory", "title": "Warum fühlt sich das gut an?", "body": [
+              "Unser Gehör sucht Gruppen von 2 und 3. Ungerade Takte sind **zusammengesetzte** Takte: 5 = 3 + 2, 7 = 2 + 2 + 3. Wenn du die Gruppen hörst, verliert der Takt seine Fremdheit. Beispiele aus der Musikgeschichte: Brubecks „Take Five“ (5/4) oder „Money“ von Pink Floyd (7/4)."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Wie zählst du 7/8 üblicherweise?", "options": ["2 + 2 + 3", "7 + 0", "4 + 4"], "answer": 0, "explain": "7/8 besteht aus drei Gruppen: zwei Zweiergruppen und eine Dreiergruppe." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "l4m5",
+      "title": "Musiker werden",
+      "lessons": [
+        {
+          "id": "l4-write", "title": "Eigene Basslines erfinden", "minutes": 14, "goal": "Zu einer Akkordfolge selbst Basslines entwickeln",
+          "steps": [
+            { "type": "text", "title": "Von einfach zu persönlich", "body": [
+              "Eine eigene Bassline entsteht in Stufen. **1.** Nur Grundtöne, dafür mit einem guten Rhythmus. **2.** Akkordtöne (Terz, Quinte, Oktave) hinzunehmen. **3.** Annäherungstöne einbauen. **4.** Pausen setzen, denn der Raum macht den Groove.",
+              "Wir nutzen die Akkordfolge **C – G – Am – F** (I – V – vi – IV, die „Pop-Folge“)."
+            ] },
+            { "type": "tab", "title": "Stufe 1: Grundtöne mit Rhythmus", "bpm": 90,
+              "text": "Nur C, G, A, F. Trotzdem klingt es durch das Muster „Zählzeit 1, 2+, 4“ schon nach Musik.",
+              "riff": { "id": "r4-write-1", "title": "Stufe 1", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "A3 ~ ~ A3 ~ ~ A3 -",
+                "E3 ~ ~ E3 ~ ~ E3 -",
+                "A0 ~ ~ A0 ~ ~ A0 -",
+                "E1 ~ ~ E1 ~ ~ E1 -"
+              ] } },
+            { "type": "tab", "title": "Stufe 2: Akkordtöne", "bpm": 90,
+              "text": "Jetzt Grundton, Terz und Quinte. Bei C: C – E – G – E. Die Linie hat mehr Melodie.",
+              "riff": { "id": "r4-write-2", "title": "Stufe 2", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "A3 ~ D2 ~ D5 ~ D2 ~",
+                "E3 ~ A2 ~ D0 ~ A2 ~",
+                "A0 ~ A3 ~ A7 ~ A3 ~",
+                "E1 ~ E5 ~ A3 ~ E5 ~"
+              ] } },
+            { "type": "tab", "title": "Stufe 3: Annäherungstöne", "bpm": 90,
+              "text": "Der letzte Achtel jedes Takts führt einen Halbton zum nächsten Grundton. Hör, wie flüssig die Folge wird.",
+              "riff": { "id": "r4-write-3", "title": "Stufe 3", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+                "A3 ~ D2 ~ D5 ~ D2 E2",
+                "E3 ~ A2 ~ D0 ~ A2 E4",
+                "A0 ~ A3 ~ A7 ~ A3 E2",
+                "E1 ~ E5 ~ A3 ~ E5 A2"
+              ] } },
+            { "type": "jam", "title": "Deine eigene Bassline", "key": "C", "progression": "pop-1564", "genre": "rock", "bpm": 90,
+              "text": "Erfinde jetzt **eine eigene** Bassline über C – G – Am – F. Beginne mit Stufe 1 und baue Schritt für Schritt auf. Ändere den **Rhythmus**, nicht nur die Töne. Probiere ein Pausen-Muster, das **dir** gefällt." },
+            { "type": "theory", "title": "Warum Pausen?", "body": [
+              "Ein Bass, der **alles** füllt, drückt die Musik platt. Pausen lassen die Bassdrum und die Gesangsmelodie atmen. Die besten Basslines klingen oft „einfacher“, als sie sind: Sie spielen die **richtigen** Töne an den **richtigen** Stellen und lassen den Rest weg."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Was ist ein Annäherungston?", "options": ["Ein Ton, der einen Halbton neben dem nächsten Zielton liegt und zu ihm hinführt", "Ein sehr lauter Ton", "Ein Ton auf der leeren Saite"], "answer": 0, "explain": "Er „zeigt“ auf den Zielton, meist von oben oder unten im Halbtonabstand." }
+          ]
+        },
+        {
+          "id": "l4-clef", "title": "Noten lesen im Bassschlüssel", "minutes": 14, "goal": "Die Noten im Bassschlüssel den Saiten und Bünden zuordnen",
+          "steps": [
+            { "type": "text", "title": "Das Notensystem", "body": [
+              "Neben der Tab gibt es die klassische Notenschrift. Der Bass wird im **Bassschlüssel** (F-Schlüssel) notiert. Die zwei Punkte des Schlüssels umschließen die Linie, auf der das **F** steht.",
+              "Die fünf Linien tragen von unten nach oben die Töne **G – H – D – F – A**, die Zwischenräume **A – C – E – G**. Hilfslinien erweitern das System nach oben und unten.",
+              "**Wichtig:** Der E-Bass klingt eine Oktave **tiefer**, als er notiert wird. Die leere E-Saite steht auf der ersten Hilfslinie unter dem System."
+            ] },
+            { "type": "staff", "title": "Die leeren Saiten", "text": ["Von links nach rechts: E-, A-, D- und G-Saite leer gespielt. Du siehst, wie die Noten die Linien hochsteigen."], "notes": [28, 33, 38, 43], "names": true },
+            { "type": "quiz", "title": "Welche Saite?", "question": "Welche leere Saite ist hier notiert? (Die Note steht auf der **mittleren Linie**.)", "staff": { "notes": [38] }, "options": ["D-Saite", "A-Saite", "G-Saite"], "answer": 0, "explain": "Die mittlere Linie ist das D. Die leere D-Saite wird dort notiert." },
+            { "type": "quiz", "title": "Noch eine Saite", "question": "Und diese Note im obersten Zwischenraum?", "staff": { "notes": [43] }, "options": ["G-Saite leer", "E-Saite leer", "A-Saite leer"], "answer": 0, "explain": "Der oberste Zwischenraum ist das G. Auf dem Bass ist das die leere G-Saite." },
+            { "type": "quiz", "title": "Ton benennen", "question": "Welcher Ton ist notiert? (Zweiter Zwischenraum von unten.)", "staff": { "notes": [36], "names": false }, "options": ["C", "A", "E"], "answer": 0, "explain": "Die Zwischenräume heißen von unten A – C – E – G. Der zweite ist das C (auf dem Bass: A-Saite, 3. Bund)." },
+            { "type": "text", "title": "So übst du", "body": [
+              "Nimm dir pro Tag **drei Noten** vor: Notenzeichen ansehen, den Ton auf dem Griffbrett finden und spielen. Beginne mit den leeren Saiten und den ersten fünf Bünden der E- und A-Saite. Das Notenlesen kommt mit der Zeit von selbst."
+            ] },
+            { "type": "fretquiz", "title": "Griffbrett festigen", "mode": "find", "strings": [0, 1, 2], "maxFret": 7, "rounds": 6 }
+          ]
+        },
+        {
+          "id": "l4-transcribe", "title": "Basslines nach Gehör herausfinden", "minutes": 14, "goal": "Eine Bassline hören und selbst auf dem Griffbrett finden",
+          "steps": [
+            { "type": "text", "title": "Das Heraushören", "body": [
+              "Basslines nach Gehör zu finden ist die wichtigste Fähigkeit für Profis. Die Methode in vier Schritten: **1.** Den **Grundton** finden (summen, bis es passt). **2.** Den **Rhythmus** klatschen oder tippen. **3.** Die Töne **Schritt für Schritt** auf dem Griffbrett suchen: aufwärts oder abwärts? Wie weit? **4.** Alles aufschreiben und gegenprüfen."
+            ] },
+            { "type": "ear", "title": "Basslinien erkennen", "mode": "line", "rounds": 5, "text": "Du hörst eine kurze Bassline und wählst die passende Tab. Achte erst auf die **Richtung** (auf oder ab), dann auf die **Schrittgröße**." },
+            { "type": "ear", "title": "Intervalle hören", "mode": "interval", "rounds": 8, "intervals": [3, 4, 5, 7, 12], "text": "Basslines bestehen aus Intervallen. Wer sie erkennt, findet Töne viel schneller." },
+            { "type": "jam", "title": "Mitspielen nach Gehör", "key": "E", "progression": "rock-145", "genre": "rock", "bpm": 90,
+              "text": "Der Jam-Track läuft. Finde **nach Gehör** den Grundton jedes Akkords, bevor du auf die Nashville-Zahlen schaust. Spiele ihn danach mit. Prüfe dich am Ende mit der Anzeige." },
+            { "type": "theory", "title": "Warum es zuerst der Grundton ist", "body": [
+              "Der Bass spielt meist den **Grundton** des Akkords. Wenn du den Grundton jeder Station hörst, hast du schon 70 % der Bassline. Alles Weitere (Rhythmus, Oktaven, Annäherungstöne) ist Ausschmückung."
+            ] },
+            { "type": "quiz", "title": "Kurz geprüft", "question": "Womit beginnt man beim Heraushören einer Bassline?", "options": ["Mit dem Grundton und dem Rhythmus", "Mit dem lautesten Ton", "Mit der Tab aus dem Internet"], "answer": 0, "explain": "Grundton und Rhythmus ergeben das Gerüst. Danach füllst du die Details." }
+          ]
+        }
+      ]
+    }
+  ]
+}

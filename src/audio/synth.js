@@ -15,9 +15,11 @@ function noise() {
 
 /**
  * E-Bass-ähnlicher gezupfter Ton. t = AudioContext-Zeit, dur in Sekunden.
- * opts: { ghost, soft (Hammer-on/Pull-off), glideFrom (Slide, MIDI-Startton), vibrato }
+ * opts: { ghost, soft (Hammer-on/Pull-off), glideFrom (Slide, MIDI-Startton), vibrato, slap, pop, harmonic }
  */
 export function pluck(midi, t, dur = 0.4, vel = 0.9, dest = out(), opts = {}) {
+  if (opts.slap || opts.pop) return slapPop(midi, t, dur, vel, dest, !!opts.pop);
+  if (opts.harmonic) return harmonic(midi, t, dur, vel, dest);
   const c = getCtx();
   const f = midiToFreq(midi);
   const ghost = !!opts.ghost;
@@ -58,6 +60,53 @@ export function pluck(midi, t, dur = 0.4, vel = 0.9, dest = out(), opts = {}) {
     osc.stop(end);
   }
   lp.connect(g).connect(dest);
+}
+
+/** Slap (Daumen) bzw. Pop (Zupfen nach oben): kurzer, heller, perkussiver Ton mit Anschlagsgeräusch. */
+function slapPop(midi, t, dur, vel, dest, pop) {
+  const c = getCtx();
+  const f = midiToFreq(midi);
+  const len = Math.min(dur, pop ? 0.2 : 0.26);
+  const lp = c.createBiquadFilter();
+  lp.type = 'lowpass'; lp.Q.value = pop ? 3 : 1.6;
+  lp.frequency.setValueAtTime(Math.min(f * (pop ? 26 : 18), 7000), t);
+  lp.frequency.exponentialRampToValueAtTime(Math.max(f * 3, 200), t + 0.09);
+  const g = c.createGain();
+  const peak = 0.55 * vel * (pop ? 0.9 : 1);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.linearRampToValueAtTime(peak, t + 0.003);
+  g.gain.setTargetAtTime(0.0001, t + 0.02, len * 0.35);
+  for (const [type, level] of [['sawtooth', 0.55], ['square', pop ? 0.3 : 0.15], ['sine', 0.5]]) {
+    const o = c.createOscillator(); const og = c.createGain();
+    o.type = type; o.frequency.value = f; og.gain.value = level;
+    o.connect(og).connect(lp); o.start(t); o.stop(t + len + 0.3);
+  }
+  lp.connect(g).connect(dest);
+  // Anschlagsgeräusch (Saite trifft den Bund)
+  const n = c.createBufferSource(); n.buffer = noise();
+  const hp = c.createBiquadFilter(); hp.type = 'bandpass'; hp.frequency.value = pop ? 3200 : 2200; hp.Q.value = 0.8;
+  const ng = c.createGain();
+  ng.gain.setValueAtTime(0.28 * vel, t); ng.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+  n.connect(hp).connect(ng).connect(dest); n.start(t, Math.random() * 0.5, 0.07);
+}
+
+/** Flageolett (Oberton): glockenartig, fast reiner Sinus, langer Ausklang. */
+function harmonic(midi, t, dur, vel, dest) {
+  const c = getCtx();
+  const f = midiToFreq(midi);
+  const g = c.createGain();
+  const peak = 0.32 * vel;
+  const hold = Math.max(dur, 0.5);
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.linearRampToValueAtTime(peak, t + 0.006);
+  g.gain.setTargetAtTime(peak * 0.5, t + 0.006, 0.35);
+  g.gain.setTargetAtTime(0.0001, t + hold, 0.12);
+  for (const [type, level, mult] of [['sine', 1, 1], ['triangle', 0.18, 1], ['sine', 0.12, 2]]) {
+    const o = c.createOscillator(); const og = c.createGain();
+    o.type = type; o.frequency.value = f * mult; og.gain.value = level;
+    o.connect(og).connect(g); o.start(t); o.stop(t + hold + 0.8);
+  }
+  g.connect(dest);
 }
 
 /** Weicher Akkord-/Pad-Klang für Jam-Tracks (mehrere MIDI-Töne gleichzeitig). */

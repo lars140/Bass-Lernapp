@@ -14,6 +14,16 @@ const minMerge = (a, b) => {
   return out;
 };
 
+/** Wiederholungs-Karten: pro Karte den Stand mit mehr Wiederholungen behalten (bei Gleichstand den später fälligen). */
+function mergeSrs(a, b) {
+  const out = { ...a };
+  for (const [k, v] of Object.entries(b)) {
+    const o = out[k];
+    if (!o || v[3] > o[3] || (v[3] === o[3] && v[0] > o[0])) out[k] = v;
+  }
+  return out;
+}
+
 function mergeStreak(a, b) {
   const [x, y] = (a.last || '') >= (b.last || '') ? [a, b] : [b, a]; // x = aktuellere Streak
   return {
@@ -48,6 +58,9 @@ export function mergeProgress(localRaw, remoteRaw) {
     records: maxMerge(a.records, b.records),
     days: maxMerge(a.days, b.days),
     stats: maxMerge(a.stats, b.stats),
+    srs: mergeSrs(a.srs, b.srs),
+    skipped: minMerge(a.skipped, b.skipped),
+    placement: (a.placement && b.placement) ? (a.placement.at >= b.placement.at ? a.placement : b.placement) : (a.placement || b.placement),
     settings: { ...newer.settings },
   };
 }

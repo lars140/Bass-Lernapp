@@ -3,9 +3,10 @@
 import { h } from '../dom.js';
 import { getState } from '../../state/store.js';
 import { completeStep, setPosition, startPractice } from '../../state/gamify.js';
-import { findLesson, loadAvailableLevels, flattenLessons } from '../../lessons/loader.js';
+import { findLesson, loadAvailableLevels, flattenLessons, newlyUnlockedSongs } from '../../lessons/loader.js';
 import { STEP_TYPES } from '../../exercises/index.js';
 import { go } from '../router.js';
+import { register, cardIdFor } from '../../state/srs.js';
 
 export async function lessonView(root, [lessonId]) {
   const lesson = await findLesson(lessonId);
@@ -62,6 +63,8 @@ export async function lessonView(root, [lessonId]) {
   }
 
   async function advance() {
+    // Wiederholungs-Karte für diesen Schritt anlegen (Quiz, Riff, Griffbrett-Quiz)
+    register([cardIdFor(lessonId, idx, lesson.steps[idx])]);
     const res = completeStep(lessonId, idx, total);
     if (idx < total - 1) { show(idx + 1); return; }
     cleanupStep();
@@ -72,13 +75,15 @@ export async function lessonView(root, [lessonId]) {
     const lessons = flattenLessons(await loadAvailableLevels());
     const i = lessons.findIndex((l) => l.id === lessonId);
     const nextLesson = lessons[i + 1];
+    const unlocked = await newlyUnlockedSongs(lessonId, getState().done).catch(() => []);
     title.textContent = 'Lektion geschafft! 🎸';
     counter.textContent = '';
     nav.remove();
     body.replaceChildren(
       h('div', { class: 'prose' },
         h('p', null, `**${lesson.title}** ist abgeschlossen.`.replace(/\*\*/g, '')),
-        res.firstTime ? h('p', { class: 'xp-line' }, `+${res.xp} XP`) : h('p', { class: 'muted' }, 'Wiederholt – gut für die Routine!')),
+        res.firstTime ? h('p', { class: 'xp-line' }, `+${res.xp} XP`) : h('p', { class: 'muted' }, 'Wiederholt – gut für die Routine!'),
+        unlocked.length && res.firstTime ? h('p', null, '🎵 Neu freigeschaltet: ', unlocked.map((s, k) => [k ? ', ' : '', h('a', { href: `#/songs/${s.id}` }, s.title)])) : null),
       h('div', { class: 'row center wrap' },
         nextLesson ? h('a', { class: 'btn primary', href: `#/lesson/${nextLesson.id}` }, `Weiter: ${nextLesson.title}`) : null,
         h('a', { class: 'btn ghost', href: '#/course' }, 'Zurück zum Kurs')));

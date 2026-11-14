@@ -28,7 +28,7 @@ const { load } = await import('../src/state/store.js');
 load();
 
 let steps = 0;
-for (const f of ['level1', 'level2', 'level3']) {
+for (const f of ['level1', 'level2', 'level3', 'level4']) {
   const lv = JSON.parse(readFileSync(`public/content/${f}.json`, 'utf8'));
   for (const m of lv.modules) for (const l of m.lessons) {
     for (const [i, s] of l.steps.entries()) {

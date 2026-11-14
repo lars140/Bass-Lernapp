@@ -210,3 +210,27 @@ input[type="range"] { width: 100%; accent-color: var(--accent); min-height: 32px
 .jam-bar.now { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, var(--surface2)); }
 .jb-name { font-weight: 800; font-size: 1.15rem; } .jb-nash { color: var(--accent); font-weight: 700; }
 .jam .tempo { margin: 12px 0; }
+
+/* ---------- Phase 4: Notensystem, Songs, Statistik, Aufwärmen ---------- */
+.staff-wrap { overflow-x: auto; margin: 10px 0; }
+.staff { width: 100%; max-width: 520px; height: auto; min-width: 260px; display: block; }
+.staff-line { stroke: var(--muted); stroke-width: 1.2; }
+.staff-clef { stroke: var(--text); stroke-width: 3; stroke-linecap: round; }
+.staff-dot, .staff-note { fill: var(--text); }
+.staff-stem { stroke: var(--text); stroke-width: 1.6; }
+.staff-acc { fill: var(--text); font: 700 15px var(--font); }
+.staff-name { fill: var(--muted); font: 600 13px var(--font); }
+.row.between { justify-content: space-between; align-items: baseline; }
+.tag { display: inline-block; font-size: .78rem; padding: 2px 10px; border-radius: 999px; background: var(--surface2); border: 1px solid var(--line); color: var(--muted); }
+.chip.static { cursor: default; min-height: 0; padding: 1px 10px; font-size: .78rem; color: var(--muted); }
+.song > * { margin-bottom: 6px; } .song > :last-child { margin-bottom: 0; }
+.warmup-card { border-color: color-mix(in srgb, var(--warn) 55%, var(--line)); }
+.skills .skill + .skill { margin-top: 14px; } .skill .row { margin-bottom: 6px; }
+.records, .plain { list-style: none; padding: 0; margin: 0; }
+.records li { padding: 8px 0; border-bottom: 1px solid var(--line); } .records li:last-child { border-bottom: 0; }
+.rec-bpm { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.plain li { padding: 3px 0; }
+.stat-bars { height: 120px; }
+.stat-bars .wd { min-width: 0; }
+textarea.input { width: 100%; font: .88rem/1.5 var(--mono); background: var(--surface2); color: var(--text); border: 1px solid var(--line); border-radius: 12px; padding: 12px; resize: vertical; }
+.level-head .btn { margin-top: 6px; }

@@ -53,7 +53,7 @@ export function renderTab(riff, o = {}) {
         g.append(s('rect', { x: x - 8, y: y - 8, width: 16, height: 16, rx: 5 }));
         g.append(s('text', { x, y: y + 4.5, 'text-anchor': 'middle' }, st.ghost ? 'x' : label));
         // Technik-Zeichen: H/P = Hammer-on/Pull-off, Slide-Linie, ~ = Vibrato
-        const tech = st.hammer ? 'H' : st.pull ? 'P' : st.vib ? '~' : '';
+        const tech = st.hammer ? 'H' : st.pull ? 'P' : st.slap ? 'S' : st.pop ? '↑' : st.harm ? '◇' : st.vib ? '~' : '';
         if (tech) g.append(s('text', { class: 'tab-tech', x, y: y - 11, 'text-anchor': 'middle' }, tech));
         if (st.slide) g.append(s('line', { class: 'tab-slide', x1: x - 15, x2: x - 9, y1: st.slide === 'up' ? y + 5 : y - 5, y2: st.slide === 'up' ? y - 5 : y + 5 }));
         svg.append(g);

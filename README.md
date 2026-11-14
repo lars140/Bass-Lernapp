@@ -1,4 +1,4 @@
-# Bass lernen – Phase 1–3 (Gast-Modus, Konten, Sync, Level 1–3)
+# Bass lernen – Phase 1–4 (Gast-Modus, Konten, Sync, Level 1–4, Einstufung, Wiederholung, Statistik, Songs)
 
 Statische Web-App (Vanilla JS, ES-Module, Vite). Alle Sounds werden per Web Audio synthetisiert,
 alle Grafiken sind SVG, Lektionen liegen als JSON in `public/content/`. Kein CDN, kein Tracking.
@@ -9,7 +9,7 @@ alle Grafiken sind SVG, Lektionen liegen als JSON in `public/content/`. Kein CDN
 npm install
 npm run dev        # Vite-Dev-Server (ohne Service Worker)
 npm run check      # prüft alle Lektions-JSONs (Taktlängen, Typen, IDs)
-npm test           # check + Merge-/Musik-Tests + Render-Test aller 179 Lektionsschritte (jsdom)
+npm test           # check + Merge-/Musik-/SRS-Tests + Render-Test aller 253 Lektionsschritte + Ansichten-Test (jsdom)
 npm run build      # erzeugt dist/ inkl. sw.js (Offline-Cache)
 npm run pages:dev  # Build + wrangler pages dev (ab Phase 2 mit lokaler D1)
 ```
@@ -155,6 +155,9 @@ Technik-Suffixe hinter dem Bund (kombinierbar), sie beziehen sich auf den Ton, *
 
 | Suffix | Technik | Beispiel |
 |---|---|---|
+| `t` | Slap (Daumen), im Tab **S** | `E0t` |
+| `o` | Pop (Zupfen nach oben), im Tab **↑** | `D2o` |
+| `*` | Flageolett im 5., 7. oder 12. Bund (klingt 24 / 19 / 12 Halbtöne über der leeren Saite), im Tab **◇** | `G12*` |
 | `g` | Ghost Note (gedämpft, wird als **x** angezeigt) | `E0g` |
 | `h` | Hammer-on | `A2h` |
 | `p` | Pull-off | `A0p` |
@@ -168,10 +171,11 @@ Triolen/Shuffle: `sub: 3` (12 Tokens pro 4/4-Takt), Drums `shuffle`. Sechzehntel
 | `type` | Felder |
 |---|---|
 | `text` | `title`, `body` (Array von Absätzen), `diagram: "bass"` (optional) |
+| `staff` | Notensystem im Bassschlüssel: `notes` (klingende MIDI-Töne, z. B. `[28, 33, 38, 43]` = leere Saiten), `names` (Notennamen darunter), `text`. Der Bass wird eine Oktave höher notiert, das rechnet die App selbst um |
 | `theory` | `body` – die „Warum klingt das so?“-Box |
-| `fretboard` | `text`, `frets`, `string` (alle Töne einer Saite) oder `marks: [[saite, bund, label]]` (Saite 0 = E … 3 = G), `labels: "names"/"frets"`; **oder** `scale: {root, type, fromFret, toFret, strings, labels}` (Tonleiter/Arpeggio, `labels: "degrees"` zeigt 1, b3, 5 …; Typen: major, minor, majorPent, minorPent, blues, dorian, mixolydian, arp-maj, arp-min, arp-dom7, arp-min7, arp-maj7) mit „Töne abspielen“ |
+| `fretboard` | `text`, `frets`, `string` (alle Töne einer Saite) oder `marks: [[saite, bund, label]]` (Saite 0 = E … 3 = G), `labels: "names"/"frets"`; **oder** `scale: {root, type, fromFret, toFret, strings, labels}` (Tonleiter/Arpeggio, `labels: "degrees"` zeigt 1, b3, 5 …; Typen: major, minor, majorPent, minorPent, blues, dorian, mixolydian, lydian, phrygian, locrian, arp-maj, arp-min, arp-dom7, arp-min7, arp-maj7) mit „Töne abspielen“ |
 | `tab` | `riff`, `bpm`, `text` – Player mit „Hat geklappt / Nochmal“ |
-| `quiz` | `question`, `options`, `answer` (Index), `explain`, optional `riff` (statische Tab) |
+| `quiz` | `question`, `options`, `answer` (Index), `explain`, optional `riff` (statische Tab) oder `staff: { notes: [...] }` (Notensystem) |
 | `fretquiz` | `mode: "find"/"name"`, `strings`, `maxFret`, `rounds` |
 | `rhythm` | `bpm`, `sub` (1 oder 2), `bars: ["x - x x"]` (x = tippen) |
 | `tempoLadder` | `riff`, `start`, `target`, `stepBpm` |
@@ -185,7 +189,7 @@ Bleibt ein Schritt interaktiv (alles außer `text`, `theory`, `fretboard`), muss
 
 ## Fortschrittsformat (`localStorage`, Key `bass.progress`)
 
-Versioniert (`v`), migriert über `migrate()` in `src/state/store.js`. Felder: `xp`, `streak`, `done`, `steps`, `pos`, `badges`, `records`, `days`, `stats`, `settings`, `rev`, `updatedAt`.
+Versioniert (`v`, aktuell **2**), migriert über `migrate()` in `src/state/store.js`. Felder: `xp`, `streak`, `done`, `steps`, `pos`, `badges`, `records`, `days`, `stats`, `settings`, `rev`, `updatedAt`, `resetAt` sowie ab Version 2 `srs` (Wiederholungs-Karten), `skipped` (per Test übersprungene Lektionen) und `placement` (Einstufung). Die Server-Validierung (`functions/_lib/validate.js`) akzeptiert v1 und v2.
 Der Dirty-Flag liegt getrennt unter `bass.meta`. Phase 2 nutzt `rev`/`updatedAt` für den Sync.
 
 ## Hinweise
@@ -209,3 +213,46 @@ Der Dirty-Flag liegt getrennt unter `bass.meta`. Phase 2 nutzt `rev`/`updatedAt`
 **API/Datenbank:** unverändert. Phase 3 verursacht **keine** zusätzlichen Server-Anfragen: Mehr Lektionen sind nur mehr statische Dateien, der Fortschritt bleibt ein JSON-Datensatz (nur ein paar Zähler mehr).
 
 **Tests:** `npm test` rendert alle 179 Schritte in jsdom mit Audio-Stub und klickt alle Buttons, prüft die Tonhöhen aller Riffs gegen die gemeinten Tonleitern und Akkorde und die Merge-Regeln.
+
+## Phase 4: Level 4, Einstufung, Wiederholung, Statistik, Songs
+
+**Level 4** (`public/content/level4.json`, 13 Lektionen): Slap und Pop, Slap-Groove und Double Thumbing, Flageolett und Tapping, Walking Bass (Grundlagen und 12-Takt-Blues), Dorisch/Mixolydisch, Lydisch/Phrygisch, Swing und Shuffle, Laid-back/Ahead, ungerade Taktarten (5/4, 7/8), eigene Basslines erfinden, Noten im Bassschlüssel lesen, Basslines nach Gehör herausfinden. Alle Riffs sind eigene Kompositionen.
+
+**Einstufungstest** (`#/placement`, `src/ui/views/placement.js`, Fragen in `public/content/placement.json`): Level 1, 2 und 3 nacheinander, je 6 Fragen, bestanden ab 80 % beim ersten Versuch. Nach dem Test schlägt die App den Einstieg vor. Die Lektionen davor werden nur auf Wunsch übersprungen. Im Kurs lässt sich Level 2 oder 3 auch einzeln per Kurztest überspringen (`#/placement/level2`). Übersprungene Lektionen geben **keine XP** und zählen **nicht** für Level-Abzeichen (`state.skipped`).
+
+**Wiederholung / Spaced Repetition** (`src/state/srs.js`, `#/warmup`): Beim Abschließen eines Quiz-, Riff- oder Griffbrett-Quiz-Schritts entsteht eine Karte. Bewertung „Noch unsicher / Hat geklappt / Locker“ (Quiz: erster Versuch richtig = geschafft). Intervalle: 1 Tag, 3 Tage, dann ×Ease (Start 2,5), bei „unsicher“ zurück auf 1 Tag. Pro Aufwärm-Runde höchstens 6 Karten. Das Format ist `srs[kartenId] = [fälligTag, Intervall, Ease×100, Wiederholungen]` (maximal 500 Karten, ca. 40 Byte pro Karte). Karten zu Lektionen, die es nicht mehr gibt, werden automatisch entfernt. Es gibt **keine zusätzlichen API-Aufrufe**: Die Karten reisen mit dem normalen Fortschritt.
+
+**Statistik** (`#/stats`): Übungszeit pro Tag (14 Tage) und pro Woche (8 Wochen), Skill-Übersicht in 6 Bereichen (Zuordnung in `public/content/skills.json`), Tempo-Rekorde pro Riff, Wiederholungs-Stand.
+
+**Songs** (`#/songs`, `public/content/songs.json`): 11 originale Kurzstücke mit Schwierigkeit, Genre, Tempo und benötigten Lektionen. Sie werden frei, sobald die Lektionen aus `requires` abgeschlossen sind. Zum Song gehört „Sauber gespielt“, das den Tempo-Rekord speichert. Der **Song-Editor** (`#/songs/editor`) prüft eigenes JSON mit denselben Regeln wie `npm run check` und zeigt eine Vorschau. Eigene Songs bleiben in `localStorage` (`bass.songs`) und werden **nicht** mit dem Konto synchronisiert (sonst wüchse der Datensatz und jede Änderung würde einen Schreibvorgang kosten).
+
+### Wie ich einen Song hinzufüge
+
+Entweder im Editor (nur für dich) oder dauerhaft in `public/content/songs.json`:
+
+```json
+{ "id": "s-mein-song", "title": "Mein Song", "genre": "Rock", "difficulty": 2, "bpm": 90, "key": "E",
+  "requires": ["l1-groove"], "skills": ["Achtelnoten"], "description": "Kurzer Text.",
+  "riff": { "id": "s-mein-song", "title": "Mein Song", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8",
+            "bars": ["E0 ~ E0 ~ E0 ~ G3 ~", "A0 ~ A0 ~ A0 ~ E0 -"] } }
+```
+
+`difficulty` 1–5, `requires` sind Lektions-IDs (leer = sofort frei), `skills` sind freie Texte. Danach `npm run check`.
+
+### Wie ich eine neue Lektion einordne
+
+Jede Lektion braucht einen Eintrag in `public/content/skills.json` (Bereich `technik`, `rhythmus`, `griffbrett`, `theorie`, `groove` oder `gehoer`). `npm run check` meldet fehlende Einträge. Neue Level: Datei `levelN.json` mit Lektions-IDs `lN-…` anlegen, in `index.json` eintragen (`"available": true`), Lektionszahl in `src/state/badges.js` anpassen. Lektionen vom Typ `quiz`, `tab` (mit Riff-`id`) und `fretquiz` werden automatisch zu Wiederholungs-Karten.
+
+### Neue Abzeichen
+
+Level 4, Slap-Meister, Ganzes Griffbrett (Noten, Lagenwechsel und Bassschlüssel), Eingestuft, Aufgewärmt, Routine (10 Runden).
+
+### Datenbank und Anfragen
+
+**Keine neue Tabelle, keine neue Migration, keine neuen Endpunkte.** `progress.data` wächst um `srs`, `skipped` und `placement`. Die Beispielrechnung oben bleibt gültig: Wiederholungen, Statistik, Songs und Tests laufen komplett im Browser. Im Datensatz belegen 500 Karten ca. 20 KB (Grenze: 60 KB). Zusätzliche Schreibvorgänge entstehen nur dadurch, dass eine Aufwärm-Runde den Fortschritt ändert und beim nächsten gebündelten Sync (Lektion verlassen, Seite verstecken, alle 3 Minuten) mitgesendet wird. Die Server-Validierung prüft die Karten (Länge, Zahlenwerte, höchstens 600).
+
+### Test-Stand
+
+`npm test` prüft zusätzlich: Level-4-Inhalte (alle 45 Lektionen, 11 Songs, Skill-Zuordnung, Einstufungsfragen), Tonhöhen der neuen Riffs (Modi, Walking-Blues, Flageolett-Töne, Slap/Pop-Oktaven, Notenpositionen im Bassschlüssel), Intervall-Berechnung, Merge v2, Migration v1 → v2, Server-Validierung und alle neuen Ansichten (Aufwärmen, Einstufung inklusive Durchfallen und Überspringen, Statistik, Songs, Editor). Gegen den lokalen Server (wrangler + D1) habe ich den Ablauf Registrierung → Abruf → Update → ungültige Karte → alter v1-Client einmalig von Hand geprüft.
+
+**Nicht prüfbar ohne echtes Gerät:** Klang von Slap, Pop und Flageolett (synthetisch, also nur eine Annäherung), Gefühl und Timing der Übungen, die Mikrofon-Erkennung bei Slap/Flageolett (sehr kurze oder sehr hohe Töne werden unzuverlässiger erkannt), Darstellung auf iOS/Safari und die Größe des Cloudflare-CPU-Budgets beim Login.

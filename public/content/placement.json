@@ -1,0 +1,38 @@
+{
+  "passRatio": 0.8,
+  "levels": {
+    "level1": {
+      "title": "Level 1: Erste Töne",
+      "questions": [
+        { "question": "Wie heißen die vier Saiten eines Basses, von der tiefsten zur höchsten?", "options": ["E – A – D – G", "G – D – A – E", "C – G – D – A"], "answer": 0, "explain": "E-A-D-G, im Quartabstand gestimmt." },
+        { "question": "Wie viele Viertelnoten passen in einen 4/4-Takt?", "options": ["4", "2", "8"], "answer": 0, "explain": "Ein 4/4-Takt hat vier Schläge, jeder ist eine Viertel." },
+        { "question": "Auf welcher Saite wird in diesem Takt gespielt?", "riff": { "id": "p1-tab", "title": "Tab", "bpm": 80, "beats": 4, "sub": 2, "bars": ["A0 ~ A0 ~ A0 ~ A0 ~"] }, "options": ["Auf der A-Saite", "Auf der E-Saite", "Auf der G-Saite"], "answer": 0, "explain": "In der Tab entspricht die zweite Linie von unten der A-Saite." },
+        { "question": "Was bedeutet eine „0“ in der Tabulatur?", "options": ["Leere Saite, ohne zu greifen", "Eine Pause", "Eine Ghost Note"], "answer": 0, "explain": "0 = die Saite wird gespielt, ohne einen Bund zu greifen." },
+        { "question": "Welcher Ton liegt auf der A-Saite im 5. Bund?", "options": ["D", "E", "C"], "answer": 0, "explain": "Der 5. Bund einer Saite klingt wie die nächsthöhere leere Saite: A-Saite, 5. Bund = D." },
+        { "question": "Wie zupft man bei schnellen Achteln normalerweise?", "options": ["Im Wechselschlag mit Zeige- und Mittelfinger", "Nur mit dem Daumen", "Immer nur mit dem Zeigefinger"], "answer": 0, "explain": "Der Wechselschlag macht gleichmäßiges, ausdauerndes Spielen möglich." }
+      ]
+    },
+    "level2": {
+      "title": "Level 2: Grundlagen festigen",
+      "questions": [
+        { "question": "Wie viele Halbtöne hat eine Oktave?", "options": ["12", "8", "7"], "answer": 0, "explain": "12 Halbtonschritte, dann beginnt die Tonleiter von vorn." },
+        { "question": "Welche Halbtonabstände hat ein Dur-Dreiklang (Grundton – Terz – Quinte)?", "options": ["0 – 4 – 7", "0 – 3 – 7", "0 – 5 – 7"], "answer": 0, "explain": "Große Terz (4 Halbtöne) und reine Quinte (7) ergeben Dur." },
+        { "question": "Welcher Ton liegt auf der E-Saite im 3. Bund?", "options": ["G", "F", "A"], "answer": 0, "explain": "E – F (1) – Fis (2) – G (3)." },
+        { "question": "Wie viele Sechzehntel passen in eine Viertelnote?", "options": ["4", "2", "3"], "answer": 0, "explain": "Eine Viertel = 2 Achtel = 4 Sechzehntel." },
+        { "question": "Wo findest du die Oktave zum Ton der leeren E-Saite?", "options": ["D-Saite, 2. Bund", "A-Saite, 5. Bund", "G-Saite, 7. Bund"], "answer": 0, "explain": "Zwei Saiten höher, zwei Bünde: Der Ton ist der gleiche Buchstabe, eine Oktave höher." },
+        { "question": "Wozu dient Muting?", "options": ["Unerwünschte Saiten leise halten, damit nichts mitklingt", "Den Bass lauter machen", "Den Bass stimmen"], "answer": 0, "explain": "Gutes Muting macht dein Spiel sauber und präzise." }
+      ]
+    },
+    "level3": {
+      "title": "Level 3: Fortgeschritten",
+      "questions": [
+        { "question": "Welche Töne hat die A-Moll-Pentatonik?", "options": ["A C D E G", "A H C E F", "A Cis D E G"], "answer": 0, "explain": "Grundton, kleine Terz, Quarte, Quinte, kleine Septime." },
+        { "question": "Welche Note ist die V. Stufe in C-Dur?", "options": ["G", "F", "A"], "answer": 0, "explain": "C D E F G: Die fünfte Stufe ist G." },
+        { "question": "Was bedeutet die Nashville-Zahl „4“?", "options": ["Der Akkord auf der vierten Stufe", "Vier Schläge pro Takt", "Der vierte Bund"], "answer": 0, "explain": "Nashville-Zahlen nennen die Stufe, unabhängig von der Tonart." },
+        { "question": "Bei welcher Technik entsteht der Ton allein durch das Aufschlagen des Fingers, ohne zu zupfen?", "options": ["Hammer-on", "Slide", "Ghost Note"], "answer": 0, "explain": "Hammer-on = der greifende Finger schlägt die Saite an." },
+        { "question": "In welchem Takt eines 12-Takt-Blues kommt die IV. Stufe erstmals?", "options": ["Takt 5", "Takt 3", "Takt 9"], "answer": 0, "explain": "I I I I | IV IV I I | V IV I V." },
+        { "question": "Was ist ein Arpeggio?", "options": ["Die Töne eines Akkords nacheinander gespielt", "Eine besonders schnelle Tonleiter", "Ein gedämpfter Ton"], "answer": 0, "explain": "Arpeggio = gebrochener Akkord." }
+      ]
+    }
+  }
+}

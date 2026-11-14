@@ -124,6 +124,39 @@ export function bumpStat(name) {
   commit((s) => { s.stats[name] = (s.stats[name] || 0) + 1; finalize(s); });
 }
 
+export const XP_WARMUP = 10;
+
+/** Aufwärm-Übung (Wiederholung) abgeschlossen: zählt als Übungstag, gibt XP. */
+export function completeWarmup(cards) {
+  const amount = XP_WARMUP + 2 * cards;
+  commit((s) => {
+    bumpStreak(s, dateStr());
+    s.stats.warmups = (s.stats.warmups || 0) + 1;
+    grantXp(s, amount);
+    finalize(s);
+  });
+  emit('xp', { amount });
+  return amount;
+}
+
+/**
+ * Lektionen per Test überspringen (Einstufungs- oder Level-Test). Es gibt dafür keine XP.
+ * Übersprungene Lektionen zählen als erledigt, aber nicht für Level-Abzeichen (s.skipped).
+ * placementLevel: erstes Level, bei dem du einsteigst (nur beim Einstufungstest).
+ */
+export function skipLessons(lessons, placementLevel = null) {
+  commit((s) => {
+    const now = Date.now();
+    for (const l of lessons) {
+      if (s.done[l.id]) continue;
+      s.done[l.id] = now; s.skipped[l.id] = now; s.steps[l.id] = l.steps.length;
+    }
+    s.stats.skillTests = (s.stats.skillTests || 0) + 1;
+    if (placementLevel != null) s.placement = { at: now, level: placementLevel };
+    finalize(s);
+  });
+}
+
 export function buyFreeze() {
   let ok = false;
   commit((s) => {

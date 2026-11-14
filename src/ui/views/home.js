@@ -3,6 +3,7 @@ import { getState } from '../../state/store.js';
 import { currentStreak, levelInfo, todaySeconds } from '../../state/gamify.js';
 import { loadAvailableLevels, flattenLessons } from '../../lessons/loader.js';
 import { goalRing } from '../widgets.js';
+import { dueCount } from '../../state/srs.js';
 import { getUser } from '../../sync/sync.js';
 
 export async function homeView(root) {
@@ -10,6 +11,7 @@ export async function homeView(root) {
   const levels = await loadAvailableLevels();
   const lessons = flattenLessons(levels);
   const lv = levelInfo(s.xp);
+  const due = dueCount(s);
 
   // „Weiter, wo du aufgehört hast“
   let target = s.pos && lessons.find((l) => l.id === s.pos.lesson);
@@ -20,7 +22,7 @@ export async function homeView(root) {
 
   const started = Object.keys(s.steps).length > 0;
   const card = allDone
-    ? h('div', { class: 'card hero' }, h('h2', null, 'Alle verfügbaren Lektionen geschafft 🎉'), h('p', { class: 'muted' }, 'Weitere Level folgen. Bis dahin: Wiederhole Riffs im Tempo-Training oder nutze die Werkzeuge.'), h('a', { class: 'btn primary', href: '#/course' }, 'Zum Kurs'))
+    ? h('div', { class: 'card hero' }, h('h2', null, 'Alle verfügbaren Lektionen geschafft 🎉'), h('p', { class: 'muted' }, 'Du hast den ganzen Kurs durch. Halte dein Können mit den Aufwärm-Wiederholungen frisch, spiele Songs und erfinde eigene Basslines.'), h('div', { class: 'row wrap' }, h('a', { class: 'btn primary', href: '#/songs' }, 'Zu den Songs'), h('a', { class: 'btn ghost', href: '#/course' }, 'Zum Kurs')))
     : h('a', { class: 'card hero link', href: `#/lesson/${target.id}` },
       h('span', { class: 'eyebrow' }, started ? 'Weiter, wo du aufgehört hast' : 'Los geht’s'),
       h('h2', null, target.title),
@@ -30,6 +32,8 @@ export async function homeView(root) {
   root.append(h('section', { class: 'view' },
     h('h1', null, started ? 'Schön, dass du da bist 👋' : 'Willkommen!'),
     card,
+    due ? h('a', { class: 'card link warmup-card', href: '#/warmup' }, h('span', { class: 'eyebrow' }, 'Aufwärmen ☕'), h('p', null, `${due} ${due === 1 ? 'Wiederholung ist' : 'Wiederholungen sind'} fällig. Das dauert nur ein paar Minuten.`)) : null,
+    !s.placement && !Object.keys(s.done).length ? h('div', { class: 'card' }, h('h3', null, 'Du spielst schon Bass?'), h('p', { class: 'muted' }, 'Mit dem Einstufungstest steigst du auf deinem Niveau ein und musst nicht bei null anfangen.'), h('a', { class: 'btn ghost', href: '#/placement' }, 'Einstufungstest machen')) : null,
     h('div', { class: 'grid2' },
       h('div', { class: 'card center-text' }, h('h3', null, 'Tagesziel'), goalRing(todaySeconds(s), s.settings.goal * 60), h('p', { class: 'muted small' }, `${s.settings.goal} Min. pro Tag`)),
       h('div', { class: 'card' }, h('h3', null, 'Fortschritt'),

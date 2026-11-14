@@ -91,7 +91,7 @@ export function createTabPlayer(riff, o = {}) {
         o.onNote && o.onNote({ idx, time, dur, midi: n.midi, ghost: n.ghost });
         if (!(o.muteBass && o.muteBass())) {
           pluck(n.midi, time, dur, 0.9, bus.node, {
-            ghost: n.ghost, soft: n.hammer || n.pull, vibrato: n.vib,
+            ghost: n.ghost, soft: n.hammer || n.pull, vibrato: n.vib, slap: n.slap, pop: n.pop, harmonic: n.harm,
             glideFrom: n.slide ? (n.prevMidi != null ? n.prevMidi : n.midi + (n.slide === 'up' ? -3 : 3)) : null,
           });
         }

@@ -1,0 +1,99 @@
+{
+  "songs": [
+    {
+      "id": "s-sunday-rock", "title": "Sonntagsrock", "genre": "Rock", "difficulty": 1, "bpm": 80, "key": "E",
+      "requires": ["l1-groove"], "skills": ["Achtelnoten", "Leere Saiten"],
+      "description": "Dein erster eigener „Song“: E und A, gleichmäßige Achtel.",
+      "riff": { "id": "s-sunday-rock", "title": "Sonntagsrock", "bpm": 80, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+        "E0 ~ E0 ~ E0 ~ E0 ~", "E0 ~ E0 ~ E0 ~ A0 ~", "A0 ~ A0 ~ A0 ~ A0 ~", "E0 ~ E0 ~ E0 ~ E0 -"
+      ] }
+    },
+    {
+      "id": "s-campfire", "title": "Lagerfeuer", "genre": "Pop", "difficulty": 2, "bpm": 90, "key": "C",
+      "requires": ["l2-root5oct"], "skills": ["Grundton – Quinte – Oktave", "Pop-Akkordfolge"],
+      "description": "C – G – Am – F mit Grundton und Quinte im Wechsel.",
+      "riff": { "id": "s-campfire", "title": "Lagerfeuer", "bpm": 90, "beats": 4, "sub": 2, "drums": "rock8", "bars": [
+        "A3 ~ A3 D5 ~ D5 A3 ~", "E3 ~ E3 D0 ~ D0 E3 ~", "A0 ~ A0 D2 ~ D2 A0 ~", "E1 ~ E1 A3 ~ A3 E1 ~"
+      ] }
+    },
+    {
+      "id": "s-island", "title": "Inselgefühl", "genre": "Reggae", "difficulty": 3, "bpm": 76, "key": "A",
+      "requires": ["l3-reggae"], "skills": ["Reggae-Pausen", "Moll-Pentatonik"],
+      "description": "Viel Platz zwischen den Tönen: Der Groove entsteht aus den Pausen.",
+      "riff": { "id": "s-island", "title": "Inselgefühl", "bpm": 76, "beats": 4, "sub": 2, "drums": "reggae", "bars": [
+        "A0 ~ ~ - A3 ~ A5 -", "A0 ~ ~ - A3 ~ A7 A5", "D0 ~ ~ - D3 ~ D5 -", "E0 ~ ~ - E3 ~ E5 -"
+      ] }
+    },
+    {
+      "id": "s-river-blues", "title": "Blues am Fluss", "genre": "Blues", "difficulty": 3, "bpm": 100, "key": "A",
+      "requires": ["l3-blues"], "skills": ["Shuffle", "Grundton – Terz – Quinte – Sexte"],
+      "description": "Boogie-Shuffle durch A, D und E.",
+      "riff": { "id": "s-river-blues", "title": "Blues am Fluss", "bpm": 100, "beats": 4, "sub": 3, "drums": "shuffle", "bars": [
+        "A0 ~ A0 A4 ~ A4 A7 ~ A7 A9 ~ A7", "A0 ~ A0 A4 ~ A4 A7 ~ A7 A9 ~ A7",
+        "D0 ~ D0 D4 ~ D4 D7 ~ D7 D9 ~ D7", "E0 ~ E0 E4 ~ E4 E7 ~ E7 E9 ~ E7"
+      ] }
+    },
+    {
+      "id": "s-night-shift", "title": "Nachtschicht", "genre": "Funk", "difficulty": 3, "bpm": 96, "key": "E",
+      "requires": ["l3-funk", "l3-slides"], "skills": ["Ghost Notes", "Sechzehntel"],
+      "description": "Funk-Groove mit Ghost Notes auf dem Sechzehntel-Raster.",
+      "riff": { "id": "s-night-shift", "title": "Nachtschicht", "bpm": 96, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+        "E0 - E0g E0 - - E3 - E0 - E0g E0 - E5 E3 -",
+        "A0 - A0g A0 - - A3 - A0 - A0g A0 - A5 A3 -",
+        "E0 - E0g E0 - - E3 - E0 - E0g E0 - E5 E3 -",
+        "E0 - E0g E0 - - E3 - E5 - E5g E5 - E7 E5 E3"
+      ] }
+    },
+    {
+      "id": "s-glitter", "title": "Glitzerkugel", "genre": "Disco", "difficulty": 3, "bpm": 118, "key": "E",
+      "requires": ["l3-disco"], "skills": ["Oktav-Achtel", "Ausdauer"],
+      "description": "Durchlaufende Oktav-Achtel, wie sie die Tanzfläche liebt.",
+      "riff": { "id": "s-glitter", "title": "Glitzerkugel", "bpm": 118, "beats": 4, "sub": 2, "drums": "disco", "bars": [
+        "E0 D2 E0 D2 E0 D2 E0 D2", "A0 G2 A0 G2 A0 G2 A0 G2", "D0 G7 D0 G7 D0 G7 D0 G7", "E0 D2 E0 D2 E0 D2 E0 D2"
+      ] }
+    },
+    {
+      "id": "s-bells", "title": "Glockenspiel", "genre": "Ambient", "difficulty": 4, "bpm": 70, "key": "E",
+      "requires": ["l4-harmtap"], "skills": ["Flageoletts"],
+      "description": "Nur Obertöne: Hör zu, wie die Saiten singen.",
+      "riff": { "id": "s-bells", "title": "Glockenspiel", "bpm": 70, "beats": 4, "sub": 1, "bars": [
+        "E12* A12* D12* G12*", "G12* D12* A12* E12*", "G7* D7* A7* E7*", "E7* A7* D7* G7*"
+      ] }
+    },
+    {
+      "id": "s-dorian-drive", "title": "Dorische Fahrt", "genre": "Funk", "difficulty": 4, "bpm": 92, "key": "A",
+      "requires": ["l4-modes1"], "skills": ["Dorisch", "Charakterton"],
+      "description": "Aufwärts und abwärts durch A dorisch.",
+      "riff": { "id": "s-dorian-drive", "title": "Dorische Fahrt", "bpm": 92, "beats": 4, "sub": 2, "drums": "funk", "bars": [
+        "A0 ~ A0 A3 ~ A5 A7 A9", "A10 A9 A7 A5 A3 ~ A0 ~", "A0 ~ A0 A3 ~ A5 A7 A9", "A10 A9 A7 A5 A3 ~ A0 -"
+      ] }
+    },
+    {
+      "id": "s-slow-walk", "title": "Langsamer Spaziergang", "genre": "Jazz-Blues", "difficulty": 4, "bpm": 110, "key": "A",
+      "requires": ["l4-walkblues"], "skills": ["Walking Bass", "Annäherungstöne"],
+      "description": "Vier Takte Walking durch A und D.",
+      "riff": { "id": "s-slow-walk", "title": "Langsamer Spaziergang", "bpm": 110, "beats": 4, "sub": 1, "drums": "shuffle", "bars": [
+        "A0 A4 A7 A9", "A7 A4 A2 A0", "D0 D4 D7 D4", "D7 D4 D2 A1"
+      ] }
+    },
+    {
+      "id": "s-thumb-town", "title": "Daumenstadt", "genre": "Funk", "difficulty": 5, "bpm": 90, "key": "E",
+      "requires": ["l4-slapgroove"], "skills": ["Slap", "Pop", "Ghost Notes"],
+      "description": "Voller Slap-Groove über G, A und E.",
+      "riff": { "id": "s-thumb-town", "title": "Daumenstadt", "bpm": 90, "beats": 4, "sub": 4, "drums": "funk", "bars": [
+        "E0t - - E0g D2o - E0g - E0t - E0g D2o - E0g - -",
+        "E3t - - E3g G0o - E3g - E3t - E3g G0o - E3g - -",
+        "A0t - - A0g G2o - A0g - A0t - A0g G2o - G2o A0g -",
+        "E0t - - E0g D2o - E0g - E0t E0g D2o - E0t - D2o -"
+      ] }
+    },
+    {
+      "id": "s-seven-ways", "title": "Sieben Wege", "genre": "Prog", "difficulty": 5, "bpm": 130, "key": "E",
+      "requires": ["l4-odd"], "skills": ["7/8-Takt", "Gruppen zählen"],
+      "description": "Ein 7/8-Groove in der Gruppierung 2 + 2 + 3.",
+      "riff": { "id": "s-seven-ways", "title": "Sieben Wege", "bpm": 130, "beats": 7, "sub": 1, "bars": [
+        "E0 ~ A0 ~ D2 ~ ~", "E0 E3 A0 A2 D2 ~ ~", "E0 ~ A0 ~ D2 ~ ~", "E0 E3 A0 A2 D5 ~ ~"
+      ] }
+    }
+  ]
+}

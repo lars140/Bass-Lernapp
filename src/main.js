@@ -14,6 +14,10 @@ import { courseView } from './ui/views/course.js';
 import { lessonView } from './ui/views/lesson.js';
 import { toolsView } from './ui/views/tools.js';
 import { profileView } from './ui/views/profile.js';
+import { warmupView } from './ui/views/warmup.js';
+import { placementView } from './ui/views/placement.js';
+import { statsView } from './ui/views/stats.js';
+import { songsView } from './ui/views/songs.js';
 import { privacyView, imprintView } from './ui/views/legal.js';
 import { loginView, registerView, resetView } from './ui/views/auth.js';
 import { boot, requestSync } from './sync/sync.js';
@@ -23,7 +27,7 @@ applySettings();
 startTimer();
 
 // ---------- Shell ----------
-const NAV = [['/', 'Start', '🏠'], ['/course', 'Kurs', '📚'], ['/tools', 'Werkzeuge', '🎚️'], ['/profile', 'Profil', '👤']];
+const NAV = [['/', 'Start', '🏠'], ['/course', 'Kurs', '📚'], ['/songs', 'Songs', '🎵'], ['/tools', 'Werkzeuge', '🎚️'], ['/profile', 'Profil', '👤']];
 const status = h('div', { class: 'status', 'aria-live': 'off' });
 const syncNote = h('span', { class: 'sync-note small muted', role: 'status' });
 const accountLink = h('a', { class: 'acct', href: '#/login' }, 'Anmelden');
@@ -87,6 +91,10 @@ initRouter(main, [
   ['/lesson/([\\w-]+)', lessonView],
   ['/tools(?:/(\\w+))?', toolsView],
   ['/profile', profileView],
+  ['/warmup', warmupView],
+  ['/placement(?:/(\\w+))?', placementView],
+  ['/stats', statsView],
+  ['/songs(?:/([\\w-]+))?', songsView],
   ['/privacy', privacyView],
   ['/imprint', imprintView],
 ]);

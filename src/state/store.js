@@ -4,7 +4,7 @@
 // - Das Format ist versioniert (`v`) und wird per migrate() auf den aktuellen Stand gebracht.
 import { emit } from './events.js';
 
-export const SCHEMA_VERSION = 1;
+export const SCHEMA_VERSION = 2;
 const KEY = 'bass.progress';
 const META_KEY = 'bass.meta';
 
@@ -22,7 +22,10 @@ export function defaults() {
     badges: {},         // badgeId -> Zeitstempel
     records: {},        // riffId -> höchstes sauberes Tempo (BPM)
     days: {},           // 'YYYY-MM-DD' -> Übungssekunden
-    stats: { rhythmPerfect: 0, quizCorrect: 0, earPassed: 0, micPassed: 0, jamsDone: 0 },
+    stats: { rhythmPerfect: 0, quizCorrect: 0, earPassed: 0, micPassed: 0, jamsDone: 0, warmups: 0, skillTests: 0 },
+    srs: {},            // Wiederholungs-Karten: kartenId -> [fälligTag, Intervall (Tage), Ease×100, Wiederholungen]
+    skipped: {},        // lessonId -> Zeitstempel (per Einstufungs-/Überspringtest übersprungen)
+    placement: null,    // { at, level } nach dem Einstufungstest
     settings: { theme: 'dark', lefty: false, goal: 10, volume: 0.8, sounds: true, latencyMs: 0 },
   };
 }
@@ -35,8 +38,10 @@ export function migrate(raw) {
   out.streak = { ...base.streak, ...(raw.streak || {}) };
   out.settings = { ...base.settings, ...(raw.settings || {}) };
   out.stats = { ...base.stats, ...(raw.stats || {}) };
-  for (const k of ['done', 'steps', 'badges', 'records', 'days']) out[k] = { ...(raw[k] || {}) };
-  // zukünftige Versionssprünge hier einfügen: if (raw.v < 2) { ... }
+  for (const k of ['done', 'steps', 'badges', 'records', 'days', 'srs', 'skipped']) out[k] = { ...(raw[k] || {}) };
+  out.placement = raw.placement && typeof raw.placement === 'object' ? { at: Number(raw.placement.at) || 0, level: Number(raw.placement.level) || 1 } : null;
+  // v1 -> v2: neue Felder srs, skipped, placement sind oben mit Defaults gefüllt.
+  // zukünftige Versionssprünge hier einfügen: if (raw.v < 3) { ... }
   out.v = SCHEMA_VERSION;
   return out;
 }
