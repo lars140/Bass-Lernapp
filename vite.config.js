@@ -26,6 +26,7 @@ function serviceWorkerPlugin() {
         .filter((f) => !skip.has(f));
       const hash = createHash('sha1');
       for (const f of files.sort()) hash.update(f).update(readFileSync(join(outDir, f)));
+      hash.update(readFileSync('sw-template.js')); // Änderungen am Service Worker selbst ergeben ebenfalls eine neue Version
       const version = 'bass-' + hash.digest('hex').slice(0, 10);
       const urls = ['/', ...files.map((f) => '/' + f)];
       const tpl = readFileSync('sw-template.js', 'utf8')
