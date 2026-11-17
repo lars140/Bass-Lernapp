@@ -15,12 +15,20 @@ const isHtml = (res) => (res.headers.get('content-type') || '').includes('text/h
 // Das darf nicht unter dem Namen einer JSON-/Audio-/JS-Datei im Cache landen.
 const usable = (url, res) => res && res.ok && (isHtmlUrl(url) || !isHtml(res));
 
+// Umgeleitete Antworten (z. B. /index.html -> / bei Cloudflare Pages, 308) dürfen NICHT als Antwort auf eine Seitennavigation
+// ausgeliefert werden: Der Browser meldet dann „net::ERR_FAILED“ (erst nach der Installation des Service Workers, daher
+// klappt der erste Besuch und danach nicht mehr). Darum wird jede Antwort vor dem Speichern/Ausliefern „glatt gezogen“.
+async function plain(res) {
+  if (!res || !res.redirected) return res;
+  return new Response(await res.blob(), { status: res.status, statusText: res.statusText, headers: res.headers });
+}
+
 async function precache() {
   const cache = await caches.open(VERSION);
   const results = await Promise.allSettled(PRECACHE.map(async (u) => {
     const res = await fetch(new Request(u, { cache: 'reload' }));
     if (!usable(u, res)) throw new Error(`${u}: ${res.status} ${res.headers.get('content-type')}`);
-    await cache.put(u, res);
+    await cache.put(u, await plain(res));
   }));
   const bad = results.map((r, i) => (r.status === 'rejected' ? PRECACHE[i] : null)).filter(Boolean);
   if (bad.some(isCritical)) throw new Error('Wichtige Dateien nicht ladbar: ' + bad.filter(isCritical).join(', '));
@@ -44,26 +52,26 @@ const OFFLINE_PAGE = '<!doctype html><meta charset="utf-8"><meta name="viewport"
   + '<h1>Gerade keine Verbindung</h1><p>Die App konnte nicht geladen werden. Bitte prüfe deine Internetverbindung und lade die Seite neu.</p>';
 
 async function handleNavigate(req) {
-  const cached = await caches.match('/index.html') || await caches.match('/');
-  if (cached) return cached;
+  const cached = await caches.match('/') || await caches.match('/index.html');
+  if (cached) return plain(cached);
   try {
     const res = await fetch(req);
-    if (res) return res;
+    if (res) return await plain(res);
   } catch { /* offline und nichts im Cache */ }
   return new Response(OFFLINE_PAGE, { status: 503, headers: { 'content-type': 'text/html; charset=utf-8' } });
 }
 
 async function handleAsset(req, url) {
   const cached = await caches.match(req, { ignoreSearch: true });
-  if (cached) return cached;
+  if (cached) return plain(cached);
   try {
     const res = await fetch(req);
     // Gültige Antworten für spätere Offline-Nutzung merken (nicht die Startseite unter fremdem Namen)
     if (usable(url.pathname, res)) {
       const copy = res.clone();
-      caches.open(VERSION).then((c) => c.put(req, copy)).catch(() => {});
+      plain(copy).then((p) => caches.open(VERSION).then((c) => c.put(req, p))).catch(() => {});
     }
-    return res;
+    return await plain(res);
   } catch {
     // Keine Verbindung und nicht im Cache: normale Fehlerantwort statt abgebrochener Anfrage
     return new Response('', { status: 504, statusText: 'Offline' });

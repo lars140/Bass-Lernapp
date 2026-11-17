@@ -93,4 +93,18 @@ const get = (url) => ({ request: { method: 'GET', url, mode: 'no-cors' } });
   await w.run('activate');
   assert.ok(!w.stores.has('bass-alt'));
 }
+// 9) Cloudflare Pages leitet /index.html auf / um (308). Eine umgeleitete Antwort darf nie an eine Navigation gehen (sonst ERR_FAILED)
+{
+  const redirected = () => { const r = html(); Object.defineProperty(r, 'redirected', { value: true }); return r; };
+  const w = makeWorker(async (p) => (p === '/index.html' ? redirected() : healthy(p)));
+  await w.run('install');
+  for (const [k, v] of w.stores.get('bass-test')) assert.equal(v.redirected, false, k + ' wurde umgeleitet gespeichert');
+  const r = await w.run('fetch', nav());
+  assert.equal(r.redirected, false); assert.equal(r.status, 200);
+  // auch wenn nur die umgeleitete Variante im Cache liegt (alter Worker), wird sie beim Ausliefern geglättet
+  const w2 = makeWorker(async () => { throw new TypeError('offline'); });
+  w2.stores.set('bass-test', new Map([['/index.html', redirected()]]));
+  const r2 = await w2.run('fetch', nav());
+  assert.equal(r2.redirected, false); assert.equal(r2.status, 200);
+}
 console.log('✓ Service-Worker-Tests bestanden');
